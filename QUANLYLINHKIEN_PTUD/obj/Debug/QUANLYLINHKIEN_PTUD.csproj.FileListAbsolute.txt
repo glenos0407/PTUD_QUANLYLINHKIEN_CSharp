@@ -14,3 +14,4 @@ X:\Documents\C#\Demo_UIFormQuanLyLinhKien\PTUD_QuanLyLinhKien_UI_Final\QUANLYLIN
 X:\Documents\C#\Demo_UIFormQuanLyLinhKien\PTUD_QuanLyLinhKien_UI_Final\QUANLYLINHKIEN_PTUD\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.frmLogin.resources
 X:\Documents\C#\Demo_UIFormQuanLyLinhKien\PTUD_QuanLyLinhKien_UI_Final\QUANLYLINHKIEN_PTUD\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.frmMainUI_Staff.resources
 X:\Documents\C#\Demo_UIFormQuanLyLinhKien\PTUD_QuanLyLinhKien_UI_Final\QUANLYLINHKIEN_PTUD\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.frmAccessories.resources
+X:\Documents\C#\Demo_UIFormQuanLyLinhKien\PTUD_QuanLyLinhKien_UI_Final\QUANLYLINHKIEN_PTUD\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.frmChangePassword.resources

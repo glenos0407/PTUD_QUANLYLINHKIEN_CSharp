@@ -238,7 +238,7 @@
             this.TaiKhoanToolStripMenuItem,
             this.DangXuatToolStripMenuItem});
             this.cmstrp_Account.Name = "cmstrp_Account";
-            this.cmstrp_Account.Size = new System.Drawing.Size(156, 56);
+            this.cmstrp_Account.Size = new System.Drawing.Size(181, 78);
             // 
             // TaiKhoanToolStripMenuItem
             // 
@@ -246,7 +246,7 @@
             this.ChiTietTKToolStripMenuItem,
             this.ChangePassToolStripMenuItem});
             this.TaiKhoanToolStripMenuItem.Name = "TaiKhoanToolStripMenuItem";
-            this.TaiKhoanToolStripMenuItem.Size = new System.Drawing.Size(155, 26);
+            this.TaiKhoanToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.TaiKhoanToolStripMenuItem.Text = "Tài Khoản";
             // 
             // ChiTietTKToolStripMenuItem
@@ -260,11 +260,12 @@
             this.ChangePassToolStripMenuItem.Name = "ChangePassToolStripMenuItem";
             this.ChangePassToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.ChangePassToolStripMenuItem.Text = "Đổi Mật Khẩu";
+            this.ChangePassToolStripMenuItem.Click += new System.EventHandler(this.ChangePassToolStripMenuItem_Click);
             // 
             // DangXuatToolStripMenuItem
             // 
             this.DangXuatToolStripMenuItem.Name = "DangXuatToolStripMenuItem";
-            this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(155, 26);
+            this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.DangXuatToolStripMenuItem.Text = "Đăng Xuất";
             // 
             // imgs_BtnICon

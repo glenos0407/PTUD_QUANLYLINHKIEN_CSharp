@@ -115,5 +115,11 @@ namespace QUANLYLINHKIEN_PTUD
             }
             open_frmLinhKien();
         }
+
+        private void ChangePassToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmChangePassword frm_dmk = new frmChangePassword();
+            frm_dmk.ShowDialog();
+        }
     }
 }
