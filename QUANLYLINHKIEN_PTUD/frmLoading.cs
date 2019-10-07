@@ -15,7 +15,18 @@ namespace QUANLYLINHKIEN_PTUD
     {
         string version;
 
-        public string Version { get => version; set => version = value; }
+        public string Version
+        {
+            get
+            {
+                return version;
+            }
+
+            set
+            {
+                version = value;
+            }
+        }
 
         public frmLoading()
         {
