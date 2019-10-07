@@ -103,7 +103,7 @@ namespace QUANLYLINHKIEN_PTUD
             this.pnlRight.Controls.Add(tc);
         }
 
-
+        
         private void btnAccessories_Click(object sender, EventArgs e)
         {
             foreach (Form item in Application.OpenForms)
@@ -120,6 +120,41 @@ namespace QUANLYLINHKIEN_PTUD
         {
             frmChangePassword frm_dmk = new frmChangePassword();
             frm_dmk.ShowDialog();
+        }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            foreach (Form item in Application.OpenForms)
+            {
+                if (item.Name.Equals("frmCustomer"))
+                {
+                    return;
+                }
+            }
+            open_frmCustomer();
+        }
+        private void open_frmCustomer()
+        {
+            this.pnlRight.Controls.Clear();
+
+            TabPage tp = new TabPage();
+            tp.Text = "Quản Lý Khách Hàng";
+            tp.Tag = "KhachHang";
+            tc.TabPages.Add(tp);
+
+            frmCustomer fa = new frmCustomer(this, tc);
+            fa.TopLevel = false;
+            fa.Dock = DockStyle.Fill;
+            fa.FormBorderStyle = FormBorderStyle.None;
+            fa.ShowInTaskbar = false;
+            fa.Show();
+
+            tp.Controls.Add(fa);
+            this.pnlRight.Controls.Add(tc);
+        }
+        public Panel getPanel()
+        {
+            return this.pnlRight;
         }
     }
 }
