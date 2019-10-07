@@ -34,6 +34,3 @@ D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code\PTUD_QUANLYLINHKIEN_UI
 D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\EntityFramework.SqlServer.dll
 D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\EntityFramework.xml
 D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Toan\Desktop\C# Project PTUD\QUANLYLINHKIEN_PTUD\bin\Debug\QUANLYLINHKIEN_PTUD.exe.config
-C:\Users\Toan\Desktop\C# Project PTUD\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.exe
-C:\Users\Toan\Desktop\C# Project PTUD\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.pdb
