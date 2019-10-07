@@ -86,7 +86,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(329, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(286, 21);
+            this.label1.Size = new System.Drawing.Size(285, 21);
             this.label1.TabIndex = 2;
             this.label1.Text = "Phần Mềm Quản Lý Mua Bán Linh Kiện";
             // 
@@ -205,7 +205,6 @@
             this.btnCustomer.Text = "Khách Hàng";
             this.btnCustomer.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCustomer.UseVisualStyleBackColor = false;
-            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
             // btnPOS
             // 
@@ -239,7 +238,7 @@
             this.TaiKhoanToolStripMenuItem,
             this.DangXuatToolStripMenuItem});
             this.cmstrp_Account.Name = "cmstrp_Account";
-            this.cmstrp_Account.Size = new System.Drawing.Size(156, 56);
+            this.cmstrp_Account.Size = new System.Drawing.Size(181, 78);
             // 
             // TaiKhoanToolStripMenuItem
             // 
@@ -247,7 +246,7 @@
             this.ChiTietTKToolStripMenuItem,
             this.ChangePassToolStripMenuItem});
             this.TaiKhoanToolStripMenuItem.Name = "TaiKhoanToolStripMenuItem";
-            this.TaiKhoanToolStripMenuItem.Size = new System.Drawing.Size(155, 26);
+            this.TaiKhoanToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.TaiKhoanToolStripMenuItem.Text = "Tài Khoản";
             // 
             // ChiTietTKToolStripMenuItem
@@ -266,7 +265,7 @@
             // DangXuatToolStripMenuItem
             // 
             this.DangXuatToolStripMenuItem.Name = "DangXuatToolStripMenuItem";
-            this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(155, 26);
+            this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.DangXuatToolStripMenuItem.Text = "Đăng Xuất";
             // 
             // imgs_BtnICon

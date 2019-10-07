@@ -15,18 +15,7 @@ namespace QUANLYLINHKIEN_PTUD
     {
         string version;
 
-        public string Version
-        {
-            get
-            {
-                return version;
-            }
-
-            set
-            {
-                version = value;
-            }
-        }
+        public string Version { get => version; set => version = value; }
 
         public frmLoading()
         {
@@ -42,7 +31,7 @@ namespace QUANLYLINHKIEN_PTUD
 
         private void frmLoading_Load(object sender, EventArgs e)
         {
-            lbVersion.Text = "Version " + Version;
+            lbVersion.Text = "Version " + version;
             Custom_Theme();
         }
 
