@@ -12,7 +12,6 @@ namespace QUANLYLINHKIEN_PTUD
 {
     public partial class frmAccessories : Form
     {
-        TabControl tab_c;
         frmMainUI_Staff frm_main;
 
         public frmAccessories()
@@ -20,11 +19,10 @@ namespace QUANLYLINHKIEN_PTUD
             InitializeComponent();
         }
 
-        public frmAccessories(frmMainUI_Staff f, TabControl tc)
+        public frmAccessories(frmMainUI_Staff f)
         {
             InitializeComponent();
             frm_main = f;
-            tab_c = tc;
         }
 
         private void Custom_Theme()
@@ -46,13 +44,6 @@ namespace QUANLYLINHKIEN_PTUD
 
             if (dr == DialogResult.Yes)
             {
-                foreach (TabPage item in tab_c.TabPages)
-                {
-                    if (item.Tag.Equals("LinhKien"))
-                    {
-                        tab_c.TabPages.Remove(item);
-                    }
-                }
                 this.Close();
             }
             else

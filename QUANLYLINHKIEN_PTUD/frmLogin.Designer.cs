@@ -212,11 +212,11 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Navy;
-            this.label2.Location = new System.Drawing.Point(64, 20);
+            this.label2.Location = new System.Drawing.Point(54, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(330, 45);
+            this.label2.Size = new System.Drawing.Size(340, 45);
             this.label2.TabIndex = 0;
             this.label2.Text = "Đăng Nhập Hệ Thống";
             // 

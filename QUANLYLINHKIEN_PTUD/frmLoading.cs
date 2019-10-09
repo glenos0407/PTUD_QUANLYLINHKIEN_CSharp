@@ -69,6 +69,7 @@ namespace QUANLYLINHKIEN_PTUD
             if(b_pbrLoading.Value < 100)
             {
                 b_pbrLoading.Value += 20;
+                lbPercent.Text = b_pbrLoading.Value.ToString() + "%";
             }
             else
             {

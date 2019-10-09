@@ -32,12 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLoading));
             this.timer_loading = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.b_pbrLoading = new Bunifu.Framework.UI.BunifuProgressBar();
+            this.picbx_Logo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lbVersion = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.picbx_Logo = new System.Windows.Forms.PictureBox();
-            this.b_pbrLoading = new Bunifu.Framework.UI.BunifuProgressBar();
+            this.lbPercent = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbx_Logo)).BeginInit();
@@ -46,7 +47,7 @@
             // timer_loading
             // 
             this.timer_loading.Enabled = true;
-            this.timer_loading.Interval = 200;
+            this.timer_loading.Interval = 300;
             this.timer_loading.Tick += new System.EventHandler(this.timer_loading_Tick);
             // 
             // panel1
@@ -59,17 +60,50 @@
             this.panel1.Size = new System.Drawing.Size(584, 58);
             this.panel1.TabIndex = 1;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Navy;
+            this.label2.Location = new System.Drawing.Point(107, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(370, 32);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Cửa Hàng Phát Triển Tương Lai";
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.lbPercent);
             this.panel2.Controls.Add(this.b_pbrLoading);
             this.panel2.Controls.Add(this.picbx_Logo);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 58);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(584, 276);
+            this.panel2.Size = new System.Drawing.Size(584, 288);
             this.panel2.TabIndex = 2;
+            // 
+            // b_pbrLoading
+            // 
+            this.b_pbrLoading.BackColor = System.Drawing.Color.Silver;
+            this.b_pbrLoading.BorderRadius = 5;
+            this.b_pbrLoading.Location = new System.Drawing.Point(190, 259);
+            this.b_pbrLoading.Margin = new System.Windows.Forms.Padding(7);
+            this.b_pbrLoading.MaximumValue = 100;
+            this.b_pbrLoading.Name = "b_pbrLoading";
+            this.b_pbrLoading.ProgressColor = System.Drawing.Color.Green;
+            this.b_pbrLoading.Size = new System.Drawing.Size(205, 6);
+            this.b_pbrLoading.TabIndex = 3;
+            this.b_pbrLoading.Value = 0;
+            // 
+            // picbx_Logo
+            // 
+            this.picbx_Logo.Location = new System.Drawing.Point(190, 45);
+            this.picbx_Logo.Name = "picbx_Logo";
+            this.picbx_Logo.Size = new System.Drawing.Size(205, 205);
+            this.picbx_Logo.TabIndex = 2;
+            this.picbx_Logo.TabStop = false;
             // 
             // label1
             // 
@@ -87,55 +121,35 @@
             this.lbVersion.AutoSize = true;
             this.lbVersion.BackColor = System.Drawing.Color.Transparent;
             this.lbVersion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbVersion.Location = new System.Drawing.Point(471, 335);
+            this.lbVersion.Location = new System.Drawing.Point(472, 349);
             this.lbVersion.Name = "lbVersion";
             this.lbVersion.Size = new System.Drawing.Size(51, 17);
             this.lbVersion.TabIndex = 4;
             this.lbVersion.Text = "Version";
             // 
-            // label2
+            // lbPercent
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Navy;
-            this.label2.Location = new System.Drawing.Point(107, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(370, 32);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Cửa Hàng Phát Triển Tương Lai";
-            // 
-            // picbx_Logo
-            // 
-            this.picbx_Logo.Location = new System.Drawing.Point(190, 45);
-            this.picbx_Logo.Name = "picbx_Logo";
-            this.picbx_Logo.Size = new System.Drawing.Size(205, 205);
-            this.picbx_Logo.TabIndex = 2;
-            this.picbx_Logo.TabStop = false;
-            // 
-            // b_pbrLoading
-            // 
-            this.b_pbrLoading.BackColor = System.Drawing.Color.Silver;
-            this.b_pbrLoading.BorderRadius = 5;
-            this.b_pbrLoading.Location = new System.Drawing.Point(190, 259);
-            this.b_pbrLoading.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.b_pbrLoading.MaximumValue = 100;
-            this.b_pbrLoading.Name = "b_pbrLoading";
-            this.b_pbrLoading.ProgressColor = System.Drawing.Color.Green;
-            this.b_pbrLoading.Size = new System.Drawing.Size(205, 6);
-            this.b_pbrLoading.TabIndex = 3;
-            this.b_pbrLoading.Value = 0;
+            this.lbPercent.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbPercent.AutoSize = true;
+            this.lbPercent.BackColor = System.Drawing.Color.Transparent;
+            this.lbPercent.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPercent.Location = new System.Drawing.Point(279, 271);
+            this.lbPercent.Name = "lbPercent";
+            this.lbPercent.Size = new System.Drawing.Size(26, 17);
+            this.lbPercent.TabIndex = 5;
+            this.lbPercent.Text = "0%";
             // 
             // frmLoading
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 361);
+            this.ClientSize = new System.Drawing.Size(584, 375);
             this.Controls.Add(this.lbVersion);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.Margin = new System.Windows.Forms.Padding(7);
             this.Name = "frmLoading";
             this.Text = "frmLoading";
             this.Load += new System.EventHandler(this.frmLoading_Load);
@@ -158,5 +172,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox picbx_Logo;
         private Bunifu.Framework.UI.BunifuProgressBar b_pbrLoading;
+        private System.Windows.Forms.Label lbPercent;
     }
 }

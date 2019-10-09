@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace QUANLYLINHKIEN_PTUD
 {
     public partial class frmMainUI_Staff : Form
     {
         bool isClickShow = false;
-        TabControl tc;
 
         public frmMainUI_Staff()
         {
@@ -23,11 +23,9 @@ namespace QUANLYLINHKIEN_PTUD
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-
-
         private void btnExit_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Bạn Có Muốn Thoát Chương Trình", "THOÁT", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult dr = MessageBox.Show("Bạn Có Muốn Thoát Phần Mềm ?", "THOÁT PHẦN MỀM", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
 
             if (dr == DialogResult.Yes)
             {
@@ -45,7 +43,7 @@ namespace QUANLYLINHKIEN_PTUD
             this.pnl_Menu.BackColor = Color.LightGray;
             this.btnShowMenu.BackColor = Color.FromArgb(26, 58, 102);
             this.btnShowMenu.Image = imgs_BtnICon.Images[6];
-            
+
 
             this.btnAccount.Image = imgs_BtnICon.Images[0];
             this.btnPOS.Image = imgs_BtnICon.Images[2];
@@ -53,20 +51,18 @@ namespace QUANLYLINHKIEN_PTUD
             this.btnAccessories.Image = imgs_BtnICon.Images[4];
             this.btnReport.Image = imgs_BtnICon.Images[1];
             this.btnCustomer.Image = imgs_BtnICon.Images[5];
+            this.btnWarehouse.Image = imgs_BtnICon.Images[7];
+            this.btnBill.Image = imgs_BtnICon.Images[8];
         }
 
         private void frmMainUI_Staff_Load(object sender, EventArgs e)
         {
             Custom_Theme();
-
-            tc = new TabControl();
-            tc.Dock = DockStyle.Fill;
-            tc.Font = new Font("Segoe UI Semibold", 12);
         }
 
         private void btnShowMenu_Click(object sender, EventArgs e)
         {
-            if(isClickShow == false)
+            if (isClickShow == false)
             {
                 pnl_Menu.Visible = false;
                 isClickShow = true;
@@ -87,49 +83,50 @@ namespace QUANLYLINHKIEN_PTUD
         {
             this.pnlRight.Controls.Clear();
 
-            TabPage tp = new TabPage();
-            tp.Text = "Quản Lý Linh Kiện";
-            tp.Tag = "LinhKien";
-            tc.TabPages.Add(tp);
-
-            frmAccessories fa = new frmAccessories(this,tc);
+            frmAccessories fa = new frmAccessories(this);
             fa.TopLevel = false;
             fa.Dock = DockStyle.Fill;
             fa.FormBorderStyle = FormBorderStyle.None;
             fa.ShowInTaskbar = false;
             fa.Show();
 
-            tp.Controls.Add(fa);
-            this.pnlRight.Controls.Add(tc);
+            this.pnlRight.Controls.Add(fa);
         }
 
-        
+
         private void btnAccessories_Click(object sender, EventArgs e)
         {
-            foreach (Form item in Application.OpenForms)
+
+            //Kiểm Tra Có Form Sub nào đang chạy không ?
+            if (this.pnlRight.Controls.Count == 1)
             {
-                if(item.Name.Equals("frmAccessories"))
-                {
-                    return;
-                }
+                MessageBox.Show("Hãy Đóng Giao Diện Hiện Tại", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+
             open_frmLinhKien();
         }
 
         private void ChangePassToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Kiểm Tra Có Form Sub nào đang chạy không ?
+            if (this.pnlRight.Controls.Count == 1)
+            {
+                MessageBox.Show("Hãy Đóng Giao Diện Hiện Tại", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             frmChangePassword frm_dmk = new frmChangePassword();
             frm_dmk.ShowDialog();
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            foreach (Form item in Application.OpenForms)
+
+            //Kiểm Tra Có Form Sub nào đang chạy không ?
+            if (this.pnlRight.Controls.Count == 1)
             {
-                if (item.Name.Equals("frmCustomer"))
-                {
-                    return;
-                }
+                MessageBox.Show("Hãy Đóng Giao Diện Hiện Tại", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
             open_frmCustomer();
         }
@@ -137,24 +134,99 @@ namespace QUANLYLINHKIEN_PTUD
         {
             this.pnlRight.Controls.Clear();
 
-            TabPage tp = new TabPage();
-            tp.Text = "Quản Lý Khách Hàng";
-            tp.Tag = "KhachHang";
-            tc.TabPages.Add(tp);
+            frmCustomer fc = new frmCustomer(this);
+            fc.TopLevel = false;
+            fc.Dock = DockStyle.Fill;
+            fc.FormBorderStyle = FormBorderStyle.None;
+            fc.ShowInTaskbar = false;
+            fc.Show();
 
-            frmCustomer fa = new frmCustomer(this, tc);
-            fa.TopLevel = false;
-            fa.Dock = DockStyle.Fill;
-            fa.FormBorderStyle = FormBorderStyle.None;
-            fa.ShowInTaskbar = false;
-            fa.Show();
-
-            tp.Controls.Add(fa);
-            this.pnlRight.Controls.Add(tc);
+            this.pnlRight.Controls.Add(fc);
         }
-        public Panel getPanel()
+
+        private void QuanLyNVToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            return this.pnlRight;
+
+        }
+
+        private void back_login()
+        {
+            Application.Run(new frmLogin());
+        }
+        private void DangXuatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Kiểm Tra Có Form Sub nào đang chạy không ?
+            if (this.pnlRight.Controls.Count == 1)
+            {
+                MessageBox.Show("Hãy Đóng Giao Diện Hiện Tại", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult dr = MessageBox.Show("Bạn Có Muốn Đăng Xuất Không ?", "QUAY VỀ ĐĂNG NHẬP", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (dr == DialogResult.Yes)
+            {
+                Thread th = new Thread(back_login);
+#pragma warning disable CS0618 // Type or member is obsolete
+                th.ApartmentState = ApartmentState.STA;
+#pragma warning restore CS0618 // Type or member is obsolete
+                th.Start();
+                this.Close();
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void btnBill_Click(object sender, EventArgs e)
+        {
+            //Kiểm Tra Có Form Sub nào đang chạy không ?
+            if (this.pnlRight.Controls.Count == 1)
+            {
+                MessageBox.Show("Hãy Đóng Giao Diện Hiện Tại", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void btnPOS_Click(object sender, EventArgs e)
+        {
+            //Kiểm Tra Có Form Sub nào đang chạy không ?
+            if (this.pnlRight.Controls.Count == 1)
+            {
+                MessageBox.Show("Hãy Đóng Giao Diện Hiện Tại", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void btnWarehouse_Click(object sender, EventArgs e)
+        {
+            //Kiểm Tra Có Form Sub nào đang chạy không ?
+            if (this.pnlRight.Controls.Count == 1)
+            {
+                MessageBox.Show("Hãy Đóng Giao Diện Hiện Tại", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            //Kiểm Tra Có Form Sub nào đang chạy không ?
+            if (this.pnlRight.Controls.Count == 1)
+            {
+                MessageBox.Show("Hãy Đóng Giao Diện Hiện Tại", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void btnBackUp_Click(object sender, EventArgs e)
+        {
+            //Kiểm Tra Có Form Sub nào đang chạy không ?
+            if (this.pnlRight.Controls.Count == 1)
+            {
+                MessageBox.Show("Hãy Đóng Giao Diện Hiện Tại", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
         }
     }
 }
