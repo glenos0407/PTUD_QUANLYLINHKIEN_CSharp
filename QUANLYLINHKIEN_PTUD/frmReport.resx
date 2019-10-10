@@ -117,45 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="imgs_Icon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>41, 21</value>
-  </metadata>
-  <data name="imgs_Icon.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
-        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABC
-        AwAAAk1TRnQBSQFMAwEBAAE4AQABOAEAARkBAAEZAQAE/wERAQAI/wFCAU0BNgcAATYDAAEoAwABZAMA
-        ARkDAAEBAQABEAUAAYgBE/8A/wCSAAH/AX8B/wF/wgAB/wF/Ad4BewH/AX8B/wF/vgAB/wF/Ad4BewH/
-        AX8B3gF7vgAB/wF/Ad4BewH/AX8B3gF7sAAB/wF/Ad4BewHeAXsB3gF7Af8BfwH/AX8CAAH/AX8B3gF7
-        Af8BfwHeAXuuAAH/AX8B3gF7Ad4BewHeAXsB3gF7Ad4BewHeAXsB/wF/Ad4BewHeAXsB/wF/Ad4Be64A
-        Af8BfwH/AX8B3gF7CgAB/wF/Ad4BewH/AX8B3gF7rgAB/wF/Af8BfwH/AX8OAAH/AX8B3gF7Ad4Be64A
-        Ad4BewHeAXsSAAH/AX8B/wF/Af8Bf6oAAf8BfwH/AX8B/wF/FAAB3gF7Ad4Be6oAAf8BfwHeAXsWAAHe
-        AXsB3gF7qgAB3gF7Ad4BexYAAf8BfwHeAXuqAAH/AX8B3gF7FgAB3gF7Ad4Be6oAAf8BfwH/AX8B/wF/
-        FAAB3gF7Ad4Be6wAAd4BewHeAXsSAAH/AX8B/wF/Af8Bf6wAAf8BfwH/AX8B/wF/DgAB/wF/Ad4BewHe
-        AXuwAAH/AX8B/wF/Ad4BewoAAf8BfwHeAXsB3gF7tAAB/wF/Ad4BewHeAXsB3gF7Ad4BewHeAXsB3gF7
-        Af8BfwHeAXu6AAH/AX8B3gF7Ad4BewHeAXsB3gF7Af8Bf/8A/wD/AAcAAUIBTQE+BwABPgMAASgDAAFk
-        AwABGQMAAQEBAAEBBQABkAEBFgAD/wEAA/8BgAwAA/8BgAwAA/8BgAwAAv8B5wGADAAC/wHDAYAMAAL/
-        AYcBgAwAAv8BDwGADAAB/wECAR8BgAwAAfwBAAE/AYAMAAL4AX8BgAwAAfEB/AF/AYAMAAHzAf4BPwGA
-        DAAB4wH/AT8BgAwAAecB/wE/AYAMAAHnAf8BPwGADAAB5wH/AT8BgAwAAeMB/wE/AYAMAAHzAf4BPwGA
-        DAAB8QH8AX8BgAwAAvgB/wGADAAB/AEBAf8BgAwAAf8BAwH/AYAMAAP/AYAMAAP/AYAMAAP/AYAMAAs=
-</value>
-  </data>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

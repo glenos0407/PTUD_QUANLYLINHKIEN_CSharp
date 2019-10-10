@@ -25,6 +25,13 @@ namespace QUANLYLINHKIEN_PTUD
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            //Kiểm Tra Có Form Sub nào đang chạy không ?
+            if (this.pnlRight.Controls.Count == 1)
+            {
+                MessageBox.Show("Hãy Đóng Giao Diện Hiện Tại", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             DialogResult dr = MessageBox.Show("Bạn Có Muốn Thoát Phần Mềm ?", "THOÁT PHẦN MỀM", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
 
             if (dr == DialogResult.Yes)
@@ -144,9 +151,19 @@ namespace QUANLYLINHKIEN_PTUD
             this.pnlRight.Controls.Add(fc);
         }
 
+      
+
         private void QuanLyNVToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Kiểm Tra Có Form Sub nào đang chạy không ?
+            if (this.pnlRight.Controls.Count == 1)
+            {
+                MessageBox.Show("Hãy Đóng Giao Diện Hiện Tại", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            frmStaffManager fsm = new frmStaffManager(this);
+            fsm.ShowDialog();
         }
 
         private void back_login()
@@ -209,15 +226,7 @@ namespace QUANLYLINHKIEN_PTUD
             }
         }
 
-        private void btnReport_Click(object sender, EventArgs e)
-        {
-            //Kiểm Tra Có Form Sub nào đang chạy không ?
-            if (this.pnlRight.Controls.Count == 1)
-            {
-                MessageBox.Show("Hãy Đóng Giao Diện Hiện Tại", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-        }
+        
 
         private void btnBackUp_Click(object sender, EventArgs e)
         {
@@ -228,5 +237,55 @@ namespace QUANLYLINHKIEN_PTUD
                 return;
             }
         }
+
+        private void btnReport_MouseClick(object sender, MouseEventArgs e)
+        {
+            cmstrp_Report.Show(btnReport, new Point(e.X, e.Y));
+        }
+
+        /*
+         *Kiểu Báo Cáo
+         *0: là Báo Cáo Doanh Thu
+         * 1: là Báo Cáo Số Lượng Tồn
+        */
+        private void open_frmReport(int kieuBaoCao)
+        {
+            this.pnlRight.Controls.Clear();
+
+            frmReport fr = new frmReport(this,kieuBaoCao);
+            fr.TopLevel = false;
+            fr.Dock = DockStyle.Fill;
+            fr.FormBorderStyle = FormBorderStyle.None;
+            fr.ShowInTaskbar = false;
+            fr.Show();
+
+            this.pnlRight.Controls.Add(fr);
+        }
+
+        private void baoCaoDoanhThuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Kiểm Tra Có Form Sub nào đang chạy không ?
+            if (this.pnlRight.Controls.Count == 1)
+            {
+                MessageBox.Show("Hãy Đóng Giao Diện Hiện Tại", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            open_frmReport(0);
+        }
+
+        private void baoCaoSoLuongTonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Kiểm Tra Có Form Sub nào đang chạy không ?
+            if (this.pnlRight.Controls.Count == 1)
+            {
+                MessageBox.Show("Hãy Đóng Giao Diện Hiện Tại", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            open_frmReport(1);
+        }
+
+       
     }
 }

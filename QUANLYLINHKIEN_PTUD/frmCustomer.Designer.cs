@@ -57,29 +57,29 @@
             this.btnThemKH = new System.Windows.Forms.Button();
             this.btnSuaKH = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.cbx_SapXep = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.rbtnKhachHang = new System.Windows.Forms.RadioButton();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.rbtnSoDienThoai = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.cbx_SapXep = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
-            this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -166,11 +166,12 @@
             // txtTenKH
             // 
             this.txtTenKH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenKH.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtTenKH.ForeColor = System.Drawing.Color.Black;
             this.txtTenKH.Location = new System.Drawing.Point(387, 71);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.Size = new System.Drawing.Size(110, 29);
             this.txtTenKH.TabIndex = 34;
+            this.txtTenKH.Text = "Phong";
             // 
             // label8
             // 
@@ -208,15 +209,16 @@
             // txtHoKH
             // 
             this.txtHoKH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoKH.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtHoKH.ForeColor = System.Drawing.Color.Black;
             this.txtHoKH.Location = new System.Drawing.Point(143, 71);
             this.txtHoKH.Name = "txtHoKH";
             this.txtHoKH.Size = new System.Drawing.Size(199, 29);
             this.txtHoKH.TabIndex = 27;
+            this.txtHoKH.Text = "VD: Nguyễn Huỳnh ";
             // 
             // dtmNgaySinh
             // 
-            this.dtmNgaySinh.CalendarForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.dtmNgaySinh.CalendarForeColor = System.Drawing.Color.Black;
             this.dtmNgaySinh.CalendarTitleForeColor = System.Drawing.SystemColors.WindowFrame;
             this.dtmNgaySinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtmNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -228,32 +230,32 @@
             // txtCMND
             // 
             this.txtCMND.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCMND.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtCMND.ForeColor = System.Drawing.Color.Black;
             this.txtCMND.Location = new System.Drawing.Point(143, 163);
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(354, 29);
             this.txtCMND.TabIndex = 29;
-            this.txtCMND.Text = "VD: 072098000907";
+            this.txtCMND.Text = "VD: 0204963245";
             // 
             // txtSDT
             // 
             this.txtSDT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDT.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtSDT.ForeColor = System.Drawing.Color.Black;
             this.txtSDT.Location = new System.Drawing.Point(143, 210);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(354, 29);
             this.txtSDT.TabIndex = 30;
-            this.txtSDT.Text = "VD: 0123456789";
+            this.txtSDT.Text = "VD: 0963123456";
             // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.Location = new System.Drawing.Point(143, 257);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(354, 29);
             this.txtEmail.TabIndex = 31;
-            this.txtEmail.Text = "VD: nguyenvana@gmail.com";
+            this.txtEmail.Text = "VD: ptud.nhom17@gmail.com";
             // 
             // label4
             // 
@@ -324,6 +326,7 @@
             this.btnReset.Text = "Nhập Lại";
             this.btnReset.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnLuu
             // 
@@ -339,6 +342,7 @@
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnThemKH
             // 
@@ -354,6 +358,7 @@
             this.btnThemKH.Text = "Thêm";
             this.btnThemKH.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnThemKH.UseVisualStyleBackColor = false;
+            this.btnThemKH.Click += new System.EventHandler(this.btnThemKH_Click);
             // 
             // btnSuaKH
             // 
@@ -369,6 +374,7 @@
             this.btnSuaKH.Text = "Sửa";
             this.btnSuaKH.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSuaKH.UseVisualStyleBackColor = false;
+            this.btnSuaKH.Click += new System.EventHandler(this.btnSuaKH_Click);
             // 
             // panel3
             // 
@@ -382,6 +388,72 @@
             this.panel3.Size = new System.Drawing.Size(660, 100);
             this.panel3.TabIndex = 8;
             // 
+            // panel7
+            // 
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(559, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(101, 100);
+            this.panel7.TabIndex = 20;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.cbx_SapXep);
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel5.Location = new System.Drawing.Point(421, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(138, 100);
+            this.panel5.TabIndex = 19;
+            // 
+            // cbx_SapXep
+            // 
+            this.cbx_SapXep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_SapXep.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_SapXep.FormattingEnabled = true;
+            this.cbx_SapXep.Items.AddRange(new object[] {
+            "Tên từ A-Z",
+            "Tên từ Z-A"});
+            this.cbx_SapXep.Location = new System.Drawing.Point(6, 33);
+            this.cbx_SapXep.Name = "cbx_SapXep";
+            this.cbx_SapXep.Size = new System.Drawing.Size(127, 29);
+            this.cbx_SapXep.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(6, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 21);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Sắp Xếp";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.txtSearch);
+            this.panel6.Controls.Add(this.rbtnKhachHang);
+            this.panel6.Controls.Add(this.btnSearch);
+            this.panel6.Controls.Add(this.rbtnSoDienThoai);
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(421, 100);
+            this.panel6.TabIndex = 18;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtSearch.Location = new System.Drawing.Point(12, 33);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(334, 29);
+            this.txtSearch.TabIndex = 7;
+            this.txtSearch.Text = "Nhập Tên, CMND, Mã Khách Hàng,...";
+            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
+            // 
             // rbtnKhachHang
             // 
             this.rbtnKhachHang.AutoSize = true;
@@ -394,6 +466,17 @@
             this.rbtnKhachHang.TabStop = true;
             this.rbtnKhachHang.Text = "Tên Khách Hàng";
             this.rbtnKhachHang.UseVisualStyleBackColor = true;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.Green;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Location = new System.Drawing.Point(352, 34);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(58, 29);
+            this.btnSearch.TabIndex = 8;
+            this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // rbtnSoDienThoai
             // 
@@ -418,27 +501,6 @@
             this.label1.Size = new System.Drawing.Size(169, 21);
             this.label1.TabIndex = 14;
             this.label1.Text = "Tìm Kiếm Khách Hàng";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.Green;
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(352, 34);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(58, 29);
-            this.btnSearch.TabIndex = 8;
-            this.btnSearch.UseVisualStyleBackColor = false;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtSearch.Location = new System.Drawing.Point(12, 33);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(334, 29);
-            this.txtSearch.TabIndex = 7;
-            this.txtSearch.Text = "Nhập Tên, CMND, Mã Khách hàng,...";
             // 
             // bunifuCustomDataGrid1
             // 
@@ -501,61 +563,6 @@
             this.Column5.HeaderText = "Column5";
             this.Column5.Name = "Column5";
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.txtSearch);
-            this.panel6.Controls.Add(this.rbtnKhachHang);
-            this.panel6.Controls.Add(this.btnSearch);
-            this.panel6.Controls.Add(this.rbtnSoDienThoai);
-            this.panel6.Controls.Add(this.label1);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(421, 100);
-            this.panel6.TabIndex = 18;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.cbx_SapXep);
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel5.Location = new System.Drawing.Point(421, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(138, 100);
-            this.panel5.TabIndex = 19;
-            // 
-            // cbx_SapXep
-            // 
-            this.cbx_SapXep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_SapXep.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbx_SapXep.FormattingEnabled = true;
-            this.cbx_SapXep.Items.AddRange(new object[] {
-            "Tên từ A-Z",
-            "Tên từ Z-A"});
-            this.cbx_SapXep.Location = new System.Drawing.Point(6, 33);
-            this.cbx_SapXep.Name = "cbx_SapXep";
-            this.cbx_SapXep.Size = new System.Drawing.Size(127, 29);
-            this.cbx_SapXep.TabIndex = 9;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(6, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 21);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Sắp Xếp";
-            // 
-            // panel7
-            // 
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(559, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(101, 100);
-            this.panel7.TabIndex = 20;
-            // 
             // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -567,6 +574,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCustomer";
             this.Text = "frmCustomer";
             this.Load += new System.EventHandler(this.frmCustomer_Load);
@@ -576,11 +584,11 @@
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
             this.ResumeLayout(false);
 
         }

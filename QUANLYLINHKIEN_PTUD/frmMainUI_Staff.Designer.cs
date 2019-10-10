@@ -39,7 +39,6 @@
             this.btnReport = new System.Windows.Forms.Button();
             this.btnBill = new System.Windows.Forms.Button();
             this.btnAccessories = new System.Windows.Forms.Button();
-            this.btnWarehouse = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
             this.btnPOS = new System.Windows.Forms.Button();
@@ -50,9 +49,14 @@
             this.ChangePassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DangXuatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imgs_BtnICon = new System.Windows.Forms.ImageList(this.components);
+            this.btnWarehouse = new System.Windows.Forms.Button();
+            this.cmstrp_Report = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.baoCaoSoLuongTonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.baoCaoDoanhThuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlTop.SuspendLayout();
             this.pnl_Menu.SuspendLayout();
             this.cmstrp_Account.SuspendLayout();
+            this.cmstrp_Report.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -159,7 +163,7 @@
             this.btnReport.Text = "Báo Cáo";
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReport.UseVisualStyleBackColor = false;
-            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            this.btnReport.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnReport_MouseClick);
             // 
             // btnBill
             // 
@@ -196,24 +200,6 @@
             this.btnAccessories.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAccessories.UseVisualStyleBackColor = false;
             this.btnAccessories.Click += new System.EventHandler(this.btnAccessories_Click);
-            // 
-            // btnWarehouse
-            // 
-            this.btnWarehouse.BackColor = System.Drawing.Color.Indigo;
-            this.btnWarehouse.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnWarehouse.FlatAppearance.BorderSize = 0;
-            this.btnWarehouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWarehouse.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWarehouse.ForeColor = System.Drawing.Color.White;
-            this.btnWarehouse.Location = new System.Drawing.Point(0, 160);
-            this.btnWarehouse.Margin = new System.Windows.Forms.Padding(1);
-            this.btnWarehouse.Name = "btnWarehouse";
-            this.btnWarehouse.Size = new System.Drawing.Size(106, 80);
-            this.btnWarehouse.TabIndex = 6;
-            this.btnWarehouse.Text = "Kho Hàng";
-            this.btnWarehouse.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnWarehouse.UseVisualStyleBackColor = false;
-            this.btnWarehouse.Click += new System.EventHandler(this.btnWarehouse_Click);
             // 
             // btnAccount
             // 
@@ -284,20 +270,20 @@
             this.ChangePassToolStripMenuItem,
             this.DangXuatToolStripMenuItem});
             this.cmstrp_Account.Name = "cmstrp_Account";
-            this.cmstrp_Account.Size = new System.Drawing.Size(181, 104);
+            this.cmstrp_Account.Size = new System.Drawing.Size(179, 82);
             // 
             // quảnLýNhânViênToolStripMenuItem
             // 
             this.quảnLýNhânViênToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.QuanLyNVToolStripMenuItem});
             this.quảnLýNhânViênToolStripMenuItem.Name = "quảnLýNhânViênToolStripMenuItem";
-            this.quảnLýNhânViênToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.quảnLýNhânViênToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
             this.quảnLýNhânViênToolStripMenuItem.Text = "Nhân Viên";
             // 
             // QuanLyNVToolStripMenuItem
             // 
             this.QuanLyNVToolStripMenuItem.Name = "QuanLyNVToolStripMenuItem";
-            this.QuanLyNVToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.QuanLyNVToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
             this.QuanLyNVToolStripMenuItem.Text = "Tuỳ Chỉnh";
             this.QuanLyNVToolStripMenuItem.Click += new System.EventHandler(this.QuanLyNVToolStripMenuItem_Click);
             // 
@@ -329,6 +315,47 @@
             this.imgs_BtnICon.Images.SetKeyName(7, "icon_warehouse.png");
             this.imgs_BtnICon.Images.SetKeyName(8, "icon_bill.png");
             // 
+            // btnWarehouse
+            // 
+            this.btnWarehouse.BackColor = System.Drawing.Color.Indigo;
+            this.btnWarehouse.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnWarehouse.FlatAppearance.BorderSize = 0;
+            this.btnWarehouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWarehouse.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWarehouse.ForeColor = System.Drawing.Color.White;
+            this.btnWarehouse.Location = new System.Drawing.Point(0, 160);
+            this.btnWarehouse.Margin = new System.Windows.Forms.Padding(1);
+            this.btnWarehouse.Name = "btnWarehouse";
+            this.btnWarehouse.Size = new System.Drawing.Size(106, 80);
+            this.btnWarehouse.TabIndex = 6;
+            this.btnWarehouse.Text = "Kho Hàng";
+            this.btnWarehouse.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnWarehouse.UseVisualStyleBackColor = false;
+            this.btnWarehouse.Click += new System.EventHandler(this.btnWarehouse_Click);
+            // 
+            // cmstrp_Report
+            // 
+            this.cmstrp_Report.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmstrp_Report.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.baoCaoSoLuongTonToolStripMenuItem,
+            this.baoCaoDoanhThuToolStripMenuItem});
+            this.cmstrp_Report.Name = "cmstrp_Report";
+            this.cmstrp_Report.Size = new System.Drawing.Size(247, 56);
+            // 
+            // baoCaoSoLuongTonToolStripMenuItem
+            // 
+            this.baoCaoSoLuongTonToolStripMenuItem.Name = "baoCaoSoLuongTonToolStripMenuItem";
+            this.baoCaoSoLuongTonToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
+            this.baoCaoSoLuongTonToolStripMenuItem.Text = "Báo Cáo Số Lượng Tồn";
+            this.baoCaoSoLuongTonToolStripMenuItem.Click += new System.EventHandler(this.baoCaoSoLuongTonToolStripMenuItem_Click);
+            // 
+            // baoCaoDoanhThuToolStripMenuItem
+            // 
+            this.baoCaoDoanhThuToolStripMenuItem.Name = "baoCaoDoanhThuToolStripMenuItem";
+            this.baoCaoDoanhThuToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
+            this.baoCaoDoanhThuToolStripMenuItem.Text = "Báo Cáo Doanh Thu";
+            this.baoCaoDoanhThuToolStripMenuItem.Click += new System.EventHandler(this.baoCaoDoanhThuToolStripMenuItem_Click);
+            // 
             // frmMainUI_Staff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,6 +372,7 @@
             this.pnlTop.PerformLayout();
             this.pnl_Menu.ResumeLayout(false);
             this.cmstrp_Account.ResumeLayout(false);
+            this.cmstrp_Report.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -363,7 +391,6 @@
         private System.Windows.Forms.ToolStripMenuItem DangXuatToolStripMenuItem;
         private System.Windows.Forms.ImageList imgs_BtnICon;
         private System.Windows.Forms.Button btnShowMenu;
-        private System.Windows.Forms.Button btnWarehouse;
         private System.Windows.Forms.Button btnAccessories;
         private System.Windows.Forms.ToolStripMenuItem quảnLýNhânViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem QuanLyNVToolStripMenuItem;
@@ -371,5 +398,9 @@
         private System.Windows.Forms.Button btnBackUp;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnBill;
+        private System.Windows.Forms.Button btnWarehouse;
+        private System.Windows.Forms.ContextMenuStrip cmstrp_Report;
+        private System.Windows.Forms.ToolStripMenuItem baoCaoSoLuongTonToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem baoCaoDoanhThuToolStripMenuItem;
     }
 }
