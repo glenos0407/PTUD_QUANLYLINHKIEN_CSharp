@@ -23,10 +23,16 @@ namespace Dataaccess
                 return false;
             return accountEx.Verify(password, entity.Password);
         }
-        //Phát is doing, don't delete
-        //public bool ChangePassword(string oldPassword, string newPassword)
-        //{
+        public bool ChangePassword(int staffId,string oldPassword, string newPassword)
+        {
+            var entity = db.Staffs.FirstOrDefault(x => x.Id.Equals(staffId));
+            if (entity == null)
+                return false;
+            if (!entity.Password.Equals(oldPassword))
+                return false;
 
-        //}
+            db.SaveChanges();
+            return true;
+        }
     }
 }
