@@ -11,6 +11,7 @@ namespace Model
     [Table("Customer")]
     public class Customer
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Tên khách hàng không được để trống")]

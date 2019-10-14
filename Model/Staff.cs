@@ -11,6 +11,7 @@ namespace Model
     [Table("Staff")]
     public class Staff
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Tên không được để trống")]
@@ -22,8 +23,8 @@ namespace Model
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Số điện thoại không được để trống")]
-        [RegularExpression(@"(\+[0-9]{2}|\+[0-9]{2}\(0\)|\(\+[0-9]{2}\)\(0\)|00[0-9]{2}|0)([0-9]{9}|[0-9\-\s]{9,18})",
-            ErrorMessage = "Sai định dạng số điện thoại")]
+        //[RegularExpression(@"(\+[0-9]{2}|\+[0-9]{2}\(0\)|\(\+[0-9]{2}\)\(0\)|00[0-9]{2}|0)([0-9]{9}|[0-9\-\s]{9,18})",
+        //    ErrorMessage = "Sai định dạng số điện thoại")]
         public string NumberPhone { get; set; }
 
         [Required(ErrorMessage = "Số CMND không được để trống")]
@@ -34,6 +35,7 @@ namespace Model
 
         public string Password { get; set; }
         public bool IsActived { get; set; }
+        public int Role { get; set; }
 
         public ICollection<Order> Orders { get; set; }
     }

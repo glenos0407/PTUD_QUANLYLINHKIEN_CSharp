@@ -1,4 +1,5 @@
 ﻿using Dataaccess;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Business
 {
     public class StaffBLL
     {
-        StaffDAL dal;
+        private readonly StaffDAL dal;
         public StaffBLL()
         {
             dal = new StaffDAL();
@@ -27,6 +28,10 @@ namespace Business
                 return false;
             
             return dal.ChangePassword(entity, newPassword);
+        }
+        public string CreateStaff(StaffCreateDto staff)
+        {
+            return dal.CreateStaff(staff);
         }
     }
 }

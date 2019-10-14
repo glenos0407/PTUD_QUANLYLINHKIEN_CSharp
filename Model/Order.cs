@@ -10,6 +10,7 @@ namespace Model
     [Table("Order")]
     public class Order
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public DateTime CreationTime { get; set; }
         public double TotalPrice { get; set; }
