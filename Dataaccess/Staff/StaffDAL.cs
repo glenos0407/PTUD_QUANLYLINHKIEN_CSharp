@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dataaccess
 {
-    public class StaffDAL
+    public class StaffDAL : IStaffDAL
     {
         QuanLyLinhKienDBContext db;
         AccountExtension accountEx;
@@ -23,16 +24,16 @@ namespace Dataaccess
                 return false;
             return accountEx.Verify(password, entity.Password);
         }
-        public bool ChangePassword(int staffId,string oldPassword, string newPassword)
+        public bool ChangePassword(Staff staff, string newPassword)
         {
-            var entity = db.Staffs.FirstOrDefault(x => x.Id.Equals(staffId));
-            if (entity == null)
-                return false;
-            if (!entity.Password.Equals(oldPassword))
-                return false;
+            staff.Password = newPassword;
 
             db.SaveChanges();
             return true;
+        }
+        public Staff GetStaff(int staffId)
+        {
+            return db.Staffs.FirstOrDefault(x => x.Id.Equals(staffId));
         }
     }
 }

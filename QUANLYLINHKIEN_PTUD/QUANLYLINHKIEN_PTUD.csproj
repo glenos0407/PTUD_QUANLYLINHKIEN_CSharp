@@ -187,5 +187,11 @@
   <ItemGroup>
     <None Include="imgs\icon_menu.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{f1e73211-1417-4366-861f-d7e5b49029f0}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
