@@ -36,7 +36,7 @@ namespace QUANLYLINHKIEN_PTUD
 
             if (dr == DialogResult.Yes)
             {
-                Environment.Exit(0);
+                Application.Exit();
             }
             else
             {
