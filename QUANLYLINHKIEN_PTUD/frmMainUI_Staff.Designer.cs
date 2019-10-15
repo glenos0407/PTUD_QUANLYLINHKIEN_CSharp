@@ -49,7 +49,6 @@
             this.ChangePassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DangXuatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imgs_BtnICon = new System.Windows.Forms.ImageList(this.components);
-            this.btnWarehouse = new System.Windows.Forms.Button();
             this.cmstrp_Report = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.baoCaoSoLuongTonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.baoCaoDoanhThuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -119,7 +118,6 @@
             this.pnl_Menu.Controls.Add(this.btnReport);
             this.pnl_Menu.Controls.Add(this.btnBill);
             this.pnl_Menu.Controls.Add(this.btnAccessories);
-            this.pnl_Menu.Controls.Add(this.btnWarehouse);
             this.pnl_Menu.Controls.Add(this.btnAccount);
             this.pnl_Menu.Controls.Add(this.btnCustomer);
             this.pnl_Menu.Controls.Add(this.btnPOS);
@@ -137,7 +135,7 @@
             this.btnBackUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackUp.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackUp.ForeColor = System.Drawing.Color.White;
-            this.btnBackUp.Location = new System.Drawing.Point(0, 480);
+            this.btnBackUp.Location = new System.Drawing.Point(0, 400);
             this.btnBackUp.Margin = new System.Windows.Forms.Padding(1);
             this.btnBackUp.Name = "btnBackUp";
             this.btnBackUp.Size = new System.Drawing.Size(106, 80);
@@ -155,7 +153,7 @@
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.ForeColor = System.Drawing.Color.White;
-            this.btnReport.Location = new System.Drawing.Point(0, 400);
+            this.btnReport.Location = new System.Drawing.Point(0, 320);
             this.btnReport.Margin = new System.Windows.Forms.Padding(1);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(106, 80);
@@ -173,7 +171,7 @@
             this.btnBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBill.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBill.ForeColor = System.Drawing.Color.White;
-            this.btnBill.Location = new System.Drawing.Point(0, 320);
+            this.btnBill.Location = new System.Drawing.Point(0, 240);
             this.btnBill.Margin = new System.Windows.Forms.Padding(1);
             this.btnBill.Name = "btnBill";
             this.btnBill.Size = new System.Drawing.Size(106, 80);
@@ -191,7 +189,7 @@
             this.btnAccessories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAccessories.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccessories.ForeColor = System.Drawing.Color.White;
-            this.btnAccessories.Location = new System.Drawing.Point(0, 240);
+            this.btnAccessories.Location = new System.Drawing.Point(0, 160);
             this.btnAccessories.Margin = new System.Windows.Forms.Padding(1);
             this.btnAccessories.Name = "btnAccessories";
             this.btnAccessories.Size = new System.Drawing.Size(106, 80);
@@ -315,24 +313,6 @@
             this.imgs_BtnICon.Images.SetKeyName(7, "icon_warehouse.png");
             this.imgs_BtnICon.Images.SetKeyName(8, "icon_bill.png");
             // 
-            // btnWarehouse
-            // 
-            this.btnWarehouse.BackColor = System.Drawing.Color.Indigo;
-            this.btnWarehouse.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnWarehouse.FlatAppearance.BorderSize = 0;
-            this.btnWarehouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWarehouse.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWarehouse.ForeColor = System.Drawing.Color.White;
-            this.btnWarehouse.Location = new System.Drawing.Point(0, 160);
-            this.btnWarehouse.Margin = new System.Windows.Forms.Padding(1);
-            this.btnWarehouse.Name = "btnWarehouse";
-            this.btnWarehouse.Size = new System.Drawing.Size(106, 80);
-            this.btnWarehouse.TabIndex = 6;
-            this.btnWarehouse.Text = "Kho Hàng";
-            this.btnWarehouse.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnWarehouse.UseVisualStyleBackColor = false;
-            this.btnWarehouse.Click += new System.EventHandler(this.btnWarehouse_Click);
-            // 
             // cmstrp_Report
             // 
             this.cmstrp_Report.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -398,7 +378,6 @@
         private System.Windows.Forms.Button btnBackUp;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnBill;
-        private System.Windows.Forms.Button btnWarehouse;
         private System.Windows.Forms.ContextMenuStrip cmstrp_Report;
         private System.Windows.Forms.ToolStripMenuItem baoCaoSoLuongTonToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem baoCaoDoanhThuToolStripMenuItem;

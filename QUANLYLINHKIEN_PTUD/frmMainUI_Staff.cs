@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using Model;
 
 namespace QUANLYLINHKIEN_PTUD
 {
@@ -46,6 +47,7 @@ namespace QUANLYLINHKIEN_PTUD
 
         private void Custom_Theme()
         {
+            Staff s = new Staff();
             this.pnlTop.BackColor = Color.FromArgb(26, 58, 102);
             this.pnl_Menu.BackColor = Color.LightGray;
             this.btnShowMenu.BackColor = Color.FromArgb(26, 58, 102);
@@ -58,7 +60,6 @@ namespace QUANLYLINHKIEN_PTUD
             this.btnAccessories.Image = imgs_BtnICon.Images[4];
             this.btnReport.Image = imgs_BtnICon.Images[1];
             this.btnCustomer.Image = imgs_BtnICon.Images[5];
-            this.btnWarehouse.Image = imgs_BtnICon.Images[7];
             this.btnBill.Image = imgs_BtnICon.Images[8];
         }
 
@@ -204,8 +205,21 @@ namespace QUANLYLINHKIEN_PTUD
                 MessageBox.Show("Hãy Đóng Giao Diện Hiện Tại", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            open_frmBillManager();
         }
+        private void open_frmBillManager()
+        {
+            this.pnlRight.Controls.Clear();
 
+            frmBillManager fa = new frmBillManager(this);
+            fa.TopLevel = false;
+            fa.Dock = DockStyle.Fill;
+            fa.FormBorderStyle = FormBorderStyle.None;
+            fa.ShowInTaskbar = false;
+            fa.Show();
+
+            this.pnlRight.Controls.Add(fa);
+        }
         private void btnPOS_Click(object sender, EventArgs e)
         {
             //Kiểm Tra Có Form Sub nào đang chạy không ?

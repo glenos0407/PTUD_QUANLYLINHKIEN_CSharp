@@ -70,6 +70,12 @@
     <Compile Include="frmAccessories.Designer.cs">
       <DependentUpon>frmAccessories.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBillManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBillManager.designer.cs">
+      <DependentUpon>frmBillManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,12 @@
     </Compile>
     <Compile Include="frmCustomer.Designer.cs">
       <DependentUpon>frmCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFileImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFileImport.Designer.cs">
+      <DependentUpon>frmFileImport.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLoading.cs">
       <SubType>Form</SubType>
@@ -134,6 +146,9 @@
     <EmbeddedResource Include="frmAccessories.resx">
       <DependentUpon>frmAccessories.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBillManager.resx">
+      <DependentUpon>frmBillManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChangePassword.resx">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFileImport.resx">
+      <DependentUpon>frmFileImport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLoading.resx">
       <DependentUpon>frmLoading.cs</DependentUpon>

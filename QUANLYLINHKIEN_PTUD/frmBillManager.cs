@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace QUANLYLINHKIEN_PTUD
 {
-    public partial class frmAccessories : Form
+    public partial class frmBillManager : Form
     {
         frmMainUI_Staff frm_main;
 
-        public frmAccessories()
+        public frmBillManager()
         {
             InitializeComponent();
         }
 
-        public frmAccessories(frmMainUI_Staff f)
+        public frmBillManager(frmMainUI_Staff f)
         {
             InitializeComponent();
             frm_main = f;
@@ -30,14 +30,24 @@ namespace QUANLYLINHKIEN_PTUD
             btnSearch.Image = imgs_Icon.Images[0];
         }
 
-        private void frmAccessories_Load(object sender, EventArgs e)
+        private void frmBillManager_Load(object sender, EventArgs e)
         {
             Custom_Theme();
+            listViewSetting();
         }
+        private void listViewSetting()
+        {
+            this.lstvOrderDetail.View = View.Details;
+            this.lstvOrderDetail.GridLines = true;
+            this.lstvOrderDetail.FullRowSelect = true;
+            this.lstvOrderDetail.MultiSelect = false;
 
-
-
-
+            this.lstvOrderDetail.Columns.Add("Mã hàng", 60);
+            this.lstvOrderDetail.Columns.Add("Tên hàng",165);
+            this.lstvOrderDetail.Columns.Add("Số lượng", 60);
+            this.lstvOrderDetail.Columns.Add("Đơn vị", 60);
+            this.lstvOrderDetail.Columns.Add("Đơn giá", 60);
+        }
         private void btnExit_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Hãy Chắc Rằng Bạn Đã Lưu Tất Cả Thay Đổi.\nXác Nhận Thoát Giao Diện Quản Lý Linh Kiện ?", "THOÁT GIAO DIỆN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -56,12 +66,6 @@ namespace QUANLYLINHKIEN_PTUD
         {
             txtSearch.Clear();
             txtSearch.ForeColor = Color.Black;
-        }
-
-        private void btnNhapHang_Click(object sender, EventArgs e)
-        {
-            frmFileImport frmfi = new frmFileImport();
-            frmfi.ShowDialog();
         }
     }
 }

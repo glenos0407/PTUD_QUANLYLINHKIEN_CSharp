@@ -23,10 +23,21 @@ namespace QUANLYLINHKIEN_PTUD
         {
             InitializeComponent();
             fmain = f;
-            KieuBaoCao = kbc;
+            kieuBaoCao = kbc;
         }
 
-        public int KieuBaoCao { get => kieuBaoCao; set => kieuBaoCao = value; }
+        public int KieuBaoCao
+        {
+            get
+            {
+                return kieuBaoCao;
+            }
+
+            set
+            {
+                kieuBaoCao = value;
+            }
+        }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
