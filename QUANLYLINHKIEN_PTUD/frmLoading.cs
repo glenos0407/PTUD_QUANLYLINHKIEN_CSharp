@@ -66,22 +66,42 @@ namespace QUANLYLINHKIEN_PTUD
 
         private void timer_loading_Tick(object sender, EventArgs e)
         {
-            if(b_pbrLoading.Value < 100)
+            if (b_pbrLoading.Value < 100)
             {
                 b_pbrLoading.Value += 20;
                 lbPercent.Text = b_pbrLoading.Value.ToString() + "%";
             }
             else
             {
-                Thread th = new Thread(open_login);
-                Thread.Sleep(500);
+                //frmLogin frm = new frmLogin();
+                //frm.ShowDialog();
+                //                Thread th = new Thread(open_login);
+                //                Thread.Sleep(500);
+                //#pragma warning disable CS0618 // Type or member is obsolete
+                //                th.ApartmentState = ApartmentState.STA;
+                //#pragma warning restore CS0618 // Type or member is obsolete
+                //                th.Start();
+                //                timer_loading.Stop();
+                //                this.Close();
+
+                if (b_pbrLoading.Value < 100)
+                {
+                    b_pbrLoading.Value += 20;
+                    lbPercent.Text = b_pbrLoading.Value.ToString() + "%";
+                }
+                else
+                {
+                    Thread th = new Thread(open_login);
 #pragma warning disable CS0618 // Type or member is obsolete
-                th.ApartmentState = ApartmentState.STA;
+                    th.ApartmentState = ApartmentState.STA;
 #pragma warning restore CS0618 // Type or member is obsolete
-                th.Start();
-                
-                timer_loading.Stop();
-                this.Close();
+                    th.Start();
+
+                    Thread.Sleep(500);
+
+                    timer_loading.Stop();
+                    this.Close();
+                }
             }
         }
     }

@@ -69,6 +69,10 @@
     <Compile Include="Migrations\201910141507563_updateIdIntAutoIncrement.Designer.cs">
       <DependentUpon>201910141507563_updateIdIntAutoIncrement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910150118317_addAvatar.cs" />
+    <Compile Include="Migrations\201910150118317_addAvatar.Designer.cs">
+      <DependentUpon>201910150118317_addAvatar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLyLinhKienDBContext.cs" />
@@ -88,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910141507563_updateIdIntAutoIncrement.resx">
       <DependentUpon>201910141507563_updateIdIntAutoIncrement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910150118317_addAvatar.resx">
+      <DependentUpon>201910150118317_addAvatar.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

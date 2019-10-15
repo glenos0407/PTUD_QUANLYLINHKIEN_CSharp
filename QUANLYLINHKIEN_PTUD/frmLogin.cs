@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Business;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,12 @@ namespace QUANLYLINHKIEN_PTUD
 {
     public partial class frmLogin : Form
     {
+        StaffBLL staffbll;
         public frmLogin()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            staffbll = new StaffBLL();
         }
 
         private void Custom_Theme()
@@ -55,22 +58,27 @@ namespace QUANLYLINHKIEN_PTUD
 
         private void txtUser_Enter(object sender, EventArgs e)
         {
-            txtUser.Clear();
-            txtUser.ForeColor = Color.Black;
+            txt_User.Clear();
+            txt_User.ForeColor = Color.Black;
         }
 
         private void txtPassword_Enter(object sender, EventArgs e)
         {
-            txtPassword.UseSystemPasswordChar = true;
-            txtPassword.Clear();
-            txtPassword.ForeColor = Color.Black;
+            txt_Password.UseSystemPasswordChar = true;
+            txt_Password.Clear();
+            txt_Password.ForeColor = Color.Black;
         }
-
-
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            string account = txt_User.Text.ToString();
+            string password = txt_Password.Text.ToString();
+            if (staffbll.SignIn(account, password))
+            {
+                frmMainUI_Staff frm = new frmMainUI_Staff();
+                frm.ShowDialog();
+                this.Close();
+            }
         }
     }
 }

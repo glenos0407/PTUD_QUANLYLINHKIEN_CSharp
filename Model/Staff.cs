@@ -17,6 +17,7 @@ namespace Model
         [Required(ErrorMessage = "Tên không được để trống")]
         [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Sai định dạng tên")]
         public string Name { get; set; }
+        public string Avatar { get; set; }
 
         [RegularExpression(@"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z",
             ErrorMessage = "Sai định dạng email")]

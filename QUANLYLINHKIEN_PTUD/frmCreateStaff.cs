@@ -57,7 +57,7 @@ namespace QUANLYLINHKIEN_PTUD
                 Role = Convert.ToInt32(cbx_Role.Text.ToString()),
                 Password = "123qwe"
             };
-            MessageBox.Show(staffbll.CreateStaff(staff));
+           // MessageBox.Show(staffbll.CreateStaff(staff));
           
         }
     }

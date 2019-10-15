@@ -60,6 +60,7 @@
     <Compile Include="Category.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="DTO\Staff\StaffCreateDto.cs" />
+    <Compile Include="Enum\ERole.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderDetail.cs" />
     <Compile Include="Producer.cs" />

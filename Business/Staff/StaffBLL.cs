@@ -29,8 +29,10 @@ namespace Business
             
             return dal.ChangePassword(entity, newPassword);
         }
-        public string CreateStaff(StaffCreateDto staff)
+        public string CreateStaff(StaffCreateDto staff, string rePassword)
         {
+            if (!staff.Password.Equals(rePassword))
+                return "Mật khẩu không trùng";
             return dal.CreateStaff(staff);
         }
     }

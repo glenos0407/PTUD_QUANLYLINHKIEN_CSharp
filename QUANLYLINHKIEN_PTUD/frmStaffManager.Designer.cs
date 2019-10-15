@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStaffManager));
             this.picbxAvatar = new System.Windows.Forms.PictureBox();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.txtHoTen = new System.Windows.Forms.TextBox();
-            this.txtSDTNV = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtCMND = new System.Windows.Forms.TextBox();
-            this.txtMatKhau = new System.Windows.Forms.TextBox();
-            this.dtmNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.txt_Name = new System.Windows.Forms.TextBox();
+            this.txt_Phone = new System.Windows.Forms.TextBox();
+            this.txt_Email = new System.Windows.Forms.TextBox();
+            this.txt_Identify = new System.Windows.Forms.TextBox();
+            this.txt_Password = new System.Windows.Forms.TextBox();
+            this.dtp_BirthDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,15 +46,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtNhapLaiMatKhau = new System.Windows.Forms.TextBox();
+            this.txt_RePassword = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnNhapLai = new System.Windows.Forms.Button();
             this.btnUpdateAvatar = new System.Windows.Forms.Button();
+            this.cbx_Role = new System.Windows.Forms.ComboBox();
+            this.lb_Role = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picbxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -71,19 +71,19 @@
             // 
             // bunifuCustomDataGrid1
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bunifuCustomDataGrid1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bunifuCustomDataGrid1.DoubleBuffered = true;
@@ -96,69 +96,69 @@
             this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(873, 287);
             this.bunifuCustomDataGrid1.TabIndex = 1;
             // 
-            // txtHoTen
+            // txt_Name
             // 
-            this.txtHoTen.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoTen.Location = new System.Drawing.Point(408, 62);
-            this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(280, 33);
-            this.txtHoTen.TabIndex = 2;
-            this.txtHoTen.Text = "VD: Ngọc Thụ Lâm Phong";
+            this.txt_Name.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Name.Location = new System.Drawing.Point(409, 48);
+            this.txt_Name.Name = "txt_Name";
+            this.txt_Name.Size = new System.Drawing.Size(280, 33);
+            this.txt_Name.TabIndex = 2;
+            this.txt_Name.Text = "VD: Ngọc Thụ Lâm Phong";
             // 
-            // txtSDTNV
+            // txt_Phone
             // 
-            this.txtSDTNV.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDTNV.Location = new System.Drawing.Point(408, 136);
-            this.txtSDTNV.Name = "txtSDTNV";
-            this.txtSDTNV.Size = new System.Drawing.Size(280, 33);
-            this.txtSDTNV.TabIndex = 3;
-            this.txtSDTNV.Text = "VD: 0123456789";
+            this.txt_Phone.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Phone.Location = new System.Drawing.Point(409, 122);
+            this.txt_Phone.Name = "txt_Phone";
+            this.txt_Phone.Size = new System.Drawing.Size(280, 33);
+            this.txt_Phone.TabIndex = 3;
+            this.txt_Phone.Text = "VD: 0123456789";
             // 
-            // txtEmail
+            // txt_Email
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(408, 216);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(280, 33);
-            this.txtEmail.TabIndex = 5;
-            this.txtEmail.Text = "VD: ptud.nhom17@gmail.com";
+            this.txt_Email.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Email.Location = new System.Drawing.Point(409, 202);
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.Size = new System.Drawing.Size(280, 33);
+            this.txt_Email.TabIndex = 5;
+            this.txt_Email.Text = "VD: ptud.nhom17@gmail.com";
             // 
-            // txtCMND
+            // txt_Identify
             // 
-            this.txtCMND.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCMND.Location = new System.Drawing.Point(408, 175);
-            this.txtCMND.Name = "txtCMND";
-            this.txtCMND.Size = new System.Drawing.Size(280, 33);
-            this.txtCMND.TabIndex = 4;
-            this.txtCMND.Text = "VD: 023601265458";
+            this.txt_Identify.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Identify.Location = new System.Drawing.Point(409, 161);
+            this.txt_Identify.Name = "txt_Identify";
+            this.txt_Identify.Size = new System.Drawing.Size(280, 33);
+            this.txt_Identify.TabIndex = 4;
+            this.txt_Identify.Text = "VD: 023601265458";
             // 
-            // txtMatKhau
+            // txt_Password
             // 
-            this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhau.Location = new System.Drawing.Point(408, 256);
-            this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(280, 33);
-            this.txtMatKhau.TabIndex = 6;
-            this.txtMatKhau.Text = "password";
-            this.txtMatKhau.UseSystemPasswordChar = true;
+            this.txt_Password.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Password.Location = new System.Drawing.Point(409, 242);
+            this.txt_Password.Name = "txt_Password";
+            this.txt_Password.Size = new System.Drawing.Size(280, 33);
+            this.txt_Password.TabIndex = 6;
+            this.txt_Password.Text = "password";
+            this.txt_Password.UseSystemPasswordChar = true;
             // 
-            // dtmNgaySinh
+            // dtp_BirthDate
             // 
-            this.dtmNgaySinh.CalendarForeColor = System.Drawing.Color.Black;
-            this.dtmNgaySinh.CalendarTitleForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.dtmNgaySinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtmNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtmNgaySinh.Location = new System.Drawing.Point(408, 102);
-            this.dtmNgaySinh.Name = "dtmNgaySinh";
-            this.dtmNgaySinh.Size = new System.Drawing.Size(280, 29);
-            this.dtmNgaySinh.TabIndex = 29;
+            this.dtp_BirthDate.CalendarForeColor = System.Drawing.Color.Black;
+            this.dtp_BirthDate.CalendarTitleForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.dtp_BirthDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_BirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_BirthDate.Location = new System.Drawing.Point(409, 88);
+            this.dtp_BirthDate.Name = "dtp_BirthDate";
+            this.dtp_BirthDate.Size = new System.Drawing.Size(280, 29);
+            this.dtp_BirthDate.TabIndex = 29;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(332, 65);
+            this.label1.Location = new System.Drawing.Point(333, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 25);
             this.label1.TabIndex = 30;
@@ -169,7 +169,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(273, 139);
+            this.label2.Location = new System.Drawing.Point(274, 125);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 25);
             this.label2.TabIndex = 31;
@@ -180,7 +180,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(246, 178);
+            this.label3.Location = new System.Drawing.Point(247, 164);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(156, 25);
             this.label3.TabIndex = 32;
@@ -191,7 +191,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(304, 105);
+            this.label4.Location = new System.Drawing.Point(305, 91);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 25);
             this.label4.TabIndex = 34;
@@ -202,7 +202,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(344, 219);
+            this.label5.Location = new System.Drawing.Point(345, 205);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 25);
             this.label5.TabIndex = 35;
@@ -213,7 +213,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(309, 259);
+            this.label6.Location = new System.Drawing.Point(310, 245);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(93, 25);
             this.label6.TabIndex = 36;
@@ -224,21 +224,21 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(229, 298);
+            this.label7.Location = new System.Drawing.Point(230, 284);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(173, 25);
             this.label7.TabIndex = 38;
             this.label7.Text = "Nhập Lại Mật Khẩu";
             // 
-            // txtNhapLaiMatKhau
+            // txt_RePassword
             // 
-            this.txtNhapLaiMatKhau.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNhapLaiMatKhau.Location = new System.Drawing.Point(408, 295);
-            this.txtNhapLaiMatKhau.Name = "txtNhapLaiMatKhau";
-            this.txtNhapLaiMatKhau.Size = new System.Drawing.Size(280, 33);
-            this.txtNhapLaiMatKhau.TabIndex = 37;
-            this.txtNhapLaiMatKhau.Text = "password";
-            this.txtNhapLaiMatKhau.UseSystemPasswordChar = true;
+            this.txt_RePassword.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_RePassword.Location = new System.Drawing.Point(409, 281);
+            this.txt_RePassword.Name = "txt_RePassword";
+            this.txt_RePassword.Size = new System.Drawing.Size(280, 33);
+            this.txt_RePassword.TabIndex = 37;
+            this.txt_RePassword.Text = "password";
+            this.txt_RePassword.UseSystemPasswordChar = true;
             // 
             // label8
             // 
@@ -277,36 +277,6 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnThem
-            // 
-            this.btnThem.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnThem.FlatAppearance.BorderSize = 0;
-            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(717, 62);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(129, 53);
-            this.btnThem.TabIndex = 47;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnSua.FlatAppearance.BorderSize = 0;
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(717, 121);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(129, 53);
-            this.btnSua.TabIndex = 48;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
             // btnLuu
             // 
             this.btnLuu.BackColor = System.Drawing.Color.Maroon;
@@ -314,7 +284,7 @@
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(717, 180);
+            this.btnLuu.Location = new System.Drawing.Point(717, 122);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(129, 53);
             this.btnLuu.TabIndex = 49;
@@ -329,7 +299,7 @@
             this.btnNhapLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNhapLai.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhapLai.ForeColor = System.Drawing.Color.White;
-            this.btnNhapLai.Location = new System.Drawing.Point(717, 275);
+            this.btnNhapLai.Location = new System.Drawing.Point(717, 217);
             this.btnNhapLai.Name = "btnNhapLai";
             this.btnNhapLai.Size = new System.Drawing.Size(129, 53);
             this.btnNhapLai.TabIndex = 50;
@@ -352,33 +322,53 @@
             this.btnUpdateAvatar.Text = "Cập Nhật Ảnh";
             this.btnUpdateAvatar.UseVisualStyleBackColor = false;
             // 
+            // cbx_Role
+            // 
+            this.cbx_Role.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_Role.FormattingEnabled = true;
+            this.cbx_Role.Location = new System.Drawing.Point(409, 321);
+            this.cbx_Role.Name = "cbx_Role";
+            this.cbx_Role.Size = new System.Drawing.Size(280, 33);
+            this.cbx_Role.TabIndex = 52;
+            // 
+            // lb_Role
+            // 
+            this.lb_Role.AutoSize = true;
+            this.lb_Role.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Role.ForeColor = System.Drawing.Color.White;
+            this.lb_Role.Location = new System.Drawing.Point(277, 324);
+            this.lb_Role.Name = "lb_Role";
+            this.lb_Role.Size = new System.Drawing.Size(126, 25);
+            this.lb_Role.TabIndex = 53;
+            this.lb_Role.Text = "Vị trí làm việc";
+            // 
             // frmStaffManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(69)))), ((int)(((byte)(114)))));
             this.ClientSize = new System.Drawing.Size(873, 649);
+            this.Controls.Add(this.lb_Role);
+            this.Controls.Add(this.cbx_Role);
             this.Controls.Add(this.btnUpdateAvatar);
             this.Controls.Add(this.btnNhapLai);
             this.Controls.Add(this.btnLuu);
-            this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.picbxAvatar);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtNhapLaiMatKhau);
+            this.Controls.Add(this.txt_RePassword);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dtmNgaySinh);
-            this.Controls.Add(this.txtMatKhau);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtCMND);
-            this.Controls.Add(this.txtSDTNV);
-            this.Controls.Add(this.txtHoTen);
+            this.Controls.Add(this.dtp_BirthDate);
+            this.Controls.Add(this.txt_Password);
+            this.Controls.Add(this.txt_Email);
+            this.Controls.Add(this.txt_Identify);
+            this.Controls.Add(this.txt_Phone);
+            this.Controls.Add(this.txt_Name);
             this.Controls.Add(this.bunifuCustomDataGrid1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -397,12 +387,12 @@
         #endregion
         private System.Windows.Forms.PictureBox picbxAvatar;
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
-        private System.Windows.Forms.TextBox txtHoTen;
-        private System.Windows.Forms.TextBox txtSDTNV;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtCMND;
-        private System.Windows.Forms.TextBox txtMatKhau;
-        private System.Windows.Forms.DateTimePicker dtmNgaySinh;
+        private System.Windows.Forms.TextBox txt_Name;
+        private System.Windows.Forms.TextBox txt_Phone;
+        private System.Windows.Forms.TextBox txt_Email;
+        private System.Windows.Forms.TextBox txt_Identify;
+        private System.Windows.Forms.TextBox txt_Password;
+        private System.Windows.Forms.DateTimePicker dtp_BirthDate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -410,14 +400,14 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtNhapLaiMatKhau;
+        private System.Windows.Forms.TextBox txt_RePassword;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnNhapLai;
         private System.Windows.Forms.Button btnUpdateAvatar;
+        private System.Windows.Forms.ComboBox cbx_Role;
+        private System.Windows.Forms.Label lb_Role;
     }
 }

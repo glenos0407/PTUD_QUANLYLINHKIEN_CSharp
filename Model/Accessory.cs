@@ -16,6 +16,7 @@ namespace Model
 
         [Required(ErrorMessage = "Tên không được để trống")]
         public string Name { get; set; }
+        public string Avatar { get; set; }
         public DateTime GoodsReceiptDate { get; set; }
         public int Inventory { get; set; }
         public double Price { get; set; }

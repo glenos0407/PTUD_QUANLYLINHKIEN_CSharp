@@ -40,8 +40,8 @@
             this.btnLogin = new Bunifu.Framework.UI.BunifuThinButton2();
             this.pic_Password = new System.Windows.Forms.PictureBox();
             this.pic_User = new System.Windows.Forms.PictureBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtUser = new System.Windows.Forms.TextBox();
+            this.txt_Password = new System.Windows.Forms.TextBox();
+            this.txt_User = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pnl_Left.SuspendLayout();
@@ -116,8 +116,8 @@
             this.pnl_Right.Controls.Add(this.btnLogin);
             this.pnl_Right.Controls.Add(this.pic_Password);
             this.pnl_Right.Controls.Add(this.pic_User);
-            this.pnl_Right.Controls.Add(this.txtPassword);
-            this.pnl_Right.Controls.Add(this.txtUser);
+            this.pnl_Right.Controls.Add(this.txt_Password);
+            this.pnl_Right.Controls.Add(this.txt_User);
             this.pnl_Right.Controls.Add(this.label2);
             this.pnl_Right.Location = new System.Drawing.Point(244, 33);
             this.pnl_Right.Name = "pnl_Right";
@@ -182,31 +182,31 @@
             this.pic_User.TabIndex = 3;
             this.pic_User.TabStop = false;
             // 
-            // txtPassword
+            // txt_Password
             // 
-            this.txtPassword.BackColor = System.Drawing.SystemColors.Control;
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtPassword.Location = new System.Drawing.Point(93, 196);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(301, 26);
-            this.txtPassword.TabIndex = 2;
-            this.txtPassword.Text = "Mật Khẩu";
-            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
+            this.txt_Password.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_Password.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Password.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Password.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txt_Password.Location = new System.Drawing.Point(93, 196);
+            this.txt_Password.Name = "txt_Password";
+            this.txt_Password.Size = new System.Drawing.Size(301, 26);
+            this.txt_Password.TabIndex = 2;
+            this.txt_Password.Text = "Mật Khẩu";
+            this.txt_Password.Enter += new System.EventHandler(this.txtPassword_Enter);
             // 
-            // txtUser
+            // txt_User
             // 
-            this.txtUser.BackColor = System.Drawing.SystemColors.Control;
-            this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUser.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtUser.Location = new System.Drawing.Point(93, 110);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(301, 26);
-            this.txtUser.TabIndex = 1;
-            this.txtUser.Text = "Tên Đăng Nhập";
-            this.txtUser.Enter += new System.EventHandler(this.txtUser_Enter);
+            this.txt_User.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_User.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_User.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_User.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txt_User.Location = new System.Drawing.Point(93, 110);
+            this.txt_User.Name = "txt_User";
+            this.txt_User.Size = new System.Drawing.Size(301, 26);
+            this.txt_User.TabIndex = 1;
+            this.txt_User.Text = "Tên Đăng Nhập";
+            this.txt_User.Enter += new System.EventHandler(this.txtUser_Enter);
             // 
             // label2
             // 
@@ -256,8 +256,8 @@
         private System.Windows.Forms.Panel pnl_Right;
         private System.Windows.Forms.PictureBox picbx_Logo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtUser;
+        private System.Windows.Forms.TextBox txt_Password;
+        private System.Windows.Forms.TextBox txt_User;
         private System.Windows.Forms.PictureBox pic_Password;
         private System.Windows.Forms.PictureBox pic_User;
         private Bunifu.Framework.UI.BunifuThinButton2 btnLogin;

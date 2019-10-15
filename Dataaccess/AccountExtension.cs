@@ -36,7 +36,7 @@ namespace Dataaccess
 
         private static bool IsHashSupported(string hashString)
         {
-            return hashString.Contains("$QLLKNHOM17$V1${0}${1}");
+            return hashString.Contains("$QLLKNHOM17$V1$");
         }
 
         public bool Verify(string password, string hashedPassword)
@@ -47,7 +47,7 @@ namespace Dataaccess
                 throw new NotSupportedException("The hashtype is not supported");
             }
             //extract iteration and Base64 string
-            var splittedHashString = hashedPassword.Replace("$QLLKNHOM17$V1${0}${1}", "").Split('$');
+            var splittedHashString = hashedPassword.Replace("$QLLKNHOM17$V1$", "").Split('$');
             var iterations = int.Parse(splittedHashString[0]);
             var base64Hash = splittedHashString[1];
             //get hashbytes
