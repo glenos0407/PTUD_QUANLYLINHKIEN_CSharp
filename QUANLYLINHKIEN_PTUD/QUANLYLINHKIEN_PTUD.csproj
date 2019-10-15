@@ -64,12 +64,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmBillManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmBillManager.Designer.cs">
-      <DependentUpon>frmBillManager.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmAccessories.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,9 +131,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource_Image.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmBillManager.resx">
-      <DependentUpon>frmBillManager.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmAccessories.resx">
       <DependentUpon>frmAccessories.cs</DependentUpon>
     </EmbeddedResource>
