@@ -17,8 +17,9 @@ namespace QUANLYLINHKIEN_PTUD
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmLoading("1.0"));
-            Application.Run(new frmMainUI_Staff());
+            //Application.Run(new frmMainUI_Staff());
             //Application.Run(new frmBillManager());
+            Application.Run(new frmAccessories());
         }
     }
 }
