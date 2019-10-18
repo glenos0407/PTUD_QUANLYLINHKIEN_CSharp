@@ -19,7 +19,7 @@ namespace QUANLYLINHKIEN_PTUD
             //Application.Run(new frmLoading("1.0"));
             //Application.Run(new frmMainUI_Staff());
             //Application.Run(new frmBillManager());
-            Application.Run(new frmAccessories());
+            Application.Run(new frmCustomer());
         }
     }
 }
