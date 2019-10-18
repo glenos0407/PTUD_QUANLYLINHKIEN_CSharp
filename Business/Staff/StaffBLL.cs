@@ -21,7 +21,7 @@ namespace Business
         }
         public bool ChangePassword(int staffId, string oldPassword, string newPassword)
         {
-            var entity = dal.GetStaff(staffId);
+            var entity = dal.GetStaffByStaffId(staffId);
             if (entity == null)
                 return false;
             if (!entity.Password.Equals(oldPassword))
@@ -29,11 +29,19 @@ namespace Business
             
             return dal.ChangePassword(entity, newPassword);
         }
-        public string CreateStaff(StaffCreateDto staff, string rePassword)
+        public string CreateStaff(StaffCreatingDto staff, string rePassword)
         {
             if (!staff.Password.Equals(rePassword))
                 return "Mật khẩu không trùng";
             return dal.CreateStaff(staff);
+        }
+        public Staff GetStaffByStaffEmail(string email)
+        {
+            return dal.GetStaffByStaffEmail(email);
+        }
+        public List<StaffGettingDto> GetAllStaffDto()
+        {
+            return dal.GetAllStaffDto();
         }
     }
 }

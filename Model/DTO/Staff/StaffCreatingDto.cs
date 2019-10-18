@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class StaffCreateDto
+    public class StaffCreatingDto
     {
         public string Name { get; set; }
         public string Email { get; set; }
@@ -15,5 +15,6 @@ namespace Model
         public DateTime BirthDate { get; set; }
         public int Role { get; set; }
         public string Password { get; set; }
+        public string Avatar { get; set; }
     }
 }

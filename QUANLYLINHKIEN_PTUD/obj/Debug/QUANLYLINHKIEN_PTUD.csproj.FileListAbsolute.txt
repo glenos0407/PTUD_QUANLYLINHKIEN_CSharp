@@ -100,7 +100,6 @@ D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.1\PTUD_QUANLYLINH
 D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.1\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.csproj.CopyComplete
 D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.1\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.exe
 D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.1\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.pdb
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.1\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.frmCreateStaff.resources
 D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.1\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\AutoMapper.dll
 D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.1\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Business.dll
 D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.1\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Model.dll
@@ -115,3 +114,5 @@ D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.1\PTUD_QUANLYLINH
 D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.1\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\System.ValueTuple.xml
 D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.1\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Dataaccess.pdb
 D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.1\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Dataaccess.dll.config
+D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.1\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.frmHandling.resources
+D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.1\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\XanderUI.dll

@@ -33,20 +33,38 @@ namespace Dataaccess
             db.SaveChanges();
             return true;
         }
-        public Staff GetStaff(int staffId)
+        public Staff GetStaffByStaffId(int staffId)
         {
             return db.Staffs.FirstOrDefault(x => x.Id.Equals(staffId));
         }
-        public string CreateStaff(StaffCreateDto entity)
+        public Staff GetStaffByStaffEmail(string email)
+        {
+            return db.Staffs.FirstOrDefault(x => x.Email.Equals(email));
+        }
+        public List<StaffGettingDto> GetAllStaffDto()
+        {
+            return db.Staffs
+                .Select(s => new StaffGettingDto
+                {
+                    Name = s.Name,
+                    Avatar = s.Avatar,
+                    BirthDate = s.BirthDate,
+                    Email = s.Email,
+                    IdentifyNumber = s.IdentifyNumber,
+                    Password = s.Password
+                })
+                .ToList();
+        }
+        public string CreateStaff(StaffCreatingDto entity)
         {
             entity.Password = accountEx.Hash(entity.Password);
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<StaffCreateDto, Staff>();
+                cfg.CreateMap<StaffCreatingDto, Staff>();
             });
             IMapper mapper = config.CreateMapper();
 
-            var staff = mapper.Map<StaffCreateDto, Staff>(entity);
+            var staff = mapper.Map<StaffCreatingDto, Staff>(entity);
             staff.IsActived = true;
 
             db.Staffs.Add(staff);
@@ -56,15 +74,12 @@ namespace Dataaccess
             }
             catch (DbEntityValidationException e)
             {
-                string s = "";
-                foreach (var eve in e.EntityValidationErrors)
-                {
-                    foreach (var ve in eve.ValidationErrors)
-                    {
-                        s = "Error: " + ve.ErrorMessage;
-                    }
-                }
-                return s;
+                return e
+                    .EntityValidationErrors
+                    .FirstOrDefault()
+                    .ValidationErrors
+                    .FirstOrDefault()
+                    .ErrorMessage;
             }
             return "Success";
         }

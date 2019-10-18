@@ -31,8 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStaffManager));
-            this.picbxAvatar = new System.Windows.Forms.PictureBox();
-            this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.txt_Name = new System.Windows.Forms.TextBox();
             this.txt_Phone = new System.Windows.Forms.TextBox();
             this.txt_Email = new System.Windows.Forms.TextBox();
@@ -55,46 +53,12 @@
             this.btnUpdateAvatar = new System.Windows.Forms.Button();
             this.cbx_Role = new System.Windows.Forms.ComboBox();
             this.lb_Role = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.picbxAvatar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
+            this.picbxAvatar = new System.Windows.Forms.PictureBox();
+            this.dgv_StaffInfor = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbxAvatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_StaffInfor)).BeginInit();
             this.SuspendLayout();
-            // 
-            // picbxAvatar
-            // 
-            this.picbxAvatar.Location = new System.Drawing.Point(29, 70);
-            this.picbxAvatar.Name = "picbxAvatar";
-            this.picbxAvatar.Size = new System.Drawing.Size(180, 180);
-            this.picbxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picbxAvatar.TabIndex = 0;
-            this.picbxAvatar.TabStop = false;
-            // 
-            // bunifuCustomDataGrid1
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bunifuCustomDataGrid1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bunifuCustomDataGrid1.DoubleBuffered = true;
-            this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
-            this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(0, 362);
-            this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
-            this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(873, 287);
-            this.bunifuCustomDataGrid1.TabIndex = 1;
             // 
             // txt_Name
             // 
@@ -310,7 +274,6 @@
             // btnUpdateAvatar
             // 
             this.btnUpdateAvatar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnUpdateAvatar.Enabled = false;
             this.btnUpdateAvatar.FlatAppearance.BorderSize = 0;
             this.btnUpdateAvatar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateAvatar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -321,6 +284,7 @@
             this.btnUpdateAvatar.TabIndex = 51;
             this.btnUpdateAvatar.Text = "Cập Nhật Ảnh";
             this.btnUpdateAvatar.UseVisualStyleBackColor = false;
+            this.btnUpdateAvatar.Click += new System.EventHandler(this.btnUpdateAvatar_Click);
             // 
             // cbx_Role
             // 
@@ -342,12 +306,53 @@
             this.lb_Role.TabIndex = 53;
             this.lb_Role.Text = "Vị trí làm việc";
             // 
+            // picbxAvatar
+            // 
+            this.picbxAvatar.Location = new System.Drawing.Point(29, 70);
+            this.picbxAvatar.Name = "picbxAvatar";
+            this.picbxAvatar.Size = new System.Drawing.Size(180, 180);
+            this.picbxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbxAvatar.TabIndex = 0;
+            this.picbxAvatar.TabStop = false;
+            // 
+            // dgv_StaffInfor
+            // 
+            this.dgv_StaffInfor.AllowUserToResizeColumns = false;
+            this.dgv_StaffInfor.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgv_StaffInfor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_StaffInfor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_StaffInfor.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dgv_StaffInfor.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgv_StaffInfor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_StaffInfor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_StaffInfor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_StaffInfor.ColumnHeadersHeight = 30;
+            this.dgv_StaffInfor.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgv_StaffInfor.DoubleBuffered = true;
+            this.dgv_StaffInfor.EnableHeadersVisualStyles = false;
+            this.dgv_StaffInfor.HeaderBgColor = System.Drawing.SystemColors.HotTrack;
+            this.dgv_StaffInfor.HeaderForeColor = System.Drawing.SystemColors.Window;
+            this.dgv_StaffInfor.Location = new System.Drawing.Point(0, 365);
+            this.dgv_StaffInfor.Name = "dgv_StaffInfor";
+            this.dgv_StaffInfor.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_StaffInfor.Size = new System.Drawing.Size(873, 284);
+            this.dgv_StaffInfor.TabIndex = 54;
+            // 
             // frmStaffManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(69)))), ((int)(((byte)(114)))));
             this.ClientSize = new System.Drawing.Size(873, 649);
+            this.Controls.Add(this.dgv_StaffInfor);
             this.Controls.Add(this.lb_Role);
             this.Controls.Add(this.cbx_Role);
             this.Controls.Add(this.btnUpdateAvatar);
@@ -369,16 +374,15 @@
             this.Controls.Add(this.txt_Identify);
             this.Controls.Add(this.txt_Phone);
             this.Controls.Add(this.txt_Name);
-            this.Controls.Add(this.bunifuCustomDataGrid1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmStaffManager";
             this.Text = "frmStaffManager";
             this.Load += new System.EventHandler(this.frmStaffManager_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picbxAvatar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbxAvatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_StaffInfor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,7 +390,6 @@
 
         #endregion
         private System.Windows.Forms.PictureBox picbxAvatar;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
         private System.Windows.Forms.TextBox txt_Name;
         private System.Windows.Forms.TextBox txt_Phone;
         private System.Windows.Forms.TextBox txt_Email;
@@ -409,5 +412,6 @@
         private System.Windows.Forms.Button btnUpdateAvatar;
         private System.Windows.Forms.ComboBox cbx_Role;
         private System.Windows.Forms.Label lb_Role;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid dgv_StaffInfor;
     }
 }
