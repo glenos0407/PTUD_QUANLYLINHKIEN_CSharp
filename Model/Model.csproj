@@ -59,8 +59,8 @@
     <Compile Include="Accessory.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Customer.cs" />
-    <Compile Include="DTO\Staff\StaffCreatingDto.cs" />
-    <Compile Include="DTO\Staff\StaffGettingDto.cs" />
+    <Compile Include="DTO\Customer\CustomerCreateDto.cs" />
+    <Compile Include="DTO\Staff\StaffCreateDto.cs" />
     <Compile Include="Enum\ERole.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderDetail.cs" />

@@ -73,24 +73,7 @@ namespace QUANLYLINHKIEN_PTUD
             }
             else
             {
-                //frmLogin frm = new frmLogin();
-                //frm.ShowDialog();
-                //                Thread th = new Thread(open_login);
-                //                Thread.Sleep(500);
-                //#pragma warning disable CS0618 // Type or member is obsolete
-                //                th.ApartmentState = ApartmentState.STA;
-                //#pragma warning restore CS0618 // Type or member is obsolete
-                //                th.Start();
-                //                timer_loading.Stop();
-                //                this.Close();
 
-                if (b_pbrLoading.Value < 100)
-                {
-                    b_pbrLoading.Value += 20;
-                    lbPercent.Text = b_pbrLoading.Value.ToString() + "%";
-                }
-                else
-                {
                     Thread th = new Thread(open_login);
 #pragma warning disable CS0618 // Type or member is obsolete
                     th.ApartmentState = ApartmentState.STA;
@@ -101,7 +84,7 @@ namespace QUANLYLINHKIEN_PTUD
 
                     timer_loading.Stop();
                     this.Close();
-                }
+                
             }
         }
     }

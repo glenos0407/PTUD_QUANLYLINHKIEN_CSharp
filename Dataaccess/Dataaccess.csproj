@@ -56,7 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accessory\AccessoryDAL.cs" />
+    <Compile Include="Accessory\IAccessoryDAL.cs" />
     <Compile Include="AccountExtension.cs" />
+    <Compile Include="Customer\CustomerDAL.cs" />
+    <Compile Include="Customer\ICustomerDAL.cs" />
     <Compile Include="Migrations\201910051353325_CreateDatabase.cs" />
     <Compile Include="Migrations\201910051353325_CreateDatabase.Designer.cs">
       <DependentUpon>201910051353325_CreateDatabase.cs</DependentUpon>
