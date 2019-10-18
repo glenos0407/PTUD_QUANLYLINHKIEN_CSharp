@@ -24,9 +24,9 @@ namespace QUANLYLINHKIEN_PTUD
 
         private void timer_loading_Tick(object sender, EventArgs e)
         {
-            if(cpb_loading.Percentage < 100)
+            if (cpb_loading.Value < 100)
             {
-                cpb_loading.Percentage += 10;
+                cpb_loading.Value += 10;
             }
             else
                 this.Close();

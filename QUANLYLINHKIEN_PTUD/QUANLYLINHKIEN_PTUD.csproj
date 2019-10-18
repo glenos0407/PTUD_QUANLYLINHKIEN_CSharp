@@ -82,12 +82,6 @@
     <Compile Include="frmChangePassword.Designer.cs">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCreateStaff.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCreateStaff.Designer.cs">
-      <DependentUpon>frmCreateStaff.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +93,12 @@
     </Compile>
     <Compile Include="frmFileImport.Designer.cs">
       <DependentUpon>frmFileImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHandling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHandling.Designer.cs">
+      <DependentUpon>frmHandling.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLoading.cs">
       <SubType>Form</SubType>
@@ -152,14 +152,14 @@
     <EmbeddedResource Include="frmChangePassword.resx">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCreateStaff.resx">
-      <DependentUpon>frmCreateStaff.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFileImport.resx">
       <DependentUpon>frmFileImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHandling.resx">
+      <DependentUpon>frmHandling.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLoading.resx">
       <DependentUpon>frmLoading.cs</DependentUpon>
