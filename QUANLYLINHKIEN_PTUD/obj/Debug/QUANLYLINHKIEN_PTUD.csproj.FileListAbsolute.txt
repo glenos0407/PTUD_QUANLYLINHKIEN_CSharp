@@ -303,3 +303,4 @@ D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.2\PTUD_QUANLYLINH
 D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.2\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Dataaccess.dll.config
 D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.2\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.frmHandling.resources
 D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.2\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.csproj.CopyComplete
+D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.2\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.frmResult.resources

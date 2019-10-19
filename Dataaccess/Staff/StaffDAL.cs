@@ -51,11 +51,13 @@ namespace Dataaccess
                     BirthDate = s.BirthDate,
                     Email = s.Email,
                     IdentifyNumber = s.IdentifyNumber,
-                    Password = s.Password
+                    NumberPhone = s.NumberPhone,
+                    Password = s.Password,
+                    Role = s.Role
                 })
                 .ToList();
         }
-        public string CreateStaff(StaffCreatingDto entity)
+        public Result CreateStaff(StaffCreatingDto entity)
         {
             entity.Password = accountEx.Hash(entity.Password);
             var config = new MapperConfiguration(cfg =>
@@ -74,14 +76,22 @@ namespace Dataaccess
             }
             catch (DbEntityValidationException e)
             {
-                return e
-                    .EntityValidationErrors
-                    .FirstOrDefault()
-                    .ValidationErrors
-                    .FirstOrDefault()
-                    .ErrorMessage;
+                return new Result
+                {
+                    ResultMessage = e
+                        .EntityValidationErrors
+                        .FirstOrDefault()
+                        .ValidationErrors
+                        .FirstOrDefault()
+                        .ErrorMessage,
+                    IsSuccess = false
+                };
             }
-            return "Success";
+            return new Result
+            {
+                ResultMessage = "Tạo nhân viên thành công",
+                IsSuccess = true
+            };
         }
     }
 }

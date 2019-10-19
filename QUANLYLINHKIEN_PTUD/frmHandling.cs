@@ -31,5 +31,10 @@ namespace QUANLYLINHKIEN_PTUD
             else
                 this.Close();
         }
+
+        private void lb_Loading_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -21,7 +21,8 @@ namespace QUANLYLINHKIEN_PTUD
         frmMainUI_Staff fmain;
         string openFileName;
         List<string> roleTypes;
-        BindingSource bs;
+        BindingSource bindingSource;
+        #region Cunstructor
         public frmStaffManager()
         {
             InitializeComponent();
@@ -30,38 +31,10 @@ namespace QUANLYLINHKIEN_PTUD
             roleTypes = new List<string>() { "Quản Lý", "Nhân viên thủ kho", "Nhân viên bán hàng" };
             cbx_Role.DataSource = roleTypes;
             dtp_BirthDate.Format = DateTimePickerFormat.Custom;
-            bs = new BindingSource();
+            bindingSource = new BindingSource();
             dtp_BirthDate.CustomFormat = "dd/MM/yyyy";
             CreateDataGridView();
         }
-        private void FillTextBox()
-        {
-            var outPutDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
-            outPutDirectory = outPutDirectory.Replace(@"\QUANLYLINHKIEN_PTUD\bin\Debug", @"\Dataaccess\Images\StaffAvatar");
-
-            var entity = staffbll.GetStaffByStaffEmail("chautruongphat123@gmail.com");
-            txt_Name.Text = entity.Name;
-            txt_Email.Text = entity.Email;
-            txt_Identify.Text = entity.IdentifyNumber;
-            dtp_BirthDate.Value = entity.BirthDate;
-            cbx_Role.SelectedIndex = entity.Role;
-            txt_Password.Text = entity.Password;
-
-            outPutDirectory += @"\";
-            outPutDirectory += entity.Avatar;
-            string directoryPath = new Uri(outPutDirectory).LocalPath;
-
-            picbxAvatar.Image = new Bitmap(directoryPath);
-        }
-        private void CreateDataGridView()
-        {
-            dgv_StaffInfor.Columns.Add("STT","STT");
-            dgv_StaffInfor.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgv_StaffInfor.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            dgv_StaffInfor.DataSource = staffbll.GetAllStaffDto();
-            dgv_StaffInfor.Columns["Avatar"].Visible = false;
-        }
-
         public frmStaffManager(frmMainUI_Staff f)
         {
             InitializeComponent();
@@ -72,9 +45,59 @@ namespace QUANLYLINHKIEN_PTUD
             cbx_Role.DataSource = roleTypes;
             dtp_BirthDate.Format = DateTimePickerFormat.Custom;
             dtp_BirthDate.CustomFormat = "dd/MM/yyyy";
+            bindingSource = new BindingSource();
             CreateDataGridView();
+        }
+
+        #endregion
+
+        private void FillTextBox()
+        {
+
+
+            txt_Name.DataBindings.Clear();
+            txt_Email.DataBindings.Clear();
+            txt_Identify.DataBindings.Clear();
+            txt_Password.DataBindings.Clear();
+            txt_Phone.DataBindings.Clear();
+            dtp_BirthDate.DataBindings.Clear();
+
+            txt_Name.DataBindings.Add("Text", bindingSource, "Name");
+            txt_Email.DataBindings.Add("Text", bindingSource, "Email");
+            txt_Identify.DataBindings.Add("Text", bindingSource, "IdentifyNumber");
+            txt_Password.DataBindings.Add("Text", bindingSource, "Password");
+            txt_Phone.DataBindings.Add("Text", bindingSource, "NumberPhone");
+            dtp_BirthDate.DataBindings.Add("Value", bindingSource, "BirthDate");
+
 
         }
+        private void CreateDataGridView()
+        {
+
+            bindingSource.DataSource = staffbll.GetAllStaffDto();
+
+            dgv_StaffInfor.Columns.Add("STT", "STT");
+            dgv_StaffInfor.DataSource = bindingSource;
+            dgv_StaffInfor.Columns["Avatar"].Visible = false;
+            dgv_StaffInfor.Columns["Role"].Visible = false;
+            dgv_StaffInfor.Columns["STT"].Width = 28;
+            dgv_StaffInfor.Columns["Name"].Width = 150;
+            dgv_StaffInfor.Columns["IdentifyNumber"].Width = 120;
+            dgv_StaffInfor.Columns["Email"].Width = 200;
+
+            dgv_StaffInfor.Columns["Name"].HeaderText = "Họ tên";
+            dgv_StaffInfor.Columns["BirthDate"].HeaderText = "Ngày sinh";
+            dgv_StaffInfor.Columns["NumberPhone"].HeaderText = "Số điện thoại";
+            dgv_StaffInfor.Columns["IdentifyNumber"].HeaderText = "Số CMND";
+            dgv_StaffInfor.Columns["Password"].HeaderText = "Mật khẩu";
+
+            //for (int i = 0; i < dgv_StaffInfor.Rows.Count - 1; i++)
+            //{
+            //    dgv_StaffInfor.Rows[i].Cells[0].Value = (i + 1).ToString();
+            //}
+        }
+
+ 
 
         private void frmStaffManager_Load(object sender, EventArgs e)
         {
@@ -135,7 +158,7 @@ namespace QUANLYLINHKIEN_PTUD
             var outPutDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
             outPutDirectory = outPutDirectory.Replace(@"\QUANLYLINHKIEN_PTUD\bin\Debug", @"\Dataaccess\Images\StaffAvatar");
             string directoryPath = new Uri(outPutDirectory).LocalPath;
-            if (!string.IsNullOrEmpty(outPutDirectory))
+            if (!string.IsNullOrEmpty(openFileName))
             {
                 File.Copy(openFileName, Path.Combine(directoryPath, Path.GetFileName(openFileName)), true);
                 str = openFileName.Split(new[] { @"\" }, StringSplitOptions.RemoveEmptyEntries);
@@ -149,12 +172,20 @@ namespace QUANLYLINHKIEN_PTUD
                 BirthDate = dtp_BirthDate.Value,
                 Role = Convert.ToInt32(cbx_Role.SelectedIndex),
                 Password = txt_Password.Text.ToString(),
-                Avatar = str == null? null : str[str.Length - 1]
+                Avatar = (openFileName == null)? null : str[str.Length - 1]
             };
-            var taskCreateStaff = Task.Factory.StartNew(
-                () => MessageBox.Show(staffbll.CreateStaff(staff, rePassword)));
-            openWaitingForm();
+            Result result = null;
+            var taskCreateStaff = Task.Factory.StartNew(() => result = staffbll.CreateStaff(staff, rePassword));
+            var taskOpenWaitingForm = Task.Factory.StartNew(() =>  openWaitingForm());
+            taskOpenWaitingForm.Wait();
             taskCreateStaff.Wait();
+            //if(result.IsSuccess)
+            //    MessageBox.Show(result.ResultMessage, "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
+            //else
+            //    MessageBox.Show(result.ResultMessage, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+            MessageBox.Show(result.ResultMessage, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
 
             //Phat is working here, don't delete
             //string[] str1 = openFileName.Split(new[] { "." }, StringSplitOptions.RemoveEmptyEntries);
@@ -178,6 +209,32 @@ namespace QUANLYLINHKIEN_PTUD
             {
                 openFileName = fileDialog.FileName;
                 picbxAvatar.Image = new Bitmap(fileDialog.FileName);
+            }
+        }
+
+        private void dgv_StaffInfor_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            dgv_StaffInfor.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
+        }
+
+        private void dgv_StaffInfor_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgv_StaffInfor.SelectedRows.Count > 0)
+            {
+                if (Convert.ToInt32(dgv_StaffInfor.SelectedRows[0].Cells["STT"].Value) != dgv_StaffInfor.Rows.Count)
+                {
+                    FillTextBox();
+
+                    var outPutDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
+                    outPutDirectory = outPutDirectory.Replace(@"\QUANLYLINHKIEN_PTUD\bin\Debug", @"\Dataaccess\Images\StaffAvatar");
+                    cbx_Role.SelectedIndex = Convert.ToInt16(dgv_StaffInfor.SelectedRows[0].Cells["Role"].Value);
+
+                    outPutDirectory += @"\";
+                    outPutDirectory += dgv_StaffInfor.SelectedRows[0].Cells["Avatar"].Value;
+                    string directoryPath = new Uri(outPutDirectory).LocalPath;
+
+                    picbxAvatar.Image = new Bitmap(directoryPath);
+                }
             }
         }
     }
