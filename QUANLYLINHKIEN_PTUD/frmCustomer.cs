@@ -30,7 +30,6 @@ namespace QUANLYLINHKIEN_PTUD
             InitializeComponent();
             frm_main = f;
             customerbll = new CustomerBLL();
-
         }
 
         private void Custom_Theme()

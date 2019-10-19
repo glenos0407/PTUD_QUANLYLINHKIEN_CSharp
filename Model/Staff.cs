@@ -15,7 +15,7 @@ namespace Model
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Tên không được để trống")]
-        [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Sai định dạng tên")]
+        //[RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Sai định dạng tên")]
         public string Name { get; set; }
         public string Avatar { get; set; }
 
