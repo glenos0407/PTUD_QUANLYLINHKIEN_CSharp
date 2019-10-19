@@ -43,12 +43,28 @@ namespace QUANLYLINHKIEN_PTUD
             //Chuyển Trạng Thái TextBox Thành Readonly
             Enable_TextBox(false);
         }
+        private void DuLieuTest()
+        {
+            string[] row0 = { "Nguyễn Óc chó", "11/11/1971", "0204963245",
+            "012346789", "Nguyenocngua@gmail.com" };
+            string[] row1 = { "Nguyễn Óc Bò", "11/9/1971", "0204993245",
+            "987654321", "PhatDauTrau@gmail.com" };
+            string[] row2 = { "Nguyễn Óc Trâu", "11/5/1971", "0496327745",
+            "246841012", "Phatmatlon@gmail.com" };
 
+            bunifuCustomDataGrid1.Rows.Add(row0);
+            bunifuCustomDataGrid1.Rows.Add(row1);
+            bunifuCustomDataGrid1.Rows.Add(row2);
+        }
         private void frmCustomer_Load(object sender, EventArgs e)
         {
             Custom_Theme();
             rbtnSoDienThoai.Checked = true;
             btnLuu.Enabled = false;
+            bunifuCustomDataGrid1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            //DuLieuTest();
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -205,12 +221,24 @@ namespace QUANLYLINHKIEN_PTUD
         {
             if (cbx_SapXep.SelectedItem == "Tên từ A-Z")
             {
-
+                bunifuCustomDataGrid1.Sort(bunifuCustomDataGrid1.Columns[0], ListSortDirection.Ascending);
             }
             if (cbx_SapXep.SelectedItem == "Tên từ Z-A")
             {
-
+                bunifuCustomDataGrid1.Sort(bunifuCustomDataGrid1.Columns[0], ListSortDirection.Descending);
             }
+        }
+
+        private void bunifuCustomDataGrid1_SelectionChanged(object sender, EventArgs e)
+        {
+            int n = bunifuCustomDataGrid1.CurrentRow.Index;
+            txtHoKH.Text = bunifuCustomDataGrid1.Rows[n].Cells[0].Value.ToString();
+            String a = bunifuCustomDataGrid1.CurrentCell.Value.ToString();
+            dtmNgaySinh.Value = Convert.ToDateTime(bunifuCustomDataGrid1.Rows[n].Cells[1].Value);
+            //dtmNgaySinh.Value = DateTime.ParseExact(bunifuCustomDataGrid1.Rows[n].Cells[1].Value.ToString(),"dd-MM-yyyy", CultureInfo.InvariantCulture);
+            txtCMND.Text = bunifuCustomDataGrid1.Rows[n].Cells[2].Value.ToString();
+            txtSDT.Text = bunifuCustomDataGrid1.Rows[n].Cells[3].Value.ToString();
+            txtEmail.Text = bunifuCustomDataGrid1.Rows[n].Cells[4].Value.ToString();
         }
     }
 }
