@@ -68,5 +68,21 @@ namespace Dataaccess
             }
             return true;
         }
+        //public string UnHash(string hashedPassword)
+        //{
+        //    check hash
+        //    if (!IsHashSupported(hashedPassword))
+        //    {
+        //        throw new NotSupportedException("The hashtype is not supported");
+        //    }
+        //    extract iteration and Base64 string
+        //    var splittedHashString = hashedPassword.Replace("$QLLKNHOM17$V1$", "").Split('$');
+        //    var iterations = int.Parse(splittedHashString[0]);
+        //    var base64Hash = splittedHashString[1];
+        //    get hashbytes
+        //    var hashBytes = Convert.FromBase64String(base64Hash);
+        //    get salt
+        //    var salt = new byte[SaltSize];
+        //}
     }
 }

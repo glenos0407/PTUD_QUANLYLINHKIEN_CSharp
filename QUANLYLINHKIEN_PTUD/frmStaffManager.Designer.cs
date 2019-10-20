@@ -53,11 +53,12 @@
             this.btnUpdateAvatar = new System.Windows.Forms.Button();
             this.cbx_Role = new System.Windows.Forms.ComboBox();
             this.lb_Role = new System.Windows.Forms.Label();
-            this.picbxAvatar = new System.Windows.Forms.PictureBox();
             this.dgv_StaffInfor = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.picbxAvatar = new System.Windows.Forms.PictureBox();
+            this.lb_ListStaff = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picbxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_StaffInfor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbxAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_Name
@@ -306,15 +307,6 @@
             this.lb_Role.TabIndex = 53;
             this.lb_Role.Text = "Vị trí làm việc";
             // 
-            // picbxAvatar
-            // 
-            this.picbxAvatar.Location = new System.Drawing.Point(29, 70);
-            this.picbxAvatar.Name = "picbxAvatar";
-            this.picbxAvatar.Size = new System.Drawing.Size(180, 180);
-            this.picbxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picbxAvatar.TabIndex = 0;
-            this.picbxAvatar.TabStop = false;
-            // 
             // dgv_StaffInfor
             // 
             this.dgv_StaffInfor.AllowUserToResizeColumns = false;
@@ -322,7 +314,6 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgv_StaffInfor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_StaffInfor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_StaffInfor.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dgv_StaffInfor.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgv_StaffInfor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_StaffInfor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -340,11 +331,37 @@
             this.dgv_StaffInfor.EnableHeadersVisualStyles = false;
             this.dgv_StaffInfor.HeaderBgColor = System.Drawing.SystemColors.HotTrack;
             this.dgv_StaffInfor.HeaderForeColor = System.Drawing.SystemColors.Window;
-            this.dgv_StaffInfor.Location = new System.Drawing.Point(0, 365);
+            this.dgv_StaffInfor.Location = new System.Drawing.Point(0, 416);
             this.dgv_StaffInfor.Name = "dgv_StaffInfor";
+            this.dgv_StaffInfor.ReadOnly = true;
             this.dgv_StaffInfor.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgv_StaffInfor.Size = new System.Drawing.Size(873, 284);
+            this.dgv_StaffInfor.RowHeadersVisible = false;
+            this.dgv_StaffInfor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_StaffInfor.Size = new System.Drawing.Size(873, 233);
             this.dgv_StaffInfor.TabIndex = 54;
+            this.dgv_StaffInfor.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgv_StaffInfor_RowPostPaint);
+            this.dgv_StaffInfor.SelectionChanged += new System.EventHandler(this.dgv_StaffInfor_SelectionChanged);
+            // 
+            // picbxAvatar
+            // 
+            this.picbxAvatar.Location = new System.Drawing.Point(29, 70);
+            this.picbxAvatar.Name = "picbxAvatar";
+            this.picbxAvatar.Size = new System.Drawing.Size(180, 180);
+            this.picbxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbxAvatar.TabIndex = 0;
+            this.picbxAvatar.TabStop = false;
+            // 
+            // lb_ListStaff
+            // 
+            this.lb_ListStaff.BackColor = System.Drawing.Color.Silver;
+            this.lb_ListStaff.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ListStaff.ForeColor = System.Drawing.Color.Maroon;
+            this.lb_ListStaff.Location = new System.Drawing.Point(0, 379);
+            this.lb_ListStaff.Name = "lb_ListStaff";
+            this.lb_ListStaff.Padding = new System.Windows.Forms.Padding(350, 6, 0, 0);
+            this.lb_ListStaff.Size = new System.Drawing.Size(873, 34);
+            this.lb_ListStaff.TabIndex = 56;
+            this.lb_ListStaff.Text = "DANH SÁCH NHÂN VIÊN";
             // 
             // frmStaffManager
             // 
@@ -352,6 +369,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(69)))), ((int)(((byte)(114)))));
             this.ClientSize = new System.Drawing.Size(873, 649);
+            this.Controls.Add(this.lb_ListStaff);
             this.Controls.Add(this.dgv_StaffInfor);
             this.Controls.Add(this.lb_Role);
             this.Controls.Add(this.cbx_Role);
@@ -381,8 +399,8 @@
             this.Load += new System.EventHandler(this.frmStaffManager_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picbxAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_StaffInfor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbxAvatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,5 +431,6 @@
         private System.Windows.Forms.ComboBox cbx_Role;
         private System.Windows.Forms.Label lb_Role;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgv_StaffInfor;
+        private System.Windows.Forms.Label lb_ListStaff;
     }
 }
