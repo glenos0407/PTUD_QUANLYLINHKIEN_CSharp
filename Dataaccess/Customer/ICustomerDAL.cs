@@ -11,7 +11,7 @@ namespace Dataaccess
     {
         String AddCustomer(CustomerCreateDto CustomerDto);
         List<Customer> GetAllCustomer();
-        bool UpdateCustomer(Customer a);
+        String UpdateCustomer(CustomerCreateDto cusdto, String sdt);
         List<Customer> GetListCustomer(String name);
         Customer GetCustomerFromNumberPhone(String sdt);
 

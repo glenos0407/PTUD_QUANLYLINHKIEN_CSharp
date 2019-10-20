@@ -43,40 +43,50 @@ namespace Dataaccess
             }
             catch (DbEntityValidationException e)
             {
-                string s = "";
-                foreach (var eve in e.EntityValidationErrors)
-                {
-                    foreach (var ve in eve.ValidationErrors)
-                    {
-                        s = "Error: " + ve.ErrorMessage;
-                    }
-                }
-                return s;
+                return e
+                    .EntityValidationErrors
+                    .FirstOrDefault()
+                    .ValidationErrors
+                    .FirstOrDefault()
+                    .ErrorMessage;
             }
             return "Success";
         }
 
-        public bool UpdateCustomer(Customer a)
+        public String UpdateCustomer(CustomerCreateDto cusdto,String sdt)
         {
-            Customer customer = new Model.Customer();
-            customer = db.Customers.Where(x => x.Id == a.Id).FirstOrDefault();
-            customer.Name = a.Name;
-            customer.NumberPhone = a.NumberPhone;
-            customer.IdentifyNumber = a.IdentifyNumber;
-            customer.BirthDate = a.BirthDate;
-            customer.Email = a.Email;
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<CustomerCreateDto, Customer>();
+            });
+
+            IMapper mapper = config.CreateMapper();
+            var a = mapper.Map<CustomerCreateDto, Customer>(cusdto);
+
+            Customer cus = new Customer();
+            cus = GetCustomerFromNumberPhone(sdt);
+            cus.Name = a.Name;
+            cus.NumberPhone = a.NumberPhone;
+            cus.IdentifyNumber = a.IdentifyNumber;
+            cus.BirthDate = a.BirthDate;
+            cus.Email = a.Email;
 
             try
             {
-                db.Customers.AddOrUpdate(customer);
+                db.Customers.AddOrUpdate(cus);
                 db.SaveChanges();
             }
-            catch (Exception e)
+            catch (DbEntityValidationException e)
             {
-                throw new Exception(e.Message);
+                return e
+                    .EntityValidationErrors
+                    .FirstOrDefault()
+                    .ValidationErrors
+                    .FirstOrDefault()
+                    .ErrorMessage;
 
             }
-            return true;
+            return "Success";
 
         }
 

@@ -22,6 +22,7 @@ namespace QUANLYLINHKIEN_PTUD
             InitializeComponent();
             accsorybll = new AccesoryBLL();
             //MessageBox.Show(accsorybll.GetAllAccessories().ToString());
+            bunifuCustomDataGrid1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         public frmAccessories(frmMainUI_Staff f)
@@ -89,6 +90,17 @@ namespace QUANLYLINHKIEN_PTUD
             MessageBox.Show("testTK");
         }
 
-
+        private void cbx_GiaTien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int n = 0;///colomn giá tiền *****************************************************
+            if (cbx_GiaTien.SelectedItem == "Giá Tăng Dần")
+            {
+                bunifuCustomDataGrid1.Sort(bunifuCustomDataGrid1.Columns[n], ListSortDirection.Ascending);
+            }
+            if (cbx_GiaTien.SelectedItem == "Giá Giảm Dần")
+            {
+                bunifuCustomDataGrid1.Sort(bunifuCustomDataGrid1.Columns[n], ListSortDirection.Descending);
+            }
+        }
     }
 }

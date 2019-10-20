@@ -67,5 +67,17 @@ namespace QUANLYLINHKIEN_PTUD
             txtSearch.Clear();
             txtSearch.ForeColor = Color.Black;
         }
+
+        private void cbx_GiaTien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbx_GiaTien.SelectedItem == "Tên từ A-Z")
+            {
+                bunifuCustomDataGrid1.Sort(bunifuCustomDataGrid1.Columns[0], ListSortDirection.Ascending);
+            }
+            if (cbx_GiaTien.SelectedItem == "Tên từ Z-A")
+            {
+                bunifuCustomDataGrid1.Sort(bunifuCustomDataGrid1.Columns[0], ListSortDirection.Descending);
+            }
+        }
     }
 }
