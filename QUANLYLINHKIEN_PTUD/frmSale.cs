@@ -17,6 +17,7 @@ namespace QUANLYLINHKIEN_PTUD
             InitializeComponent();
             comboBox1.Text = "TIM kiem";
             comboBox1.ForeColor = Color.LightGray;
+            this.FormBorderStyle = FormBorderStyle.None;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -53,6 +54,20 @@ namespace QUANLYLINHKIEN_PTUD
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Hãy Chắc Rằng Bạn Đã Lưu Tất Cả Thay Đổi.\nXác Nhận Thoát Giao Diện Bán Hàng ?", "THOÁT GIAO DIỆN", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (dr == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }
