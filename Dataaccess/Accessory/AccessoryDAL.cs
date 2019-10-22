@@ -23,18 +23,23 @@ namespace Dataaccess
             return db.Accessories.FirstOrDefault(x => x.Id == id);
         }
 
-        public List<Accessory> GetListAccessories(String name, bool Producer1, bool Category1, bool AccessoriyName1)
+        public List<Accessory> GetListAccessories(string name, bool Producer1, bool Category1, bool AccessoriyName1)
         {
-            if (Category1)
-            {
-                return db.Accessories.Where(x => x.Category.Name.Equals(name)).ToList();
-            }
-            else if (Producer1)
-            {
-                return db.Accessories.Where(x => x.Producer.Name.Equals(name)).ToList();
-            }
-            return db.Accessories.Where(x => x.Name.Equals(name)).ToList();
+            throw new NotImplementedException();
         }
+
+        //public List<Accessory> GetListAccessories(string nameAccessory, string, string Category1, string AccessoriyName1)
+        //{
+        //    //if (Category1)
+        //    //{
+        //    //    return db.Accessories.Where(x => x.Category.Name.Equals(name)).ToList();
+        //    //}
+        //    //else if (Producer1)
+        //    //{
+        //    //    return db.Accessories.Where(x => x.Producer.Name.Equals(name)).ToList();
+        //    //}
+        //    //return db.Accessories.Where(x => x.Name.Equals(name)).ToList();
+        //}
 
 
 

@@ -57,8 +57,10 @@ namespace Dataaccess
                 })
                 .ToList();
         }
-        public Result CreateStaff(StaffCreatingDto entity)
+        public Result CreateOrUpdateStaff(StaffCreatingDto entity)
         {
+            var entityTemp = db.Staffs.FirstOrDefault(x => x.Email.Equals(entity.Email));
+
             entity.Password = accountEx.Hash(entity.Password);
             var config = new MapperConfiguration(cfg =>
             {
@@ -69,7 +71,19 @@ namespace Dataaccess
             var staff = mapper.Map<StaffCreatingDto, Staff>(entity);
             staff.IsActived = true;
 
-            db.Staffs.Add(staff);
+            if (entityTemp == null)
+                db.Staffs.Add(staff);
+            else
+            {
+                entityTemp.Name = entity.Name;
+                entityTemp.NumberPhone = entity.NumberPhone;
+                entityTemp.IdentifyNumber = entity.IdentifyNumber;
+                entityTemp.BirthDate = entity.BirthDate;
+                entityTemp.Role = entity.Role;
+                entityTemp.Password = entity.Password;
+                entityTemp.Avatar = entity.Avatar;
+            }
+
             try
             {
                 db.SaveChanges();
@@ -80,9 +94,9 @@ namespace Dataaccess
                 {
                     ResultMessage = e
                         .EntityValidationErrors
-                        .FirstOrDefault()
+                        .LastOrDefault()
                         .ValidationErrors
-                        .FirstOrDefault()
+                        .LastOrDefault()
                         .ErrorMessage,
                     IsSuccess = false
                 };

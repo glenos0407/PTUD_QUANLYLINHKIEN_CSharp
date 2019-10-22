@@ -33,6 +33,7 @@ namespace QUANLYLINHKIEN_PTUD
             dtp_BirthDate.Format = DateTimePickerFormat.Custom;
             bindingSource = new BindingSource();
             dtp_BirthDate.CustomFormat = "dd/MM/yyyy";
+            bindingSource.DataSource = staffbll.GetAllStaffDto();
             CreateDataGridView();
         }
         public frmStaffManager(frmMainUI_Staff f)
@@ -46,6 +47,7 @@ namespace QUANLYLINHKIEN_PTUD
             dtp_BirthDate.Format = DateTimePickerFormat.Custom;
             dtp_BirthDate.CustomFormat = "dd/MM/yyyy";
             bindingSource = new BindingSource();
+            bindingSource.DataSource = staffbll.GetAllStaffDto();
             CreateDataGridView();
         }
 
@@ -53,8 +55,6 @@ namespace QUANLYLINHKIEN_PTUD
 
         private void FillTextBox()
         {
-
-
             txt_Name.DataBindings.Clear();
             txt_Email.DataBindings.Clear();
             txt_Identify.DataBindings.Clear();
@@ -68,12 +68,9 @@ namespace QUANLYLINHKIEN_PTUD
             txt_Password.DataBindings.Add("Text", bindingSource, "Password");
             txt_Phone.DataBindings.Add("Text", bindingSource, "NumberPhone");
             dtp_BirthDate.DataBindings.Add("Value", bindingSource, "BirthDate");
-
-
         }
         private void CreateDataGridView()
         {
-
             bindingSource.DataSource = staffbll.GetAllStaffDto();
 
             dgv_StaffInfor.Columns.Add("STT", "STT");
@@ -175,10 +172,14 @@ namespace QUANLYLINHKIEN_PTUD
                 Avatar = (openFileName == null)? null : str[str.Length - 1]
             };
             Result result = null;
-            var taskCreateStaff = Task.Factory.StartNew(() => result = staffbll.CreateStaff(staff, rePassword));
+            var taskCreateStaff = Task.Factory.StartNew(() => result = staffbll.CreateOrUpdateStaff(staff, rePassword));
             var taskOpenWaitingForm = Task.Factory.StartNew(() =>  openWaitingForm());
             taskOpenWaitingForm.Wait();
             taskCreateStaff.Wait();
+            //bindingSource.Add(staff);
+
+            if(!result.IsSuccess)
+                CreateDataGridView();
             //if(result.IsSuccess)
             //    MessageBox.Show(result.ResultMessage, "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
             //else

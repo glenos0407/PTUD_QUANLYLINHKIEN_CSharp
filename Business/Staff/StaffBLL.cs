@@ -37,7 +37,7 @@ namespace Business
                     ResultMessage = "Mật khẩu không trùng",
                     IsSuccess = false
                 };
-            return  dal.CreateStaff(staff);
+            return  dal.CreateOrUpdateStaff(staff);
         }
         public Staff GetStaffByStaffEmail(string email)
         {
