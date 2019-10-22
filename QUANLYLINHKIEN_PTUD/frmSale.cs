@@ -49,5 +49,10 @@ namespace QUANLYLINHKIEN_PTUD
             comboBox1.Text = "";
             comboBox1.ForeColor = Color.Black;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

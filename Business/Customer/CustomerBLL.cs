@@ -25,9 +25,9 @@ namespace Business
             return cus.AddCustomer(a);
         }
 
-        public bool UpdateCustomer(Customer a)
+        public String UpdateCustomer(CustomerCreateDto cusdto, String sdt)
         {
-            return cus.UpdateCustomer(a);
+            return cus.UpdateCustomer(cusdto,sdt);
         }
         public List<Customer> GetListCustomer(String name)
         {

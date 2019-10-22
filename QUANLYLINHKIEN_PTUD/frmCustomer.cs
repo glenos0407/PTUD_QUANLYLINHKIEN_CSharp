@@ -63,7 +63,7 @@ namespace QUANLYLINHKIEN_PTUD
             btnLuu.Enabled = false;
             bunifuCustomDataGrid1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            //DuLieuTest();
+            DuLieuTest();
 
         }
 
@@ -133,6 +133,12 @@ namespace QUANLYLINHKIEN_PTUD
 
         private void btnSuaKH_Click(object sender, EventArgs e)
         {
+            /*//Test Lỗi chưa có thông tin khách hàng trên textbox mà vẫn có thể nhấn sửa
+            if (customerbll.GetCustomerFromNumberPhone(txtSDT.Text.ToString()) == null)
+            {
+                MessageBox.Show("Không tìm thấy thông tin khách hàng");
+                return;
+            }*/
             if (btnSuaKH.Text == "Hủy")
             {
                 btnSuaKH.Text = "Sửa";
@@ -180,8 +186,22 @@ namespace QUANLYLINHKIEN_PTUD
                 btnLuu.Text = "Lưu";
                 btnThemKH.Enabled = true;
                 btnLuu.Enabled = false;
-                MessageBox.Show("TestSua123456");
+                CustomerCreateDto cus = new CustomerCreateDto()
+                {
+                    Name = txtHoKH.Text.ToString() + " " + txtTenKH.Text.ToString(),
+                    NumberPhone = txtSDT.Text.ToString(),
+                    Email = txtEmail.Text.ToString(),
+                    IdentifyNumber = txtCMND.Text.ToString(),
+                    BirthDate = dtmNgaySinh.Value
+                };
 
+                int n = bunifuCustomDataGrid1.CurrentRow.Index;
+                //MessageBox.Show(customerbll.UpdateCustomer(cus,bunifuCustomDataGrid1.Rows[n].Cells[3].Value.ToString()));
+                /*DialogResult dlr = MessageBox.Show("Bạn có muốn lưu không", "Thông báo", MessageBoxButtons.YesNo);
+                if(dlr == DialogResult.Yes)
+                {  
+                    // Xác Nhận lưu
+                }*/
             }
 
         }
@@ -232,10 +252,16 @@ namespace QUANLYLINHKIEN_PTUD
         private void bunifuCustomDataGrid1_SelectionChanged(object sender, EventArgs e)
         {
             int n = bunifuCustomDataGrid1.CurrentRow.Index;
-            txtHoKH.Text = bunifuCustomDataGrid1.Rows[n].Cells[0].Value.ToString();
+
+            String HoTen = bunifuCustomDataGrid1.Rows[n].Cells[0].Value.ToString();
+            HoTen = HoTen.Trim();
+            txtHoKH.Text = HoTen.Substring(0, HoTen.LastIndexOf(' '));
+            txtTenKH.Text = HoTen.Substring(HoTen.LastIndexOf(' ') + 1);
+            
             String a = bunifuCustomDataGrid1.CurrentCell.Value.ToString();
             dtmNgaySinh.Value = Convert.ToDateTime(bunifuCustomDataGrid1.Rows[n].Cells[1].Value);
             //dtmNgaySinh.Value = DateTime.ParseExact(bunifuCustomDataGrid1.Rows[n].Cells[1].Value.ToString(),"dd-MM-yyyy", CultureInfo.InvariantCulture);
+
             txtCMND.Text = bunifuCustomDataGrid1.Rows[n].Cells[2].Value.ToString();
             txtSDT.Text = bunifuCustomDataGrid1.Rows[n].Cells[3].Value.ToString();
             txtEmail.Text = bunifuCustomDataGrid1.Rows[n].Cells[4].Value.ToString();

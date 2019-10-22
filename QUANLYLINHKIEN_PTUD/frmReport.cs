@@ -64,5 +64,10 @@ namespace QUANLYLINHKIEN_PTUD
                 lbTieuDe.Text = "Báo Cáo Thống Kê Số Lượng Tồn";
             }
         }
+
+        private void btnLuuBaoCao_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
