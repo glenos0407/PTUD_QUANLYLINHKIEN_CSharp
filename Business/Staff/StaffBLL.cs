@@ -29,7 +29,8 @@ namespace Business
             
             return dal.ChangePassword(entity, newPassword);
         }
-        public Result CreateStaff(StaffCreatingDto staff, string rePassword)
+        public Result CreateOrUpdateStaff
+            (StaffCreatingDto staff, string rePassword)
         {
             if (!staff.Password.Equals(rePassword))
                 return new Result
