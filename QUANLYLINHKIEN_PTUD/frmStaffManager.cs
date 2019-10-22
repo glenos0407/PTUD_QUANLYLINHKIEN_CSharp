@@ -192,7 +192,13 @@ namespace QUANLYLINHKIEN_PTUD
             //File.Move(openFileName,"Staff." + str1[str1.Length - 1]);
             //MessageBox.Show(openFileName);
 
+            if (result.IsSuccess)
+            {
+
+            }
+
             btnLuu.Enabled = true;
+
         }
 
         public void openWaitingForm()

@@ -47,5 +47,9 @@ namespace Business
         {
             return dal.GetAllStaffDto();
         }
+        public int CountStaff()
+        {
+            return dal.CountStaff();
+        }
     }
 }

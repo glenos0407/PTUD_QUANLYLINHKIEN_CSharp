@@ -164,7 +164,13 @@ namespace QUANLYLINHKIEN_PTUD
             }
 
             frmStaffManager fsm = new frmStaffManager(this);
-            fsm.ShowDialog();
+            fsm.TopLevel = false;
+            fsm.Dock = DockStyle.Fill;
+            fsm.FormBorderStyle = FormBorderStyle.None;
+            fsm.ShowInTaskbar = false;
+            fsm.Show();
+
+            this.pnlRight.Controls.Add(fsm);
         }
 
         private void back_login()
