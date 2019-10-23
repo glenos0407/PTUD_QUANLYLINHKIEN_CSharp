@@ -12,48 +12,27 @@ namespace QUANLYLINHKIEN_PTUD
 {
     public partial class frmSale : Form
     {
+        frmMainUI_Staff fmain;
+
         public frmSale()
         {
             InitializeComponent();
-            comboBox1.Text = "TIM kiem";
-            comboBox1.ForeColor = Color.LightGray;
+            cbx_NhaSanXuat.SelectedIndex = 0;
+            cbx_LoaiLinhKien.SelectedIndex = 0;
+            cbx_NhaSanXuat.ForeColor = Color.DarkGray;
+            cbx_LoaiLinhKien.ForeColor = Color.DarkGray;
             this.FormBorderStyle = FormBorderStyle.None;
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        public frmSale(frmMainUI_Staff fm)
         {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_Enter(object sender, EventArgs e)
-        {
-            comboBox1.Text = "";
-            comboBox1.ForeColor = Color.Black;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
+            InitializeComponent();
+            cbx_NhaSanXuat.SelectedIndex = 0;
+            cbx_LoaiLinhKien.SelectedIndex = 0;
+            cbx_NhaSanXuat.ForeColor = Color.DarkGray;
+            cbx_LoaiLinhKien.ForeColor = Color.DarkGray;
+            this.FormBorderStyle = FormBorderStyle.None;
+            fmain = fm;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -68,6 +47,16 @@ namespace QUANLYLINHKIEN_PTUD
             {
                 return;
             }
+        }
+
+        private void cbxNhaSanXuat_Enter(object sender, EventArgs e)
+        {
+            cbx_NhaSanXuat.ForeColor = Color.Black;
+        }
+
+        private void cbx_LoaiLinhKien_Enter(object sender, EventArgs e)
+        {
+            cbx_LoaiLinhKien.ForeColor = Color.Black;
         }
     }
 }

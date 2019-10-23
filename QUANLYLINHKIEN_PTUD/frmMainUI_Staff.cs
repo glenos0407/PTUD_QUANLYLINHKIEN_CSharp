@@ -226,6 +226,21 @@ namespace QUANLYLINHKIEN_PTUD
 
             this.pnlRight.Controls.Add(fa);
         }
+
+        private void open_frmSale()
+        {
+            this.pnlRight.Controls.Clear();
+
+            frmSale fa = new frmSale(this);
+            fa.TopLevel = false;
+            fa.Dock = DockStyle.Fill;
+            fa.FormBorderStyle = FormBorderStyle.None;
+            fa.ShowInTaskbar = false;
+            fa.Show();
+
+            this.pnlRight.Controls.Add(fa);
+        }
+
         private void btnPOS_Click(object sender, EventArgs e)
         {
             //Kiểm Tra Có Form Sub nào đang chạy không ?
@@ -234,6 +249,7 @@ namespace QUANLYLINHKIEN_PTUD
                 MessageBox.Show("Hãy Đóng Giao Diện Hiện Tại", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            open_frmSale();
         }
 
         private void btnWarehouse_Click(object sender, EventArgs e)
