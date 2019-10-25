@@ -18,7 +18,7 @@ namespace QUANLYLINHKIEN_PTUD
         CustomerBLL customerbll;
         bool isEnter = false;
         /// <summary>
-        /// //////
+
         /// </summary>
         public frmCustomer()
         {
