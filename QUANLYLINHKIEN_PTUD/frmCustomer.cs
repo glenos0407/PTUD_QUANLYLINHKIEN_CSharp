@@ -17,7 +17,9 @@ namespace QUANLYLINHKIEN_PTUD
         frmMainUI_Staff frm_main;
         CustomerBLL customerbll;
         bool isEnter = false;
-
+        /// <summary>
+        /// //////
+        /// </summary>
         public frmCustomer()
         {
             InitializeComponent();
