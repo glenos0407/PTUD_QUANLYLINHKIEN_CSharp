@@ -9,11 +9,11 @@ namespace Dataaccess
 {
     public interface ICustomerDAL
     {
-        String AddCustomer(CustomerCreateDto CustomerDto);
+        Result AddCustomer(CustomerCreateDto CustomerDto);
         List<Customer> GetAllCustomer();
-        String UpdateCustomer(CustomerCreateDto cusdto, String sdt);
+        Result UpdateCustomer(CustomerCreateDto cusdto, String sdt);
         List<Customer> GetListCustomer(String name);
-        Customer GetCustomerFromNumberPhone(String sdt);
+        List<Customer> GetCustomerFromNumberPhone(String sdt);
 
     }
 }

@@ -23,11 +23,12 @@ namespace Dataaccess
         {
             return db.Customers.ToList();
         }
+        
         public Customer GetCustomer(int id)
         {
             return db.Customers.FirstOrDefault(x => x.Id == id);
         }
-        public String AddCustomer(CustomerCreateDto CustomerDto)
+        public Result AddCustomer(CustomerCreateDto CustomerDto)
         {
             var config = new MapperConfiguration(cfg =>
             {
@@ -37,24 +38,34 @@ namespace Dataaccess
             IMapper mapper = config.CreateMapper();
             var cus = mapper.Map<CustomerCreateDto, Customer>(CustomerDto);
             db.Customers.Add(cus);
+            
             try
             {
                 db.SaveChanges();
             }
             catch (DbEntityValidationException e)
             {
-                return e
-                    .EntityValidationErrors
-                    .FirstOrDefault()
-                    .ValidationErrors
-                    .FirstOrDefault()
-                    .ErrorMessage;
+                return new Result
+                {
+                    ResultMessage = e
+                        .EntityValidationErrors
+                        .LastOrDefault()
+                        .ValidationErrors
+                        .LastOrDefault()
+                        .ErrorMessage,
+                    IsSuccess = false
+                };
             }
-            return "Success";
+            return new Result
+            {
+                ResultMessage = "Tạo Khách Hàng thành công",
+                IsSuccess = true
+            };
         }
 
-        public String UpdateCustomer(CustomerCreateDto cusdto,String sdt)
+        public Result UpdateCustomer(CustomerCreateDto cusdto,String email)
         {
+            var entityTemp = db.Staffs.FirstOrDefault(x => x.Email.Equals(email));
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<CustomerCreateDto, Customer>();
@@ -63,31 +74,34 @@ namespace Dataaccess
             IMapper mapper = config.CreateMapper();
             var a = mapper.Map<CustomerCreateDto, Customer>(cusdto);
 
-            Customer cus = new Customer();
-            cus = GetCustomerFromNumberPhone(sdt);
-            cus.Name = a.Name;
-            cus.NumberPhone = a.NumberPhone;
-            cus.IdentifyNumber = a.IdentifyNumber;
-            cus.BirthDate = a.BirthDate;
-            cus.Email = a.Email;
+            entityTemp.Name = cusdto.Name;
+            entityTemp.NumberPhone = cusdto.NumberPhone;
+            entityTemp.IdentifyNumber = cusdto.IdentifyNumber;
+            entityTemp.BirthDate = cusdto.BirthDate;
+            entityTemp.Email = cusdto.Email;
 
             try
             {
-                db.Customers.AddOrUpdate(cus);
                 db.SaveChanges();
             }
             catch (DbEntityValidationException e)
             {
-                return e
-                    .EntityValidationErrors
-                    .FirstOrDefault()
-                    .ValidationErrors
-                    .FirstOrDefault()
-                    .ErrorMessage;
-
+                return new Result
+                {
+                    ResultMessage = e
+                        .EntityValidationErrors
+                        .LastOrDefault()
+                        .ValidationErrors
+                        .LastOrDefault()
+                        .ErrorMessage,
+                    IsSuccess = false
+                };
             }
-            return "Success";
-
+            return new Result
+            {
+                ResultMessage = "Sửa Khách Hàng thành công",
+                IsSuccess = true
+            };
         }
 
         public List<Customer> GetListCustomer(String name)
@@ -95,9 +109,10 @@ namespace Dataaccess
             return db.Customers.Where(x => x.Name.Equals(name)).ToList();
 
         }
-        public Customer GetCustomerFromNumberPhone(String sdt)
+        public List<Customer> GetCustomerFromNumberPhone(String sdt)
         {
-            return db.Customers.Where(x => x.NumberPhone.Equals(sdt)).FirstOrDefault();
+            return db.Customers.Where(x => x.NumberPhone.Equals(sdt)).ToList();
         }
+        
     }
 }

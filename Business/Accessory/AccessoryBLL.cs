@@ -16,7 +16,7 @@ namespace Business
             acc = new AccessoryDAL();
         }
 
-        public List<Accessory> GetAllAccessories()
+        public List<AccessoryGettingDTO> GetAllAccessories()
         {
             return acc.GetAllAccessories();
         }

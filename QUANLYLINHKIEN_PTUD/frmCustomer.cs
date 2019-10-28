@@ -16,13 +16,21 @@ namespace QUANLYLINHKIEN_PTUD
     {
         frmMainUI_Staff frm_main;
         CustomerBLL customerbll;
+        BindingSource bindingSource;
         bool isEnter = false;
-
+        
         public frmCustomer()
         {
             InitializeComponent();
             customerbll = new CustomerBLL();
-            //MessageBox.Show(customerbll.GetAllCustomer().ToString());
+            bindingSource = new BindingSource();
+            bunifuCustomDataGrid1.Columns.Add("STT", "STT");
+            bindingSource.DataSource = customerbll.GetAllCustomer();
+            bunifuCustomDataGrid1.MultiSelect = false;
+            bunifuCustomDataGrid1.ReadOnly = true;
+            bunifuCustomDataGrid1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            CreateDataGridView();
+            
         }
 
         public frmCustomer(frmMainUI_Staff f)
@@ -30,6 +38,10 @@ namespace QUANLYLINHKIEN_PTUD
             InitializeComponent();
             frm_main = f;
             customerbll = new CustomerBLL();
+            bindingSource = new BindingSource();
+            bunifuCustomDataGrid1.Columns.Add("STT", "STT");
+            bindingSource.DataSource = customerbll.GetAllCustomer();
+            CreateDataGridView();
         }
 
         private void Custom_Theme()
@@ -43,27 +55,55 @@ namespace QUANLYLINHKIEN_PTUD
             //Chuyển Trạng Thái TextBox Thành Readonly
             Enable_TextBox(false);
         }
-        private void DuLieuTest()
-        {
-            string[] row0 = { "Nguyễn Óc chó", "11/11/1971", "0204963245",
-            "012346789", "Nguyenocngua@gmail.com" };
-            string[] row1 = { "Nguyễn Óc Bò", "11/9/1971", "0204993245",
-            "987654321", "PhatDauTrau@gmail.com" };
-            string[] row2 = { "Nguyễn Óc Trâu", "11/5/1971", "0496327745",
-            "246841012", "Phatmatlon@gmail.com" };
-
-            bunifuCustomDataGrid1.Rows.Add(row0);
-            bunifuCustomDataGrid1.Rows.Add(row1);
-            bunifuCustomDataGrid1.Rows.Add(row2);
-        }
+       
         private void frmCustomer_Load(object sender, EventArgs e)
         {
             Custom_Theme();
             rbtnSoDienThoai.Checked = true;
             btnLuu.Enabled = false;
-            bunifuCustomDataGrid1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            bunifuCustomDataGrid1.MultiSelect = false;
+        }
 
-            DuLieuTest();
+        private void FillTextBox()
+        {
+            txtHoKH.DataBindings.Clear();
+            txtCMND.DataBindings.Clear();
+            txtSDT.DataBindings.Clear();
+            txtEmail.DataBindings.Clear();
+            dtmNgaySinh.DataBindings.Clear();
+
+            txtHoKH.DataBindings.Add("Text", bindingSource, "Name");
+            txtEmail.DataBindings.Add("Text", bindingSource, "Email");
+            txtCMND.DataBindings.Add("Text", bindingSource, "IdentifyNumber");
+            txtSDT.DataBindings.Add("Text", bindingSource, "NumberPhone");
+            dtmNgaySinh.DataBindings.Add("Value", bindingSource, "BirthDate");
+        }
+        private void CreateDataGridView()
+        {
+            bindingSource.DataSource = customerbll.GetAllCustomer();
+
+            
+            bunifuCustomDataGrid1.DataSource = bindingSource;
+
+            bunifuCustomDataGrid1.Columns["Id"].Visible = false;
+            bunifuCustomDataGrid1.Columns["Orders"].Visible = false;
+
+            bunifuCustomDataGrid1.Columns["Name"].Width = 120;
+            bunifuCustomDataGrid1.Columns["Points"].Width = 70;
+            bunifuCustomDataGrid1.Columns["Email"].Width = 150;
+            bunifuCustomDataGrid1.Columns["STT"].Width = 30;
+            bunifuCustomDataGrid1.Columns["BirthDate"].Width = 110;
+            bunifuCustomDataGrid1.Columns["NumberPhone"].Width = 80;
+            bunifuCustomDataGrid1.Columns["IdentifyNumber"].Width = 80;
+            
+            bunifuCustomDataGrid1.Columns["Name"].HeaderText = "Họ tên";
+            bunifuCustomDataGrid1.Columns["BirthDate"].HeaderText = "Ngày sinh";
+            bunifuCustomDataGrid1.Columns["NumberPhone"].HeaderText = "Số điện thoại";
+            bunifuCustomDataGrid1.Columns["IdentifyNumber"].HeaderText = "Số CMND";
+            bunifuCustomDataGrid1.Columns["Points"].HeaderText = "Điểm Thưởng";
+
+            bunifuCustomDataGrid1.ClearSelection();
+            bunifuCustomDataGrid1.Rows[0].Selected = false;
 
         }
 
@@ -91,7 +131,6 @@ namespace QUANLYLINHKIEN_PTUD
         private void Enable_TextBox(bool s)
         {
             txtHoKH.Enabled = s;
-            txtTenKH.Enabled = s;
             txtCMND.Enabled = s;
             txtEmail.Enabled = s;
             txtSDT.Enabled = s;
@@ -101,7 +140,6 @@ namespace QUANLYLINHKIEN_PTUD
         private void Clear_TextBox()
         {
             txtHoKH.Clear();
-            txtTenKH.Clear();
             txtCMND.Clear();
             txtEmail.Clear();
             txtSDT.Clear();
@@ -115,6 +153,7 @@ namespace QUANLYLINHKIEN_PTUD
                 btnThemKH.Text = "Thêm";
                 btnLuu.Enabled = false;
                 btnSuaKH.Enabled = true;
+                bunifuCustomDataGrid1.ClearSelection();
                 Enable_TextBox(false);
                 btnLuu.Text = "Lưu";
             }
@@ -125,8 +164,11 @@ namespace QUANLYLINHKIEN_PTUD
                 txtHoKH.Focus();
                 btnLuu.Text = "Lưu Mới";
                 btnSuaKH.Enabled = false;
+                bunifuCustomDataGrid1.ClearSelection();
+                bunifuCustomDataGrid1.Rows[0].Selected = false;
                 btnLuu.Enabled = true;
                 btnThemKH.Text = "Hủy";
+                
             }
 
         }
@@ -146,7 +188,6 @@ namespace QUANLYLINHKIEN_PTUD
                 btnThemKH.Enabled = true;
                 btnLuu.Enabled = false;
                 Enable_TextBox(false);
-
             }
             else
             {
@@ -171,14 +212,34 @@ namespace QUANLYLINHKIEN_PTUD
                 btnSuaKH.Enabled = true;
                 CustomerCreateDto cus = new CustomerCreateDto()
                 {
-                    Name = txtHoKH.Text.ToString() + " " + txtTenKH.Text.ToString(),
+                    Name = txtHoKH.Text.ToString(),
                     NumberPhone = txtSDT.Text.ToString(),
                     Email = txtEmail.Text.ToString(),
+                    Points = 0,
                     IdentifyNumber = txtCMND.Text.ToString(),
                     BirthDate = dtmNgaySinh.Value
                 };
-                MessageBox.Show("Test123456");
-                //MessageBox.Show(customerbll.AddCustomer(cus));
+                Result result = null;
+                var taskCreateStaff = Task.Factory.StartNew(() => result = customerbll.AddCustomer(cus));
+                var taskOpenWaitingForm = Task.Factory.StartNew(() => openWaitingForm());
+                taskOpenWaitingForm.Wait();
+                taskCreateStaff.Wait();
+                
+                if (!result.IsSuccess)
+                {
+                    CreateDataGridView();
+                }                
+                if(result.IsSuccess)
+                {
+                    MessageBox.Show(result.ResultMessage, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }          
+                else
+                {
+                    MessageBox.Show(result.ResultMessage, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                
+                bindingSource.DataSource = customerbll.GetAllCustomer();
+                CreateDataGridView();
             }
             else
             {
@@ -188,7 +249,7 @@ namespace QUANLYLINHKIEN_PTUD
                 btnLuu.Enabled = false;
                 CustomerCreateDto cus = new CustomerCreateDto()
                 {
-                    Name = txtHoKH.Text.ToString() + " " + txtTenKH.Text.ToString(),
+                    Name = txtHoKH.Text.ToString(),
                     NumberPhone = txtSDT.Text.ToString(),
                     Email = txtEmail.Text.ToString(),
                     IdentifyNumber = txtCMND.Text.ToString(),
@@ -196,14 +257,23 @@ namespace QUANLYLINHKIEN_PTUD
                 };
 
                 int n = bunifuCustomDataGrid1.CurrentRow.Index;
-                //MessageBox.Show(customerbll.UpdateCustomer(cus,bunifuCustomDataGrid1.Rows[n].Cells[3].Value.ToString()));
+                customerbll.UpdateCustomer(cus, bunifuCustomDataGrid1.Rows[n].Cells[3].Value.ToString());
                 /*DialogResult dlr = MessageBox.Show("Bạn có muốn lưu không", "Thông báo", MessageBoxButtons.YesNo);
+                 * 
                 if(dlr == DialogResult.Yes)
                 {  
                     // Xác Nhận lưu
                 }*/
+                bindingSource.DataSource = customerbll.GetAllCustomer();
+                CreateDataGridView();
             }
 
+        }
+
+        private void openWaitingForm()
+        {
+            frmHandling frm = new frmHandling();
+            frm.ShowDialog();
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -227,44 +297,63 @@ namespace QUANLYLINHKIEN_PTUD
             }
             if (rbtnKhachHang.Checked == true)
             {
-                MessageBox.Show(customerbll.GetListCustomer(txt).ToString());
+                if(customerbll.GetListCustomer(txt).Count != 0)
+                {
+                    CreateDataGridView();
+                    bindingSource.DataSource = customerbll.GetListCustomer(txt);
+                }
+                else
+                {
+                    MessageBox.Show("Không Tìm Thấy");
+                }
+                
             }
             else if (rbtnSoDienThoai.Checked == true)
             {
-                if (customerbll.GetCustomerFromNumberPhone(txt) == null)
-
-                    MessageBox.Show("AHIJ");
-
+                if (customerbll.GetCustomerFromNumberPhone(txt).Count != 0)
+                {
+                    CreateDataGridView();
+                    bindingSource.DataSource = customerbll.GetCustomerFromNumberPhone(txt);
+                }
+                else
+                {
+                    MessageBox.Show("Không Tìm Thấy");
+                }
             }
         }
-        private void cbx_SapXep_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbx_SapXep_SelectedIndexChanged(object sender, EventArgs e)//lỗi
         {
-            if (cbx_SapXep.SelectedItem == "Tên từ A-Z")
+            if (cbx_SapXep.SelectedItem.ToString() == "Tên từ A-Z")
             {
-                bunifuCustomDataGrid1.Sort(bunifuCustomDataGrid1.Columns[0], ListSortDirection.Ascending);
+                
+                //bunifuCustomDataGrid1.Sort(bunifuCustomDataGrid1.Columns[1], ListSortDirection.Descending);
+
+                //bunifuCustomDataGrid1.Columns["Name"].SortMode = DataGridViewColumnSortMode.Automatic;
+                //bindingSource.DataSource = customerbll.GetAllCustomer().OrderBy(x => x.Name).ToList();
+                //CreateDataGridView();
+
             }
-            if (cbx_SapXep.SelectedItem == "Tên từ Z-A")
+            if (cbx_SapXep.SelectedItem.ToString() == "Tên từ Z-A")
             {
-                bunifuCustomDataGrid1.Sort(bunifuCustomDataGrid1.Columns[0], ListSortDirection.Descending);
+                //bunifuCustomDataGrid1.Sort(bunifuCustomDataGrid1.Columns[0], ListSortDirection.Descending);
             }
         }
 
         private void bunifuCustomDataGrid1_SelectionChanged(object sender, EventArgs e)
         {
-            int n = bunifuCustomDataGrid1.CurrentRow.Index;
+            if (bunifuCustomDataGrid1.SelectedRows.Count > 0)
+            {
+                if (Convert.ToInt32(bunifuCustomDataGrid1.SelectedRows[0].Cells["STT"].Value) != bunifuCustomDataGrid1.Rows.Count)
+                {
+                    FillTextBox();
+                }
+            }
+        }
 
-            String HoTen = bunifuCustomDataGrid1.Rows[n].Cells[0].Value.ToString();
-            HoTen = HoTen.Trim();
-            txtHoKH.Text = HoTen.Substring(0, HoTen.LastIndexOf(' '));
-            txtTenKH.Text = HoTen.Substring(HoTen.LastIndexOf(' ') + 1);
-            
-            String a = bunifuCustomDataGrid1.CurrentCell.Value.ToString();
-            dtmNgaySinh.Value = Convert.ToDateTime(bunifuCustomDataGrid1.Rows[n].Cells[1].Value);
-            //dtmNgaySinh.Value = DateTime.ParseExact(bunifuCustomDataGrid1.Rows[n].Cells[1].Value.ToString(),"dd-MM-yyyy", CultureInfo.InvariantCulture);
-
-            txtCMND.Text = bunifuCustomDataGrid1.Rows[n].Cells[2].Value.ToString();
-            txtSDT.Text = bunifuCustomDataGrid1.Rows[n].Cells[3].Value.ToString();
-            txtEmail.Text = bunifuCustomDataGrid1.Rows[n].Cells[4].Value.ToString();
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CreateDataGridView();
+            bindingSource.DataSource = customerbll.GetAllCustomer();
         }
     }
 }

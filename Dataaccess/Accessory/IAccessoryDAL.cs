@@ -9,7 +9,7 @@ namespace Dataaccess
 {
     public interface IAccessoryDAL
     {
-        List<Accessory> GetAllAccessories();
+        List<AccessoryGettingDTO> GetAllAccessories();
 
         Accessory GetAccessory(string id);
 

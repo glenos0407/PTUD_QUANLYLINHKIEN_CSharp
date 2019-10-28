@@ -77,10 +77,6 @@
     <Compile Include="Migrations\201910150118317_addAvatar.Designer.cs">
       <DependentUpon>201910150118317_addAvatar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201910220331193_removeRole.cs" />
-    <Compile Include="Migrations\201910220331193_removeRole.Designer.cs">
-      <DependentUpon>201910220331193_removeRole.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201910220333342_addRole.cs" />
     <Compile Include="Migrations\201910220333342_addRole.Designer.cs">
       <DependentUpon>201910220333342_addRole.cs</DependentUpon>
@@ -107,9 +103,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910150118317_addAvatar.resx">
       <DependentUpon>201910150118317_addAvatar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910220331193_removeRole.resx">
-      <DependentUpon>201910220331193_removeRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910220333342_addRole.resx">
       <DependentUpon>201910220333342_addRole.cs</DependentUpon>
