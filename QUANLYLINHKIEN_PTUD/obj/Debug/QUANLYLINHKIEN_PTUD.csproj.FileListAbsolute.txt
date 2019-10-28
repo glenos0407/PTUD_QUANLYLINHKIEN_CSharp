@@ -382,3 +382,40 @@ C:\Users\GlenOrient\Desktop\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug
 C:\Users\GlenOrient\Desktop\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.csproj.CopyComplete
 C:\Users\GlenOrient\Desktop\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.exe
 C:\Users\GlenOrient\Desktop\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.pdb
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\QUANLYLINHKIEN_PTUD.exe.config
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.exe
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.pdb
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\QUANLYLINHKIEN_PTUD.exe
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\QUANLYLINHKIEN_PTUD.pdb
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\AutoMapper.dll
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Business.dll
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\EntityFramework.dll
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Model.dll
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\System.ValueTuple.dll
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Dataaccess.dll
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Business.pdb
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Model.pdb
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\AutoMapper.pdb
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\AutoMapper.xml
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\EntityFramework.xml
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\System.ValueTuple.xml
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Dataaccess.pdb
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.csprojResolveAssemblyReference.cache
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.frmAccessories.resources
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.frmBillManager.resources
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.frmChangePassword.resources
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.frmCustomer.resources
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.frmFileImport.resources
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.frmHandling.resources
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.frmLoading.resources
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.frmLogin.resources
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.frmMainUI_Staff.resources
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.frmReport.resources
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.frmResult.resources
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.frmSale.resources
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.frmStaffManager.resources
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.Properties.Resources.resources
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.Resource_Image.resources
+C:\Users\Student\Desktop\New folder\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.csproj.GenerateResource.Cache

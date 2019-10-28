@@ -30,6 +30,7 @@ namespace QUANLYLINHKIEN_PTUD
             bunifuCustomDataGrid1.ReadOnly = true;
             bunifuCustomDataGrid1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             CreateDataGridView();
+            
         }
 
         public frmCustomer(frmMainUI_Staff f)
@@ -101,6 +102,9 @@ namespace QUANLYLINHKIEN_PTUD
             bunifuCustomDataGrid1.Columns["IdentifyNumber"].HeaderText = "Số CMND";
             bunifuCustomDataGrid1.Columns["Points"].HeaderText = "Điểm Thưởng";
 
+            bunifuCustomDataGrid1.ClearSelection();
+            bunifuCustomDataGrid1.Rows[0].Selected = false;
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -149,6 +153,7 @@ namespace QUANLYLINHKIEN_PTUD
                 btnThemKH.Text = "Thêm";
                 btnLuu.Enabled = false;
                 btnSuaKH.Enabled = true;
+                bunifuCustomDataGrid1.ClearSelection();
                 Enable_TextBox(false);
                 btnLuu.Text = "Lưu";
             }
@@ -232,7 +237,7 @@ namespace QUANLYLINHKIEN_PTUD
                 {
                     MessageBox.Show(result.ResultMessage, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
-                customerbll.AddCustomer(cus);
+                
                 bindingSource.DataSource = customerbll.GetAllCustomer();
                 CreateDataGridView();
             }
@@ -320,9 +325,10 @@ namespace QUANLYLINHKIEN_PTUD
         {
             if (cbx_SapXep.SelectedItem.ToString() == "Tên từ A-Z")
             {
+                
                 //bunifuCustomDataGrid1.Sort(bunifuCustomDataGrid1.Columns[1], ListSortDirection.Descending);
 
-                bunifuCustomDataGrid1.Columns["Name"].SortMode = DataGridViewColumnSortMode.Automatic;
+                //bunifuCustomDataGrid1.Columns["Name"].SortMode = DataGridViewColumnSortMode.Automatic;
                 //bindingSource.DataSource = customerbll.GetAllCustomer().OrderBy(x => x.Name).ToList();
                 //CreateDataGridView();
 
