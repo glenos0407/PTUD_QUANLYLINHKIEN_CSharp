@@ -73,7 +73,6 @@ namespace QUANLYLINHKIEN_PTUD
             }
             else
             {
-
                     Thread th = new Thread(open_login);
 #pragma warning disable CS0618 // Type or member is obsolete
                     th.ApartmentState = ApartmentState.STA;
@@ -84,7 +83,6 @@ namespace QUANLYLINHKIEN_PTUD
 
                     timer_loading.Stop();
                     this.Close();
-                
             }
         }
     }

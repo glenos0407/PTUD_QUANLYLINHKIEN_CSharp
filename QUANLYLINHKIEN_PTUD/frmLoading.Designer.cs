@@ -34,11 +34,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbPercent = new System.Windows.Forms.Label();
             this.b_pbrLoading = new Bunifu.Framework.UI.BunifuProgressBar();
             this.picbx_Logo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lbVersion = new System.Windows.Forms.Label();
-            this.lbPercent = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbx_Logo)).BeginInit();
@@ -84,16 +84,28 @@
             this.panel2.Size = new System.Drawing.Size(584, 288);
             this.panel2.TabIndex = 2;
             // 
+            // lbPercent
+            // 
+            this.lbPercent.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbPercent.AutoSize = true;
+            this.lbPercent.BackColor = System.Drawing.Color.Transparent;
+            this.lbPercent.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPercent.Location = new System.Drawing.Point(279, 271);
+            this.lbPercent.Name = "lbPercent";
+            this.lbPercent.Size = new System.Drawing.Size(26, 17);
+            this.lbPercent.TabIndex = 5;
+            this.lbPercent.Text = "0%";
+            // 
             // b_pbrLoading
             // 
             this.b_pbrLoading.BackColor = System.Drawing.Color.Silver;
             this.b_pbrLoading.BorderRadius = 5;
-            this.b_pbrLoading.Location = new System.Drawing.Point(190, 259);
-            this.b_pbrLoading.Margin = new System.Windows.Forms.Padding(7);
+            this.b_pbrLoading.Location = new System.Drawing.Point(189, 258);
+            this.b_pbrLoading.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.b_pbrLoading.MaximumValue = 100;
             this.b_pbrLoading.Name = "b_pbrLoading";
             this.b_pbrLoading.ProgressColor = System.Drawing.Color.Green;
-            this.b_pbrLoading.Size = new System.Drawing.Size(205, 6);
+            this.b_pbrLoading.Size = new System.Drawing.Size(205, 5);
             this.b_pbrLoading.TabIndex = 3;
             this.b_pbrLoading.Value = 0;
             // 
@@ -126,18 +138,6 @@
             this.lbVersion.Size = new System.Drawing.Size(51, 17);
             this.lbVersion.TabIndex = 4;
             this.lbVersion.Text = "Version";
-            // 
-            // lbPercent
-            // 
-            this.lbPercent.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbPercent.AutoSize = true;
-            this.lbPercent.BackColor = System.Drawing.Color.Transparent;
-            this.lbPercent.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPercent.Location = new System.Drawing.Point(279, 271);
-            this.lbPercent.Name = "lbPercent";
-            this.lbPercent.Size = new System.Drawing.Size(26, 17);
-            this.lbPercent.TabIndex = 5;
-            this.lbPercent.Text = "0%";
             // 
             // frmLoading
             // 

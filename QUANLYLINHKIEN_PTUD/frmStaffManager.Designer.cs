@@ -84,7 +84,7 @@
             // txt_Identify
             // 
             this.txt_Identify.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Identify.Location = new System.Drawing.Point(415, 134);
+            this.txt_Identify.Location = new System.Drawing.Point(414, 134);
             this.txt_Identify.Name = "txt_Identify";
             this.txt_Identify.Size = new System.Drawing.Size(280, 33);
             this.txt_Identify.TabIndex = 4;
@@ -108,7 +108,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(338, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 25);
+            this.label1.Size = new System.Drawing.Size(70, 25);
             this.label1.TabIndex = 30;
             this.label1.Text = "Họ Tên";
             // 
