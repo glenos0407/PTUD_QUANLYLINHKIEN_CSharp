@@ -125,7 +125,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABC
-        AwAAAk1TRnQBSQFMAwEBAAFoAQABaAEAARkBAAEZAQAE/wERAQAI/wFCAU0BNgcAATYDAAEoAwABZAMA
+        AwAAAk1TRnQBSQFMAwEBAAFwAQABcAEAARkBAAEZAQAE/wERAQAI/wFCAU0BNgcAATYDAAEoAwABZAMA
         ARkDAAEBAQABEAUAAYgBE/8A/wCSAAH/AX8B/wF/wgAB/wF/Ad4BewH/AX8B/wF/vgAB/wF/Ad4BewH/
         AX8B3gF7vgAB/wF/Ad4BewH/AX8B3gF7sAAB/wF/Ad4BewHeAXsB3gF7Af8BfwH/AX8CAAH/AX8B3gF7
         Af8BfwHeAXuuAAH/AX8B3gF7Ad4BewHeAXsB3gF7Ad4BewHeAXsB/wF/Ad4BewHeAXsB/wF/Ad4Be64A
@@ -141,21 +141,6 @@
         DAAB8QH8AX8BgAwAAvgB/wGADAAB/AEBAf8BgAwAAf8BAwH/AYAMAAP/AYAMAAP/AYAMAAP/AYAMAAs=
 </value>
   </data>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>53</value>
   </metadata>

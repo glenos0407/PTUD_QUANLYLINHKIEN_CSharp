@@ -28,8 +28,9 @@ namespace Dataaccess
         {
             return db.Customers.FirstOrDefault(x => x.Id == id);
         }
-        public Result AddCustomer(CustomerCreateDto CustomerDto)
+        public Result AddOrUpdateCustomer(CustomerCreateDto CustomerDto)
         {
+            var entityTemp = db.Customers.FirstOrDefault(x => x.Email.Equals(CustomerDto.Email));
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<CustomerCreateDto, Customer>();
@@ -37,7 +38,19 @@ namespace Dataaccess
 
             IMapper mapper = config.CreateMapper();
             var cus = mapper.Map<CustomerCreateDto, Customer>(CustomerDto);
-            db.Customers.Add(cus);
+
+            if(entityTemp == null)
+            {
+                db.Customers.Add(cus);
+            }
+            else
+            {
+                entityTemp.Name = CustomerDto.Name;
+                entityTemp.NumberPhone = CustomerDto.NumberPhone;
+                entityTemp.IdentifyNumber = CustomerDto.IdentifyNumber;
+                entityTemp.BirthDate = CustomerDto.BirthDate;
+                entityTemp.Email = CustomerDto.Email;
+            }
             
             try
             {
@@ -58,48 +71,7 @@ namespace Dataaccess
             }
             return new Result
             {
-                ResultMessage = "Tạo Khách Hàng thành công",
-                IsSuccess = true
-            };
-        }
-
-        public Result UpdateCustomer(CustomerCreateDto cusdto,String email)
-        {
-            var entityTemp = db.Staffs.FirstOrDefault(x => x.Email.Equals(email));
-            var config = new MapperConfiguration(cfg =>
-            {
-                cfg.CreateMap<CustomerCreateDto, Customer>();
-            });
-
-            IMapper mapper = config.CreateMapper();
-            var a = mapper.Map<CustomerCreateDto, Customer>(cusdto);
-
-            entityTemp.Name = cusdto.Name;
-            entityTemp.NumberPhone = cusdto.NumberPhone;
-            entityTemp.IdentifyNumber = cusdto.IdentifyNumber;
-            entityTemp.BirthDate = cusdto.BirthDate;
-            entityTemp.Email = cusdto.Email;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbEntityValidationException e)
-            {
-                return new Result
-                {
-                    ResultMessage = e
-                        .EntityValidationErrors
-                        .LastOrDefault()
-                        .ValidationErrors
-                        .LastOrDefault()
-                        .ErrorMessage,
-                    IsSuccess = false
-                };
-            }
-            return new Result
-            {
-                ResultMessage = "Sửa Khách Hàng thành công",
+                ResultMessage = "Thao Tác thành công",
                 IsSuccess = true
             };
         }
