@@ -81,6 +81,14 @@
     <Compile Include="Migrations\201910220333342_addRole.Designer.cs">
       <DependentUpon>201910220333342_addRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910300402496_updateAccessory.cs" />
+    <Compile Include="Migrations\201910300402496_updateAccessory.Designer.cs">
+      <DependentUpon>201910300402496_updateAccessory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910302045429_updateProducer.cs" />
+    <Compile Include="Migrations\201910302045429_updateProducer.Designer.cs">
+      <DependentUpon>201910302045429_updateProducer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLyLinhKienDBContext.cs" />
@@ -106,6 +114,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910220333342_addRole.resx">
       <DependentUpon>201910220333342_addRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910300402496_updateAccessory.resx">
+      <DependentUpon>201910300402496_updateAccessory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910302045429_updateProducer.resx">
+      <DependentUpon>201910302045429_updateProducer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

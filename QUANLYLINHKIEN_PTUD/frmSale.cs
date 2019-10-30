@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,7 +17,8 @@ namespace QUANLYLINHKIEN_PTUD
     {
         frmMainUI_Staff fmain;
         AccesoryBLL accesoryBLL;
-            
+        BindingSource bindingSource;
+
         public frmSale()
         {
             InitializeComponent();
@@ -24,6 +27,8 @@ namespace QUANLYLINHKIEN_PTUD
             cbx_NhaSanXuat.ForeColor = Color.DarkGray;
             cbx_LoaiLinhKien.ForeColor = Color.DarkGray;
             this.FormBorderStyle = FormBorderStyle.None;
+            bindingSource = new BindingSource();
+            //bindingSource.DataSource
         }
 
         public frmSale(frmMainUI_Staff fm)
@@ -35,6 +40,7 @@ namespace QUANLYLINHKIEN_PTUD
             cbx_LoaiLinhKien.ForeColor = Color.DarkGray;
             this.FormBorderStyle = FormBorderStyle.None;
             fmain = fm;
+            bindingSource = new BindingSource();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -64,11 +70,11 @@ namespace QUANLYLINHKIEN_PTUD
         private void CreateDataGridView()
         {
             bindingSource.DataSource = accesoryBLL.GetAllAccessories();
-
             dgv_Accessories.Columns.Add("STT", "STT");
             dgv_Accessories.DataSource = bindingSource;
-
+            Custom_GridView();
             dgv_Accessories.Columns["Id"].Visible = false;
+            //dgv_Accessories.Columns["Id"].HeaderText = "STT";
             dgv_Accessories.Columns["Avatar"].Visible = false;
             dgv_Accessories.Columns["GoodsReceiptDate"].Visible = false;
             dgv_Accessories.Columns["WarrantyTime"].Visible = false;
@@ -110,11 +116,12 @@ namespace QUANLYLINHKIEN_PTUD
             //    ProducerId 
             //    CategoryId 
 
-            dgv_Accessories.Columns["STT"].Width = 45;
+            dgv_Accessories.Columns["STT"].Width = 30;
+            dgv_Accessories.Columns["STT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_Accessories.Columns["Name"].Width = 200;
-            dgv_Accessories.Columns["Price"].Width = 120;
-            dgv_Accessories.Columns["Inventory"].Width = 120;
-            dgv_Accessories.Columns["CalculationUnit"].Width = 150;
+            dgv_Accessories.Columns["Price"].Width = 80;
+            dgv_Accessories.Columns["Inventory"].Width = 50;
+            dgv_Accessories.Columns["CalculationUnit"].Width = 40;
 
             dgv_Accessories.Columns["Name"].HeaderText = "Tên Linh Kiện";
             dgv_Accessories.Columns["Inventory"].HeaderText = "Hiện Có";
@@ -127,7 +134,6 @@ namespace QUANLYLINHKIEN_PTUD
             //{
             //    dgv_StaffInfor.Rows[i].Cells[0].Value = (i + 1).ToString();
             //}
-            Custom_GridView();
         }
 
         private void Custom_GridView()
@@ -137,6 +143,7 @@ namespace QUANLYLINHKIEN_PTUD
                 column.DefaultCellStyle.Font = new Font("Segoe UI", 10);
                 column.HeaderCell.Style.Font = new Font("Segoe UI Semibold", 12);
             }
+            dgv_Accessories.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv_Accessories.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
@@ -144,6 +151,70 @@ namespace QUANLYLINHKIEN_PTUD
         {
             accesoryBLL = new AccesoryBLL();
             CreateDataGridView();
+        }
+
+        private void dgv_Accessories_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            dgv_Accessories.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
+        }
+
+        private void dgv_Accessories_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgv_Accessories.SelectedRows.Count > 0)
+            {
+                if (Convert.ToInt32(dgv_Accessories.SelectedRows[0].Cells["STT"].Value) != dgv_Accessories.Rows.Count)
+                {
+                    Label lb_Name = new Label();
+                    lb_Name.DataBindings.Add("Text", bindingSource, "Name");
+                    //lb_Name.Location = new Point(20, 205);
+                    lb_Name.AutoSize = false;
+                    lb_Name.Size = new Size(300, 45);
+                    lb_Name.Anchor = AnchorStyles.Top;
+                    lb_Name.Dock = DockStyle.Top;
+                    groupBox2.Controls.Add(lb_Name);
+                    picbx_LinhKien.Dock = DockStyle.Top;
+
+                    Label lb_TitleCPU = new Label();
+                    Label lb_ProcessingSpeed = new Label();
+                    Label lb_Socket = new Label();
+
+                    var outPutDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
+                    outPutDirectory = outPutDirectory.Replace(@"\QUANLYLINHKIEN_PTUD\bin\Debug", @"\Dataaccess\Images\AccessoryAvatar");
+
+                    outPutDirectory += @"\";
+                    outPutDirectory += dgv_Accessories.SelectedRows[0].Cells["Avatar"].Value;
+                    string directoryPath = new Uri(outPutDirectory).LocalPath;
+
+                    picbx_LinhKien.Image = new Bitmap(directoryPath);
+                }
+            }
+                  
+
+
+
+            //if (dgv_Accessories.SelectedRows[0].Cells["Id"].Value.ToString().Contains("CPU"))
+            //{
+            //    Label lb_Name = new Label();
+            //    lb_Name.Text = "Tên: ";
+            //    Label lb_Name = new Label();
+            //    lb_Name.Text = "Tên: ";
+            //}
+
+
+            //Label lb_Name = new Label();
+            //lb_Name.Text = "Tên: "; 
+            //Label lb_Name = new Label();
+            //lb_Name.Text = "Tên: ";
+            //Label lb_Name = new Label();
+            //lb_Name.Text = "Tên: "; 
+            //Label lb_Name = new Label();
+            //lb_Name.Text = "Tên: "; 
+            //Label lb_Name = new Label();
+            //lb_Name.Text = "Tên: "; 
+            //Label lb_Name = new Label();
+            //lb_Name.Text = "Tên: "; 
+            //Label lb_Name = new Label();
+            //lb_Name.Text = "Tên: ";
         }
     }
 }
