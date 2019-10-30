@@ -20,15 +20,11 @@ namespace Business
             return cus.GetAllCustomer();
         }
 
-        public Result AddCustomer(CustomerCreateDto a)
+        public Result AddOrUpdateCustomer(CustomerCreateDto CustomerDto)
         {
-            return cus.AddCustomer(a);
+            return cus.AddOrUpdateCustomer(CustomerDto);
         }
 
-        public Result UpdateCustomer(CustomerCreateDto cusdto, String email)
-        {
-            return cus.UpdateCustomer(cusdto,email);
-        }
         public List<Customer> GetListCustomer(String name)
         {
             return cus.GetListCustomer(name);

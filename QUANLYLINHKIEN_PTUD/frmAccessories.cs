@@ -16,12 +16,14 @@ namespace QUANLYLINHKIEN_PTUD
         frmMainUI_Staff frm_main;
         AccesoryBLL accsorybll;
         bool isEnter = false;
+        BindingSource bindingSource;
 
         public frmAccessories()
         {
             InitializeComponent();
             accsorybll = new AccesoryBLL();
-            //MessageBox.Show(accsorybll.GetAllAccessories().ToString());
+            bindingSource = new BindingSource();
+            bunifuCustomDataGrid1.Columns.Add("STT", "STT");
             bunifuCustomDataGrid1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
@@ -30,6 +32,9 @@ namespace QUANLYLINHKIEN_PTUD
             InitializeComponent();
             frm_main = f;
             radioButton1.Checked = true;
+            accsorybll = new AccesoryBLL();
+            bindingSource = new BindingSource();
+            bunifuCustomDataGrid1.Columns.Add("STT", "STT");
         }
 
         private void Custom_Theme()
@@ -38,6 +43,34 @@ namespace QUANLYLINHKIEN_PTUD
             radioButton1.Checked = true;
         }
 
+        private void CreateDataGridView()
+        {
+            bindingSource.DataSource = accsorybll.GetAllAccessories();
+
+
+            bunifuCustomDataGrid1.DataSource = bindingSource;
+
+            bunifuCustomDataGrid1.Columns["Id"].Visible = false;
+            bunifuCustomDataGrid1.Columns["Avatar"].Visible = false;
+
+            //bunifuCustomDataGrid1.Columns["Name"].Width = 120;
+            //bunifuCustomDataGrid1.Columns["Points"].Width = 70;
+            //bunifuCustomDataGrid1.Columns["Email"].Width = 150;
+            //bunifuCustomDataGrid1.Columns["STT"].Width = 30;
+            //bunifuCustomDataGrid1.Columns["BirthDate"].Width = 110;
+            //bunifuCustomDataGrid1.Columns["NumberPhone"].Width = 80;
+            //bunifuCustomDataGrid1.Columns["IdentifyNumber"].Width = 80;
+
+            //bunifuCustomDataGrid1.Columns["Name"].HeaderText = "Họ tên";
+            //bunifuCustomDataGrid1.Columns["BirthDate"].HeaderText = "Ngày sinh";
+            //bunifuCustomDataGrid1.Columns["NumberPhone"].HeaderText = "Số điện thoại";
+            //bunifuCustomDataGrid1.Columns["IdentifyNumber"].HeaderText = "Số CMND";
+            //bunifuCustomDataGrid1.Columns["Points"].HeaderText = "Điểm Thưởng";
+
+            bunifuCustomDataGrid1.ClearSelection();
+
+
+        }
         private void frmAccessories_Load(object sender, EventArgs e)
         {
             Custom_Theme();
@@ -86,21 +119,26 @@ namespace QUANLYLINHKIEN_PTUD
                 MessageBox.Show("Hãy Nhập Thông Tin Tìm kiếm");
                 return;
             }
-            //MessageBox.Show(accsorybll.GetListAccessories(txt, radioButton3.Checked, radioButton2.Checked, radioButton1.Checked).ToString());
-            MessageBox.Show("testTK");
+            bindingSource.DataSource = accsorybll.GetListAccessories(txt, radioButton3.Checked, radioButton2.Checked, radioButton1.Checked).ToString();
         }
 
         private void cbx_GiaTien_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int n = 0;///colomn giá tiền *****************************************************
-            if (cbx_GiaTien.SelectedItem == "Giá Tăng Dần")
+            if (cbx_GiaTien.SelectedItem.ToString() == "Giá Tăng Dần")
             {
-                bunifuCustomDataGrid1.Sort(bunifuCustomDataGrid1.Columns[n], ListSortDirection.Ascending);
+                //bunifuCustomDataGrid1.Sort(bunifuCustomDataGrid1.Columns[n], ListSortDirection.Ascending);
+                bindingSource.DataSource = accsorybll.GetAllAccessories().OrderBy(x => x.Price).ToList();
             }
-            if (cbx_GiaTien.SelectedItem == "Giá Giảm Dần")
+            if (cbx_GiaTien.SelectedItem.ToString() == "Giá Giảm Dần")
             {
-                bunifuCustomDataGrid1.Sort(bunifuCustomDataGrid1.Columns[n], ListSortDirection.Descending);
+                //bunifuCustomDataGrid1.Sort(bunifuCustomDataGrid1.Columns[n], ListSortDirection.Descending);
+                bindingSource.DataSource = accsorybll.GetAllAccessories().OrderByDescending(x => x.Price).ToList();
             }
+        }
+
+        private void bunifuCustomDataGrid1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
         }
     }
 }
