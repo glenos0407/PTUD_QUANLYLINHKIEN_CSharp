@@ -15,13 +15,14 @@ namespace QUANLYLINHKIEN_PTUD
     public partial class frmMainUI_Staff : Form
     {
         bool isClickShow = false;
-
-        public frmMainUI_Staff()
+        static int staffId;
+        public frmMainUI_Staff(int _staffId)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
             this.StartPosition = FormStartPosition.CenterScreen;
+            staffId = _staffId;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -231,7 +232,7 @@ namespace QUANLYLINHKIEN_PTUD
         {
             this.pnlRight.Controls.Clear();
 
-            frmSale fa = new frmSale(this);
+            frmSale fa = new frmSale(this, staffId);
             fa.TopLevel = false;
             fa.Dock = DockStyle.Fill;
             fa.FormBorderStyle = FormBorderStyle.None;

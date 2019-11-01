@@ -62,6 +62,7 @@
     <Compile Include="DTO\Accessory\AccessoryCreatingDTO.cs" />
     <Compile Include="DTO\Accessory\AccessoryGettingDTO.cs" />
     <Compile Include="DTO\Customer\CustomerCreateDto.cs" />
+    <Compile Include="DTO\OrderDetail\OrderDetail.cs" />
     <Compile Include="DTO\Staff\StaffCreatingDto.cs" />
     <Compile Include="DTO\Staff\StaffGettingDto.cs" />
     <Compile Include="Enum\ERole.cs" />

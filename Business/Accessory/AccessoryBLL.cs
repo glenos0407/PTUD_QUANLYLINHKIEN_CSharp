@@ -25,9 +25,9 @@ namespace Business
             return acc.GetAccessory(id);
         }
 
-        public List<Accessory> GetListAccessories(String name, bool Producer1, bool Category1, bool AccessoriyName1)
+        public List<AccessoryGettingDTO> GetAccessoriesByFilter(int producerId, string categoryId, string accessoryName)
         {
-            return acc.GetListAccessories(name, Producer1, Category1, AccessoriyName1);
+            return acc.GetListAccessoriesByFilter(producerId, categoryId, accessoryName);
         }
     }
 }

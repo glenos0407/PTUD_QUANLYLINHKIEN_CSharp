@@ -22,11 +22,9 @@ namespace Model
         public double Price { get; set; }
         public string WarrantyTime { get; set; }
         public string CalculationUnit { get; set; }
-        public string Description { get; set; }
         public string CPU { get; set; }
         public string Cores { get; set; }
         public string Threads { get; set; }
-        public string Generation { get; set; }
         public string ProcessingSpeed { get; set; }
         public string Size { get; set; }
         public string Socket { get; set; }

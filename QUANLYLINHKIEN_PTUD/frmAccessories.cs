@@ -119,21 +119,21 @@ namespace QUANLYLINHKIEN_PTUD
                 MessageBox.Show("Hãy Nhập Thông Tin Tìm kiếm");
                 return;
             }
-            bindingSource.DataSource = accsorybll.GetListAccessories(txt, radioButton3.Checked, radioButton2.Checked, radioButton1.Checked).ToString();
+            //bindingSource.DataSource = accsorybll.GetListAccessories(txt, radioButton3.Checked, radioButton2.Checked, radioButton1.Checked).ToString();
         }
 
         private void cbx_GiaTien_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbx_GiaTien.SelectedItem.ToString() == "Giá Tăng Dần")
-            {
-                //bunifuCustomDataGrid1.Sort(bunifuCustomDataGrid1.Columns[n], ListSortDirection.Ascending);
-                bindingSource.DataSource = accsorybll.GetAllAccessories().OrderBy(x => x.Price).ToList();
-            }
-            if (cbx_GiaTien.SelectedItem.ToString() == "Giá Giảm Dần")
-            {
-                //bunifuCustomDataGrid1.Sort(bunifuCustomDataGrid1.Columns[n], ListSortDirection.Descending);
-                bindingSource.DataSource = accsorybll.GetAllAccessories().OrderByDescending(x => x.Price).ToList();
-            }
+            //if (cbx_GiaTien.SelectedItem.ToString() == "Giá Tăng Dần")
+            //{
+            //    //bunifuCustomDataGrid1.Sort(bunifuCustomDataGrid1.Columns[n], ListSortDirection.Ascending);
+            //    bindingSource.DataSource = accsorybll.GetAllAccessories().OrderBy(x => x.Price).ToList();
+            //}
+            //if (cbx_GiaTien.SelectedItem.ToString() == "Giá Giảm Dần")
+            //{
+            //    //bunifuCustomDataGrid1.Sort(bunifuCustomDataGrid1.Columns[n], ListSortDirection.Descending);
+            //    bindingSource.DataSource = accsorybll.GetAllAccessories().OrderByDescending(x => x.Price).ToList();
+            //}
         }
 
         private void bunifuCustomDataGrid1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)

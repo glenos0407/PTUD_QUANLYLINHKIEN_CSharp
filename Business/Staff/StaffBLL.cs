@@ -15,7 +15,7 @@ namespace Business
         {
             dal = new StaffDAL();
         }
-        public bool SignIn(string email, string password)
+        public int SignIn(string email, string password)
         {
             return dal.SignIn(email, password);
         }

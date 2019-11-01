@@ -30,20 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSale));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_PhoneCustomer = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupbox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.cbx_NhaSanXuat = new System.Windows.Forms.ComboBox();
-            this.cbx_LoaiLinhKien = new System.Windows.Forms.ComboBox();
+            this.cbx_Producer = new System.Windows.Forms.ComboBox();
+            this.cbx_Category = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -57,19 +57,28 @@
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_CreateOrder = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.lbDescription = new System.Windows.Forms.Label();
             this.picbx_LinhKien = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lb_TongTien = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.bunifuCustomDataGrid2 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.dgv_Cart = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.dgv_Accessories = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameAccessory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CalculationUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Avatar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupbox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -81,7 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picbx_LinhKien)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Cart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Accessories)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,12 +127,12 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Họ Tên";
             // 
-            // textBox1
+            // txt_PhoneCustomer
             // 
-            this.textBox1.Location = new System.Drawing.Point(94, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 25);
-            this.textBox1.TabIndex = 4;
+            this.txt_PhoneCustomer.Location = new System.Drawing.Point(94, 28);
+            this.txt_PhoneCustomer.Name = "txt_PhoneCustomer";
+            this.txt_PhoneCustomer.Size = new System.Drawing.Size(191, 25);
+            this.txt_PhoneCustomer.TabIndex = 4;
             // 
             // textBox2
             // 
@@ -137,7 +146,7 @@
             this.groupbox1.Controls.Add(this.label2);
             this.groupbox1.Controls.Add(this.textBox2);
             this.groupbox1.Controls.Add(this.label3);
-            this.groupbox1.Controls.Add(this.textBox1);
+            this.groupbox1.Controls.Add(this.txt_PhoneCustomer);
             this.groupbox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupbox1.ForeColor = System.Drawing.Color.White;
             this.groupbox1.Location = new System.Drawing.Point(12, 7);
@@ -165,27 +174,27 @@
             this.txtSearch.Size = new System.Drawing.Size(329, 25);
             this.txtSearch.TabIndex = 7;
             // 
-            // cbx_NhaSanXuat
+            // cbx_Producer
             // 
-            this.cbx_NhaSanXuat.FormattingEnabled = true;
-            this.cbx_NhaSanXuat.Items.AddRange(new object[] {
+            this.cbx_Producer.FormattingEnabled = true;
+            this.cbx_Producer.Items.AddRange(new object[] {
             "Nhà Sản Xuất"});
-            this.cbx_NhaSanXuat.Location = new System.Drawing.Point(9, 61);
-            this.cbx_NhaSanXuat.Name = "cbx_NhaSanXuat";
-            this.cbx_NhaSanXuat.Size = new System.Drawing.Size(190, 25);
-            this.cbx_NhaSanXuat.TabIndex = 12;
-            this.cbx_NhaSanXuat.Enter += new System.EventHandler(this.cbxNhaSanXuat_Enter);
+            this.cbx_Producer.Location = new System.Drawing.Point(9, 61);
+            this.cbx_Producer.Name = "cbx_Producer";
+            this.cbx_Producer.Size = new System.Drawing.Size(190, 25);
+            this.cbx_Producer.TabIndex = 12;
+            this.cbx_Producer.Enter += new System.EventHandler(this.cbxNhaSanXuat_Enter);
             // 
-            // cbx_LoaiLinhKien
+            // cbx_Category
             // 
-            this.cbx_LoaiLinhKien.FormattingEnabled = true;
-            this.cbx_LoaiLinhKien.Items.AddRange(new object[] {
+            this.cbx_Category.FormattingEnabled = true;
+            this.cbx_Category.Items.AddRange(new object[] {
             "Loại Linh Kiện"});
-            this.cbx_LoaiLinhKien.Location = new System.Drawing.Point(211, 61);
-            this.cbx_LoaiLinhKien.Name = "cbx_LoaiLinhKien";
-            this.cbx_LoaiLinhKien.Size = new System.Drawing.Size(190, 25);
-            this.cbx_LoaiLinhKien.TabIndex = 13;
-            this.cbx_LoaiLinhKien.Enter += new System.EventHandler(this.cbx_LoaiLinhKien_Enter);
+            this.cbx_Category.Location = new System.Drawing.Point(211, 61);
+            this.cbx_Category.Name = "cbx_Category";
+            this.cbx_Category.Size = new System.Drawing.Size(190, 25);
+            this.cbx_Category.TabIndex = 13;
+            this.cbx_Category.Enter += new System.EventHandler(this.cbx_LoaiLinhKien_Enter);
             // 
             // groupBox3
             // 
@@ -193,9 +202,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.btnSearch);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.cbx_LoaiLinhKien);
+            this.groupBox3.Controls.Add(this.cbx_Category);
             this.groupBox3.Controls.Add(this.txtSearch);
-            this.groupBox3.Controls.Add(this.cbx_NhaSanXuat);
+            this.groupBox3.Controls.Add(this.cbx_Producer);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(319, 6);
@@ -218,12 +227,13 @@
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Tìm Kiếm";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel1.Controls.Add(this.bindingNavigator1);
-            this.panel1.Location = new System.Drawing.Point(285, 0);
+            this.panel1.Location = new System.Drawing.Point(301, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(456, 41);
             this.panel1.TabIndex = 15;
@@ -324,20 +334,21 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 41);
             // 
-            // button2
+            // btn_CreateOrder
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.DarkCyan;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(910, 7);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 53);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "In Hóa Đơn";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_CreateOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_CreateOrder.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_CreateOrder.FlatAppearance.BorderSize = 0;
+            this.btn_CreateOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_CreateOrder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CreateOrder.ForeColor = System.Drawing.Color.White;
+            this.btn_CreateOrder.Location = new System.Drawing.Point(910, 7);
+            this.btn_CreateOrder.Name = "btn_CreateOrder";
+            this.btn_CreateOrder.Size = new System.Drawing.Size(134, 53);
+            this.btn_CreateOrder.TabIndex = 14;
+            this.btn_CreateOrder.Text = "In Hóa Đơn";
+            this.btn_CreateOrder.UseVisualStyleBackColor = false;
+            this.btn_CreateOrder.Click += new System.EventHandler(this.btn_CreateOrder_Click);
             // 
             // button3
             // 
@@ -345,7 +356,7 @@
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(910, 67);
             this.button3.Name = "button3";
@@ -383,7 +394,7 @@
             // 
             this.panel4.Controls.Add(this.groupBox3);
             this.panel4.Controls.Add(this.groupbox1);
-            this.panel4.Controls.Add(this.button2);
+            this.panel4.Controls.Add(this.btn_CreateOrder);
             this.panel4.Controls.Add(this.button3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 25);
@@ -393,23 +404,50 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnAdd);
+            this.groupBox2.Controls.Add(this.lbDescription);
             this.groupBox2.Controls.Add(this.picbx_LinhKien);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(728, 137);
+            this.groupBox2.Location = new System.Drawing.Point(761, 137);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(328, 455);
+            this.groupBox2.Size = new System.Drawing.Size(295, 455);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "CHI TIẾT ";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(3, 411);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(289, 41);
+            this.btnAdd.TabIndex = 2;
+            this.btnAdd.Text = "THÊM VÀO GIỎ HÀNG";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // lbDescription
+            // 
+            this.lbDescription.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbDescription.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDescription.Location = new System.Drawing.Point(3, 198);
+            this.lbDescription.Name = "lbDescription";
+            this.lbDescription.Padding = new System.Windows.Forms.Padding(5, 10, 5, 0);
+            this.lbDescription.Size = new System.Drawing.Size(289, 201);
+            this.lbDescription.TabIndex = 1;
+            this.lbDescription.Text = resources.GetString("lbDescription.Text");
             // 
             // picbx_LinhKien
             // 
             this.picbx_LinhKien.Dock = System.Windows.Forms.DockStyle.Top;
             this.picbx_LinhKien.Location = new System.Drawing.Point(3, 18);
             this.picbx_LinhKien.Name = "picbx_LinhKien";
-            this.picbx_LinhKien.Size = new System.Drawing.Size(322, 180);
+            this.picbx_LinhKien.Size = new System.Drawing.Size(289, 180);
             this.picbx_LinhKien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picbx_LinhKien.TabIndex = 0;
             this.picbx_LinhKien.TabStop = false;
@@ -421,7 +459,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 548);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(728, 44);
+            this.panel3.Size = new System.Drawing.Size(761, 44);
             this.panel3.TabIndex = 22;
             // 
             // panel5
@@ -458,48 +496,62 @@
             this.label5.Text = "Tổng Tiền";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bunifuCustomDataGrid2
+            // dgv_Cart
             // 
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle29;
-            this.bunifuCustomDataGrid2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bunifuCustomDataGrid2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle30;
-            this.bunifuCustomDataGrid2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bunifuCustomDataGrid2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bunifuCustomDataGrid2.DoubleBuffered = true;
-            this.bunifuCustomDataGrid2.EnableHeadersVisualStyles = false;
-            this.bunifuCustomDataGrid2.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid2.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid2.Location = new System.Drawing.Point(0, 137);
-            this.bunifuCustomDataGrid2.Name = "bunifuCustomDataGrid2";
-            this.bunifuCustomDataGrid2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.bunifuCustomDataGrid2.Size = new System.Drawing.Size(297, 411);
-            this.bunifuCustomDataGrid2.TabIndex = 24;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgv_Cart.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_Cart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Cart.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dgv_Cart.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_Cart.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Cart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_Cart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Cart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT,
+            this.NameAccessory,
+            this.CalculationUnit,
+            this.Quantity,
+            this.Avatar,
+            this.Price,
+            this.Id});
+            this.dgv_Cart.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dgv_Cart.DoubleBuffered = true;
+            this.dgv_Cart.EnableHeadersVisualStyles = false;
+            this.dgv_Cart.HeaderBgColor = System.Drawing.Color.SeaGreen;
+            this.dgv_Cart.HeaderForeColor = System.Drawing.Color.White;
+            this.dgv_Cart.Location = new System.Drawing.Point(0, 137);
+            this.dgv_Cart.Name = "dgv_Cart";
+            this.dgv_Cart.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_Cart.RowHeadersVisible = false;
+            this.dgv_Cart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Cart.Size = new System.Drawing.Size(297, 411);
+            this.dgv_Cart.TabIndex = 26;
+            this.dgv_Cart.TabStop = false;
+            this.dgv_Cart.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgv_Cart_RowPostPaint);
+            this.dgv_Cart.SelectionChanged += new System.EventHandler(this.dgv_Cart_SelectionChanged);
             // 
             // dgv_Accessories
             // 
-            dataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgv_Accessories.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgv_Accessories.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_Accessories.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
             this.dgv_Accessories.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Accessories.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle32.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Accessories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Accessories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_Accessories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Accessories.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_Accessories.DoubleBuffered = true;
@@ -511,10 +563,52 @@
             this.dgv_Accessories.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgv_Accessories.RowHeadersVisible = false;
             this.dgv_Accessories.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Accessories.Size = new System.Drawing.Size(431, 411);
+            this.dgv_Accessories.Size = new System.Drawing.Size(464, 411);
             this.dgv_Accessories.TabIndex = 26;
+            this.dgv_Accessories.TabStop = false;
             this.dgv_Accessories.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgv_Accessories_RowPostPaint);
             this.dgv_Accessories.SelectionChanged += new System.EventHandler(this.dgv_Accessories_SelectionChanged);
+            // 
+            // STT
+            // 
+            this.STT.FillWeight = 26.40966F;
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            // 
+            // NameAccessory
+            // 
+            this.NameAccessory.FillWeight = 182.7411F;
+            this.NameAccessory.HeaderText = "Tên Hàng";
+            this.NameAccessory.Name = "NameAccessory";
+            // 
+            // CalculationUnit
+            // 
+            this.CalculationUnit.HeaderText = "Đơn Vị";
+            this.CalculationUnit.Name = "CalculationUnit";
+            // 
+            // Quantity
+            // 
+            this.Quantity.FillWeight = 90.84922F;
+            this.Quantity.HeaderText = "Số Lượng";
+            this.Quantity.Name = "Quantity";
+            // 
+            // Avatar
+            // 
+            this.Avatar.HeaderText = "Avatar";
+            this.Avatar.Name = "Avatar";
+            this.Avatar.Visible = false;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            this.Price.Visible = false;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
             // 
             // frmSale
             // 
@@ -523,7 +617,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(69)))), ((int)(((byte)(114)))));
             this.ClientSize = new System.Drawing.Size(1056, 592);
             this.Controls.Add(this.dgv_Accessories);
-            this.Controls.Add(this.bunifuCustomDataGrid2);
+            this.Controls.Add(this.dgv_Cart);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panel4);
@@ -546,7 +640,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picbx_LinhKien)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Cart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Accessories)).EndInit();
             this.ResumeLayout(false);
 
@@ -557,17 +651,17 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_PhoneCustomer;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.GroupBox groupbox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.ComboBox cbx_NhaSanXuat;
-        private System.Windows.Forms.ComboBox cbx_LoaiLinhKien;
+        private System.Windows.Forms.ComboBox cbx_Producer;
+        private System.Windows.Forms.ComboBox cbx_Category;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_CreateOrder;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnExit;
@@ -588,7 +682,16 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label lb_TongTien;
         private System.Windows.Forms.Label label5;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid2;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid dgv_Cart;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgv_Accessories;
+        private System.Windows.Forms.Label lbDescription;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameAccessory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CalculationUnit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Avatar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
     }
 }

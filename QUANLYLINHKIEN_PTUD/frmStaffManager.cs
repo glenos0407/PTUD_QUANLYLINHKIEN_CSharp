@@ -94,8 +94,6 @@ namespace QUANLYLINHKIEN_PTUD
             //}
         }
 
- 
-
         private void frmStaffManager_Load(object sender, EventArgs e)
         {
 

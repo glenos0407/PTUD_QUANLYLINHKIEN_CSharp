@@ -25,15 +25,18 @@ namespace Business
             return cus.AddOrUpdateCustomer(CustomerDto);
         }
 
-        public List<Customer> GetListCustomer(String name)
+        public List<Customer> GetListCustomer(string name)
         {
             return cus.GetListCustomer(name);
 
         }
-        public List<Customer> GetCustomerFromNumberPhone(String sdt)
+        public Customer GetCustomerFromNumberPhone(string sdt)
         {
             return cus.GetCustomerFromNumberPhone(sdt);
         }
-
+        public int GetCustomerIdByNumberPhone(string sdt)
+        {
+            return cus.GetCustomerByNumberPhone(sdt);
+        }
     }
 }

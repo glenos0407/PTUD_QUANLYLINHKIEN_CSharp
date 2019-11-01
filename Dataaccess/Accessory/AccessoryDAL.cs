@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using Model;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace Dataaccess
 {
@@ -28,9 +29,7 @@ namespace Dataaccess
                 Price = n.Price,
                 WarrantyTime = n.WarrantyTime,
                 CalculationUnit = n.CalculationUnit,
-                Description = n.Description,
                 CPU = n.CPU,
-                Generation = n.Generation,
                 ProcessingSpeed = n.ProcessingSpeed,
                 Size = n.Size,
                 Socket = n.Socket,
@@ -40,6 +39,8 @@ namespace Dataaccess
                 Bus = n.Bus,
                 BIT = n.BIT,
                 Power = n.Power,
+                Cores = n.Cores,
+                Threads = n.Threads,
                 ProducerId = n.ProducerId,
                 CategoryId = n.CategoryId
             }).ToList();
@@ -50,25 +51,46 @@ namespace Dataaccess
             return db.Accessories.FirstOrDefault(x => x.Id == id);
         }
 
-        public List<Accessory> GetListAccessories(string name, bool Producer1, bool Category1, bool AccessoriyName1)
+        public List<AccessoryGettingDTO> GetListAccessoriesByFilter(int producerId, string categoryId, string accessoryName)
         {
-            throw new NotImplementedException();
+            var query = db.Accessories
+                .Select(n => new AccessoryGettingDTO
+                {
+                    Id = n.Id,
+                    Name = n.Name,
+                    Avatar = n.Avatar,
+                    Inventory = n.Inventory,
+                    GoodsReceiptDate = n.GoodsReceiptDate,
+                    Price = n.Price,
+                    WarrantyTime = n.WarrantyTime,
+                    CalculationUnit = n.CalculationUnit,
+                    CPU = n.CPU,
+                    ProcessingSpeed = n.ProcessingSpeed,
+                    Size = n.Size,
+                    Socket = n.Socket,
+                    Memory = n.Memory,
+                    Chipset = n.Chipset,
+                    Version = n.Version,
+                    Bus = n.Bus,
+                    BIT = n.BIT,
+                    Power = n.Power,
+                    Cores = n.Cores,
+                    Threads = n.Threads,
+                    ProducerId = n.ProducerId,
+                    CategoryId = n.CategoryId
+                });
+            if (producerId > 0)
+                query = query.Where(x => x.ProducerId.Equals(producerId));
+
+            if (!string.IsNullOrEmpty(categoryId))
+                query = query.Where(x => x.CategoryId.Equals(categoryId));
+
+            if (!string.IsNullOrEmpty(accessoryName))
+                query = query.Where(x => x.Name.ToLower().Trim().Contains(accessoryName.ToLower()));
+
+            return query
+                .AsQueryable<AccessoryGettingDTO>()
+                .ToList();
         }
-
-        //public List<Accessory> GetListAccessories(string nameAccessory, string, string Category1, string AccessoriyName1)
-        //{
-        //    //if (Category1)
-        //    //{
-        //    //    return db.Accessories.Where(x => x.Category.Name.Equals(name)).ToList();
-        //    //}
-        //    //else if (Producer1)
-        //    //{
-        //    //    return db.Accessories.Where(x => x.Producer.Name.Equals(name)).ToList();
-        //    //}
-        //    //return db.Accessories.Where(x => x.Name.Equals(name)).ToList();
-        //}
-
-
-
     }
 }

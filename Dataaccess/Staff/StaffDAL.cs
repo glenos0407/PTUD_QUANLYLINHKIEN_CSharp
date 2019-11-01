@@ -18,13 +18,15 @@ namespace Dataaccess
             db = new QuanLyLinhKienDBContext();
             accountEx = new AccountExtension();
         }
-        public bool SignIn(string email, string password)
+        public int SignIn(string email, string password)
         {
             var entity = db.Staffs.FirstOrDefault(x => x.Email.Equals(email));
 
             if (entity == null)
-                return false;
-            return accountEx.Verify(password, entity.Password);
+                return 0;
+            if(accountEx.Verify(password, entity.Password))
+                return entity.Id;
+            return 0;
         }
         public bool ChangePassword(Staff staff, string newPassword)
         {

@@ -10,11 +10,7 @@ namespace Dataaccess
     public interface IAccessoryDAL
     {
         List<AccessoryGettingDTO> GetAllAccessories();
-
         Accessory GetAccessory(string id);
-
-        List<Accessory> GetListAccessories(String name, bool Producer1, bool Category1, bool AccessoriyName1);
-
-
+        List<AccessoryGettingDTO> GetListAccessoriesByFilter(int producerId, string categoryId, string accessoryId);
     }
 }

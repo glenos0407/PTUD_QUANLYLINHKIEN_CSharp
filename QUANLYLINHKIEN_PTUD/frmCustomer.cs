@@ -217,7 +217,7 @@ namespace QUANLYLINHKIEN_PTUD
             }
             else if (rbtnSoDienThoai.Checked == true)
             {
-                if (customerbll.GetCustomerFromNumberPhone(txt).Count != 0)
+                if (customerbll.GetCustomerFromNumberPhone(txt) != null)
                 {
                     CreateDataGridView();
                     bindingSource.DataSource = customerbll.GetCustomerFromNumberPhone(txt);

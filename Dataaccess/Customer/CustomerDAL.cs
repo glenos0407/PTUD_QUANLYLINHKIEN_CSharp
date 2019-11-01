@@ -76,14 +76,18 @@ namespace Dataaccess
             };
         }
 
-        public List<Customer> GetListCustomer(String name)
+        public List<Customer> GetListCustomer(string name)
         {
             return db.Customers.Where(x => x.Name.Equals(name)).ToList();
 
         }
-        public List<Customer> GetCustomerFromNumberPhone(String sdt)
+        public Customer GetCustomerFromNumberPhone(string sdt)
         {
-            return db.Customers.Where(x => x.NumberPhone.Equals(sdt)).ToList();
+            return db.Customers.FirstOrDefault(x => x.NumberPhone.Equals(sdt));
+        }
+        public int GetCustomerByNumberPhone(string sdt)
+        {
+            return db.Customers.FirstOrDefault(x => x.NumberPhone.Equals(sdt)).Id;
         }
         
     }

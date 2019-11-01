@@ -73,9 +73,10 @@ namespace QUANLYLINHKIEN_PTUD
         {
             string account = txt_User.Text.ToString();
             string password = txt_Password.Text.ToString();
-            if (staffbll.SignIn(account, password))
+            int staffId = staffbll.SignIn(account, password);
+            if (staffId > 0)
             {
-                frmMainUI_Staff frm = new frmMainUI_Staff();
+                frmMainUI_Staff frm = new frmMainUI_Staff(staffId);
                 frm.ShowDialog();
                 this.Close();
             }
