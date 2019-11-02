@@ -30,16 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSale));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_PhoneCustomer = new System.Windows.Forms.TextBox();
             this.txt_CustomerName = new System.Windows.Forms.TextBox();
             this.groupbox1 = new System.Windows.Forms.GroupBox();
+            this.btn_SearchCustomer = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cbx_Producer = new System.Windows.Forms.ComboBox();
@@ -71,6 +72,7 @@
             this.lb_TongTien = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgv_Cart = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.dgv_Accessories = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameAccessory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CalculationUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,8 +80,6 @@
             this.Avatar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Accessories = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.btn_SearchCustomer = new System.Windows.Forms.Button();
             this.groupbox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -159,6 +159,22 @@
             this.groupbox1.TabStop = false;
             this.groupbox1.Text = "KHÁCH HÀNG";
             // 
+            // btn_SearchCustomer
+            // 
+            this.btn_SearchCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_SearchCustomer.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_SearchCustomer.FlatAppearance.BorderSize = 0;
+            this.btn_SearchCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_SearchCustomer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SearchCustomer.ForeColor = System.Drawing.Color.White;
+            this.btn_SearchCustomer.Location = new System.Drawing.Point(289, 28);
+            this.btn_SearchCustomer.Name = "btn_SearchCustomer";
+            this.btn_SearchCustomer.Size = new System.Drawing.Size(71, 57);
+            this.btn_SearchCustomer.TabIndex = 15;
+            this.btn_SearchCustomer.Text = "Tìm";
+            this.btn_SearchCustomer.UseVisualStyleBackColor = false;
+            this.btn_SearchCustomer.Click += new System.EventHandler(this.btn_SearchCustomer_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -236,9 +252,9 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel1.Controls.Add(this.bindingNavigator1);
-            this.panel1.Location = new System.Drawing.Point(301, 0);
+            this.panel1.Location = new System.Drawing.Point(346, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(456, 41);
+            this.panel1.Size = new System.Drawing.Size(411, 41);
             this.panel1.TabIndex = 15;
             // 
             // bindingNavigator1
@@ -259,7 +275,7 @@
             this.toolStripButton3,
             this.toolStripButton4,
             this.toolStripSeparator3});
-            this.bindingNavigator1.Location = new System.Drawing.Point(91, 0);
+            this.bindingNavigator1.Location = new System.Drawing.Point(68, 0);
             this.bindingNavigator1.MoveFirstItem = this.toolStripButton1;
             this.bindingNavigator1.MoveLastItem = this.toolStripButton4;
             this.bindingNavigator1.MoveNextItem = this.toolStripButton3;
@@ -502,20 +518,20 @@
             // 
             // dgv_Cart
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgv_Cart.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgv_Cart.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Cart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Cart.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
             this.dgv_Cart.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Cart.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Cart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Cart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Cart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Cart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
@@ -535,32 +551,65 @@
             this.dgv_Cart.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgv_Cart.RowHeadersVisible = false;
             this.dgv_Cart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Cart.Size = new System.Drawing.Size(297, 411);
+            this.dgv_Cart.Size = new System.Drawing.Size(346, 411);
             this.dgv_Cart.TabIndex = 26;
             this.dgv_Cart.TabStop = false;
             this.dgv_Cart.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgv_Cart_RowPostPaint);
             this.dgv_Cart.SelectionChanged += new System.EventHandler(this.dgv_Cart_SelectionChanged);
             // 
+            // dgv_Accessories
+            // 
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgv_Accessories.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_Accessories.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dgv_Accessories.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_Accessories.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Accessories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_Accessories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Accessories.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_Accessories.DoubleBuffered = true;
+            this.dgv_Accessories.EnableHeadersVisualStyles = false;
+            this.dgv_Accessories.HeaderBgColor = System.Drawing.Color.SeaGreen;
+            this.dgv_Accessories.HeaderForeColor = System.Drawing.Color.White;
+            this.dgv_Accessories.Location = new System.Drawing.Point(346, 137);
+            this.dgv_Accessories.Name = "dgv_Accessories";
+            this.dgv_Accessories.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_Accessories.RowHeadersVisible = false;
+            this.dgv_Accessories.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Accessories.Size = new System.Drawing.Size(415, 411);
+            this.dgv_Accessories.TabIndex = 26;
+            this.dgv_Accessories.TabStop = false;
+            this.dgv_Accessories.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgv_Accessories_RowPostPaint);
+            this.dgv_Accessories.SelectionChanged += new System.EventHandler(this.dgv_Accessories_SelectionChanged);
+            // 
             // STT
             // 
-            this.STT.FillWeight = 26.40966F;
+            this.STT.FillWeight = 50.76142F;
             this.STT.HeaderText = "STT";
             this.STT.Name = "STT";
             // 
             // NameAccessory
             // 
-            this.NameAccessory.FillWeight = 182.7411F;
+            this.NameAccessory.FillWeight = 170.8295F;
             this.NameAccessory.HeaderText = "Tên Hàng";
             this.NameAccessory.Name = "NameAccessory";
             // 
             // CalculationUnit
             // 
+            this.CalculationUnit.FillWeight = 93.4817F;
             this.CalculationUnit.HeaderText = "Đơn Vị";
             this.CalculationUnit.Name = "CalculationUnit";
             // 
             // Quantity
             // 
-            this.Quantity.FillWeight = 90.84922F;
+            this.Quantity.FillWeight = 84.92739F;
             this.Quantity.HeaderText = "Số Lượng";
             this.Quantity.Name = "Quantity";
             // 
@@ -581,54 +630,6 @@
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             this.Id.Visible = false;
-            // 
-            // dgv_Accessories
-            // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgv_Accessories.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgv_Accessories.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dgv_Accessories.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_Accessories.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Accessories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dgv_Accessories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Accessories.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_Accessories.DoubleBuffered = true;
-            this.dgv_Accessories.EnableHeadersVisualStyles = false;
-            this.dgv_Accessories.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.dgv_Accessories.HeaderForeColor = System.Drawing.Color.White;
-            this.dgv_Accessories.Location = new System.Drawing.Point(297, 137);
-            this.dgv_Accessories.Name = "dgv_Accessories";
-            this.dgv_Accessories.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgv_Accessories.RowHeadersVisible = false;
-            this.dgv_Accessories.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Accessories.Size = new System.Drawing.Size(464, 411);
-            this.dgv_Accessories.TabIndex = 26;
-            this.dgv_Accessories.TabStop = false;
-            this.dgv_Accessories.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgv_Accessories_RowPostPaint);
-            this.dgv_Accessories.SelectionChanged += new System.EventHandler(this.dgv_Accessories_SelectionChanged);
-            // 
-            // btn_SearchCustomer
-            // 
-            this.btn_SearchCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_SearchCustomer.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_SearchCustomer.FlatAppearance.BorderSize = 0;
-            this.btn_SearchCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_SearchCustomer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_SearchCustomer.ForeColor = System.Drawing.Color.White;
-            this.btn_SearchCustomer.Location = new System.Drawing.Point(289, 28);
-            this.btn_SearchCustomer.Name = "btn_SearchCustomer";
-            this.btn_SearchCustomer.Size = new System.Drawing.Size(71, 57);
-            this.btn_SearchCustomer.TabIndex = 15;
-            this.btn_SearchCustomer.Text = "Tìm";
-            this.btn_SearchCustomer.UseVisualStyleBackColor = false;
-            this.btn_SearchCustomer.Click += new System.EventHandler(this.btn_SearchCustomer_Click);
             // 
             // frmSale
             // 
@@ -706,6 +707,7 @@
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgv_Accessories;
         private System.Windows.Forms.Label lbDescription;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btn_SearchCustomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameAccessory;
         private System.Windows.Forms.DataGridViewTextBoxColumn CalculationUnit;
@@ -713,6 +715,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Avatar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.Button btn_SearchCustomer;
     }
 }
