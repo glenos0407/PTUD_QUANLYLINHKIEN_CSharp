@@ -158,10 +158,10 @@ namespace QUANLYLINHKIEN_PTUD
 
             dgv_Accessories.Columns["STT"].Width = 30;
             dgv_Accessories.Columns["STT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv_Accessories.Columns["Name"].Width = 200;
+            dgv_Accessories.Columns["Name"].Width = 160;
             dgv_Accessories.Columns["Price"].Width = 80;
-            dgv_Accessories.Columns["Inventory"].Width = 50;
-            dgv_Accessories.Columns["CalculationUnit"].Width = 40;
+            dgv_Accessories.Columns["Inventory"].Width = 80;
+            dgv_Accessories.Columns["CalculationUnit"].Width = 100;
 
             dgv_Accessories.Columns["Name"].HeaderText = "Tên Linh Kiện";
             dgv_Accessories.Columns["Inventory"].HeaderText = "Hiện Có";
@@ -172,10 +172,10 @@ namespace QUANLYLINHKIEN_PTUD
         private void CreateDataGridViewCart()
         {
             dgv_Cart.ClearSelection();
-            foreach (DataGridViewColumn column in dgv_Accessories.Columns)
+            foreach (DataGridViewColumn column in dgv_Cart.Columns)
             {
-                column.DefaultCellStyle.Font = new Font("Segoe UI", 10);
-                column.HeaderCell.Style.Font = new Font("Segoe UI", 12);
+                column.DefaultCellStyle.Font = new Font("Segoe UI", 9);
+                column.HeaderCell.Style.Font = new Font("Segoe UI Semibold", 10);
             }
             dgv_Cart.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv_Cart.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -230,7 +230,7 @@ namespace QUANLYLINHKIEN_PTUD
                     outPutDirectory += dgv_Accessories.SelectedRows[0].Cells["Avatar"].Value;
                     string directoryPath = new Uri(outPutDirectory).LocalPath;
 
-                    picbx_LinhKien.Image = new Bitmap(directoryPath);
+                    //picbx_LinhKien.Image = new Bitmap(directoryPath);
                 }
             }
         }
