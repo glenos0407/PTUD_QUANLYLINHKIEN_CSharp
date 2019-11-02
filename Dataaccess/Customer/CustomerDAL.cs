@@ -89,6 +89,10 @@ namespace Dataaccess
         {
             return db.Customers.FirstOrDefault(x => x.NumberPhone.Equals(sdt)).Id;
         }
-        
+
+        public string GetCustomerNameByNumberPhone(string phone)
+        {
+            return db.Customers.FirstOrDefault(c => c.NumberPhone.Equals(phone)).Name;
+        }
     }
 }

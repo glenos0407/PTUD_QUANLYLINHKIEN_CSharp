@@ -38,5 +38,9 @@ namespace Business
         {
             return cus.GetCustomerByNumberPhone(sdt);
         }
+        public string GetCustomerNameByNumberPhone(string phone)
+        {
+            return cus.GetCustomerNameByNumberPhone(phone);
+        }
     }
 }

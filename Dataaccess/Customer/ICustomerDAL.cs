@@ -12,7 +12,7 @@ namespace Dataaccess
         List<Customer> GetAllCustomer();
         Result AddOrUpdateCustomer(CustomerCreateDto CustomerDto);
         List<Customer> GetListCustomer(string name);
-        Customer GetCustomerFromNumberPhone(string sdt);
-
+        Customer GetCustomerFromNumberPhone(string phone);
+        string GetCustomerNameByNumberPhone(string phone);
     }
 }

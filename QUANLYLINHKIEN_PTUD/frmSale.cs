@@ -279,6 +279,8 @@ namespace QUANLYLINHKIEN_PTUD
             {
                 if (btnAdd.Text.Contains("THÊM"))
                 {
+                    var Total = 0;
+
                     DataGridViewRow row = (DataGridViewRow)dgv_Cart.Rows[0].Clone();
                     row.Cells[0].ToolTipText = "Giá :" + dgv_Accessories.SelectedRows[0].Cells["Price"].Value.ToString();
 
@@ -295,7 +297,10 @@ namespace QUANLYLINHKIEN_PTUD
                     row.Cells[5].Value = dgv_Accessories.SelectedRows[0].Cells["Price"].Value;
                     row.Cells[6].Value = dgv_Accessories.SelectedRows[0].Cells["Id"].Value;
 
+                    Total += Convert.ToInt32(dgv_Accessories.SelectedRows[0].Cells["Price"].Value);
+
                     dgv_Cart.Rows.Add(row);
+                    lb_TongTien.Text = Total.ToString() + "VNĐ"; 
                 }
                 else
                     if(dgv_Cart.Rows.Count > 1 && dgv_Cart.SelectedRows[0].Index < (dgv_Cart.Rows.Count - 1))
@@ -335,10 +340,13 @@ namespace QUANLYLINHKIEN_PTUD
 
         private void btn_CreateOrder_Click(object sender, EventArgs e)
         {
-            if(dgv_Cart.Rows.Count <= 1)
-            {
-                MessageBox.Show("Vui lòng chọn sản phẩm","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            DialogResult dialogResult = DialogResult.Yes;
+            if (string.IsNullOrEmpty(txt_CustomerName.Text))
+                dialogResult = MessageBox.Show("Khách hàng không muốn cộng điểm???", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dgv_Cart.Rows.Count <= 1 && dialogResult.Equals(DialogResult.Yes))
+                MessageBox.Show("Vui lòng chọn sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             else
             {
                 var order = new Order()
@@ -383,6 +391,20 @@ namespace QUANLYLINHKIEN_PTUD
             bindingSource.DataSource = accesoryBLL.GetAccessoriesByFilter(producerId, categoryId, accessoryName);
 
             CreateDataGridViewAccessory(bindingSource);
+        }
+
+        private void btn_SearchCustomer_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txt_PhoneCustomer.Text))
+            {
+                var customerName = customerBLL.GetCustomerNameByNumberPhone(txt_PhoneCustomer.Text);
+                if (!string.IsNullOrEmpty(customerName))
+                {
+                    txt_CustomerName.Text = customerName;
+                }
+            }
+            else
+                MessageBox.Show("Nhập số điện thoại khách hàng", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Warning);
         }
     }
 }
