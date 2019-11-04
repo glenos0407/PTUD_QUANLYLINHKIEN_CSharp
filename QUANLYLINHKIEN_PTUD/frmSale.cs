@@ -230,7 +230,7 @@ namespace QUANLYLINHKIEN_PTUD
                     outPutDirectory += dgv_Accessories.SelectedRows[0].Cells["Avatar"].Value;
                     string directoryPath = new Uri(outPutDirectory).LocalPath;
 
-                    //picbx_LinhKien.Image = new Bitmap(directoryPath);
+                    picbx_LinhKien.Image = new Bitmap(directoryPath);
                 }
             }
         }

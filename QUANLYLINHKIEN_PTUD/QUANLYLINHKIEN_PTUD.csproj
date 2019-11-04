@@ -233,13 +233,13 @@
     <None Include="imgs\icon_menu.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Business\Business.csproj">
-      <Project>{f1e73211-1417-4366-861f-d7e5b49029f0}</Project>
-      <Name>Business</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{078b0672-2c3f-4210-adb9-9bce9d5b1dc5}</Project>
       <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\soi\Downloads\New folder\New folder\PTUD_QUANLYLINHKIEN_UI\Business\Business.csproj">
+      <Project>{f1e73211-1417-4366-861f-d7e5b49029f0}</Project>
+      <Name>Business</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
