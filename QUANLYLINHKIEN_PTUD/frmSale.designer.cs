@@ -72,7 +72,6 @@
             this.lb_TongTien = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgv_Cart = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.dgv_Accessories = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameAccessory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CalculationUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,6 +79,7 @@
             this.Avatar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Accessories = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.groupbox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -526,7 +526,7 @@
             this.dgv_Cart.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -556,38 +556,6 @@
             this.dgv_Cart.TabStop = false;
             this.dgv_Cart.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgv_Cart_RowPostPaint);
             this.dgv_Cart.SelectionChanged += new System.EventHandler(this.dgv_Cart_SelectionChanged);
-            // 
-            // dgv_Accessories
-            // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgv_Accessories.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_Accessories.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dgv_Accessories.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_Accessories.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Accessories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgv_Accessories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Accessories.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_Accessories.DoubleBuffered = true;
-            this.dgv_Accessories.EnableHeadersVisualStyles = false;
-            this.dgv_Accessories.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.dgv_Accessories.HeaderForeColor = System.Drawing.Color.White;
-            this.dgv_Accessories.Location = new System.Drawing.Point(346, 137);
-            this.dgv_Accessories.Name = "dgv_Accessories";
-            this.dgv_Accessories.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgv_Accessories.RowHeadersVisible = false;
-            this.dgv_Accessories.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Accessories.Size = new System.Drawing.Size(415, 411);
-            this.dgv_Accessories.TabIndex = 26;
-            this.dgv_Accessories.TabStop = false;
-            this.dgv_Accessories.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgv_Accessories_RowPostPaint);
-            this.dgv_Accessories.SelectionChanged += new System.EventHandler(this.dgv_Accessories_SelectionChanged);
             // 
             // STT
             // 
@@ -630,6 +598,38 @@
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             this.Id.Visible = false;
+            // 
+            // dgv_Accessories
+            // 
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgv_Accessories.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_Accessories.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dgv_Accessories.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_Accessories.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Accessories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_Accessories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Accessories.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_Accessories.DoubleBuffered = true;
+            this.dgv_Accessories.EnableHeadersVisualStyles = false;
+            this.dgv_Accessories.HeaderBgColor = System.Drawing.Color.SeaGreen;
+            this.dgv_Accessories.HeaderForeColor = System.Drawing.Color.White;
+            this.dgv_Accessories.Location = new System.Drawing.Point(346, 137);
+            this.dgv_Accessories.Name = "dgv_Accessories";
+            this.dgv_Accessories.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_Accessories.RowHeadersVisible = false;
+            this.dgv_Accessories.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Accessories.Size = new System.Drawing.Size(415, 411);
+            this.dgv_Accessories.TabIndex = 26;
+            this.dgv_Accessories.TabStop = false;
+            this.dgv_Accessories.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgv_Accessories_RowPostPaint);
+            this.dgv_Accessories.SelectionChanged += new System.EventHandler(this.dgv_Accessories_SelectionChanged);
             // 
             // frmSale
             // 

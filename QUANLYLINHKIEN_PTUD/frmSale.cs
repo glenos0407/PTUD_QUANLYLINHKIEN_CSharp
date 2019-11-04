@@ -230,7 +230,7 @@ namespace QUANLYLINHKIEN_PTUD
                     outPutDirectory += dgv_Accessories.SelectedRows[0].Cells["Avatar"].Value;
                     string directoryPath = new Uri(outPutDirectory).LocalPath;
 
-                    //picbx_LinhKien.Image = new Bitmap(directoryPath);
+                    picbx_LinhKien.Image = new Bitmap(directoryPath);
                 }
             }
         }
@@ -322,7 +322,7 @@ namespace QUANLYLINHKIEN_PTUD
             {
                 if (dgv_Cart.Rows.Count > 1 && dgv_Cart.SelectedRows[0].Cells["STT"].Value != null)
                 {
-                    //var category = dgv_Cart.SelectedRows[0].Cells["CategoryId"].Value.ToString();
+                    var category = dgv_Cart.SelectedRows[0].Cells["CategoryId"].Value.ToString();
 
                     //lbDescription.Text = CreateLabelDescription(category);
 
