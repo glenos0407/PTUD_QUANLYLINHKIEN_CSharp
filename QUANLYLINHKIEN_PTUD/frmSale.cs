@@ -344,7 +344,7 @@ namespace QUANLYLINHKIEN_PTUD
             {
                 if (dgv_Cart.Rows.Count > 1 && dgv_Cart.SelectedRows[0].Cells["STT"].Value != null)
                 {
-                    //var category = dgv_Cart.SelectedRows[0].Cells["CategoryId"].Value.ToString();
+                    var category = dgv_Cart.SelectedRows[0].Cells["CategoryId"].Value.ToString();
 
                     //lbDescription.Text = CreateLabelDescription(category);
 
