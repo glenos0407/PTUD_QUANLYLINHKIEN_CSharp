@@ -46,7 +46,7 @@ namespace QUANLYLINHKIEN_PTUD
             cbx_Producer.ForeColor = Color.DarkGray;
             cbx_Category.ForeColor = Color.DarkGray;
             this.FormBorderStyle = FormBorderStyle.None;
-            staffId = _staffId; 
+            staffId = _staffId;
             fmain = fm;
             bindingSource = new BindingSource();
         }
@@ -215,6 +215,7 @@ namespace QUANLYLINHKIEN_PTUD
         private void dgv_Accessories_SelectionChanged(object sender, EventArgs e)
         {
             btnAdd.Text = "THÊM VÀO GIỎ HÀNG";
+            dgv_Cart.ClearSelection();
             if (dgv_Accessories.SelectedRows.Count > 0)
             {
                 if (Convert.ToInt32(dgv_Accessories.SelectedRows[0].Cells["STT"].Value) != dgv_Accessories.Rows.Count)
@@ -241,23 +242,23 @@ namespace QUANLYLINHKIEN_PTUD
 
             if (category.Equals("CPU"))
             {
-                s+= "CPU   : " + dgv_Accessories.SelectedRows[0].Cells["CPU"].Value.ToString() + "\n\n";
-                s+= "Tốc độ: " + dgv_Accessories.SelectedRows[0].Cells["ProcessingSpeed"].Value.ToString() + "\n\n";
-                s+= "Socket: " + dgv_Accessories.SelectedRows[0].Cells["Socket"].Value.ToString();
-            }            
+                s += "CPU   : " + dgv_Accessories.SelectedRows[0].Cells["CPU"].Value.ToString() + "\n\n";
+                s += "Tốc độ: " + dgv_Accessories.SelectedRows[0].Cells["ProcessingSpeed"].Value.ToString() + "\n\n";
+                s += "Socket: " + dgv_Accessories.SelectedRows[0].Cells["Socket"].Value.ToString();
+            }
             if (category.Equals("CAC"))
             {
-                s+= "Kích thước   : " + dgv_Accessories.SelectedRows[0].Cells["Size"].Value.ToString();
-            }            
+                s += "Kích thước   : " + dgv_Accessories.SelectedRows[0].Cells["Size"].Value.ToString();
+            }
             if (category.Equals("MAB"))
             {
-                s+= "CPU       : " + dgv_Accessories.SelectedRows[0].Cells["CPU"].Value.ToString() + "\n\n";
-                s+= "Kích thước: " + dgv_Accessories.SelectedRows[0].Cells["Size"].Value.ToString() + "\n\n";
-                s+= "Chipset   : " + dgv_Accessories.SelectedRows[0].Cells["Chipset"].Value.ToString();
-            }            
+                s += "CPU       : " + dgv_Accessories.SelectedRows[0].Cells["CPU"].Value.ToString() + "\n\n";
+                s += "Kích thước: " + dgv_Accessories.SelectedRows[0].Cells["Size"].Value.ToString() + "\n\n";
+                s += "Chipset   : " + dgv_Accessories.SelectedRows[0].Cells["Chipset"].Value.ToString();
+            }
             if (category.Equals("PSU"))
             {
-                s+= "Công suất   : " + dgv_Accessories.SelectedRows[0].Cells["Power"].Value.ToString();
+                s += "Công suất   : " + dgv_Accessories.SelectedRows[0].Cells["Power"].Value.ToString();
             }
             if (category.Equals("RAM"))
             {
@@ -280,31 +281,51 @@ namespace QUANLYLINHKIEN_PTUD
                 if (btnAdd.Text.Contains("THÊM"))
                 {
                     var Total = 0;
+                    var Check = true;
+                    if (dgv_Cart.Rows.Count > 1)
+                        for (int i = 0; i < dgv_Cart.Rows.Count - 1; i++)
+                        {
+                            if (dgv_Cart.Rows[i].Cells[1].Value.Equals(dgv_Accessories.SelectedRows[0].Cells["Name"].Value))
+                            {
+                                Check = false;
+                                break;
+                            }
+                        }
+                    if (Check)
+                    {
+                        DataGridViewRow row = (DataGridViewRow)dgv_Cart.Rows[0].Clone();
+                        row.Cells[0].ToolTipText = "Giá :" + dgv_Accessories.SelectedRows[0].Cells["Price"].Value.ToString();
 
-                    DataGridViewRow row = (DataGridViewRow)dgv_Cart.Rows[0].Clone();
-                    row.Cells[0].ToolTipText = "Giá :" + dgv_Accessories.SelectedRows[0].Cells["Price"].Value.ToString();
+                        row.Cells[1].Value = dgv_Accessories.SelectedRows[0].Cells["Name"].Value;
+                        row.Cells[1].ToolTipText = "Giá :" + dgv_Accessories.SelectedRows[0].Cells["Price"].Value.ToString();
 
-                    row.Cells[1].Value = dgv_Accessories.SelectedRows[0].Cells["Name"].Value;
-                    row.Cells[1].ToolTipText = "Giá :" + dgv_Accessories.SelectedRows[0].Cells["Price"].Value.ToString();
+                        row.Cells[2].Value = dgv_Accessories.SelectedRows[0].Cells["CalculationUnit"].Value;
+                        row.Cells[2].ToolTipText = "Giá :" + dgv_Accessories.SelectedRows[0].Cells["Price"].Value.ToString();
 
-                    row.Cells[2].Value = dgv_Accessories.SelectedRows[0].Cells["CalculationUnit"].Value;
-                    row.Cells[2].ToolTipText = "Giá :" + dgv_Accessories.SelectedRows[0].Cells["Price"].Value.ToString();
+                        row.Cells[3].Value = "0";
+                        //row.Cells[2].ToolTipText = dgv_Accessories.SelectedRows[0].Cells["Price"].Value.ToString();
 
-                    row.Cells[3].Value = "0";
-                    //row.Cells[2].ToolTipText = dgv_Accessories.SelectedRows[0].Cells["Price"].Value.ToString();
+                        row.Cells[4].Value = dgv_Accessories.SelectedRows[0].Cells["Avatar"].Value;
+                        row.Cells[5].Value = dgv_Accessories.SelectedRows[0].Cells["Price"].Value;
+                        row.Cells[6].Value = dgv_Accessories.SelectedRows[0].Cells["Id"].Value;
 
-                    row.Cells[4].Value = dgv_Accessories.SelectedRows[0].Cells["Avatar"].Value;
-                    row.Cells[5].Value = dgv_Accessories.SelectedRows[0].Cells["Price"].Value;
-                    row.Cells[6].Value = dgv_Accessories.SelectedRows[0].Cells["Id"].Value;
+                        Total += Convert.ToInt32(dgv_Accessories.SelectedRows[0].Cells["Price"].Value);
 
-                    Total += Convert.ToInt32(dgv_Accessories.SelectedRows[0].Cells["Price"].Value);
-
-                    dgv_Cart.Rows.Add(row);
-                    lb_TongTien.Text = Total.ToString() + "VNĐ"; 
+                        dgv_Cart.Rows.Add(row);
+                        lb_TongTien.Text = Total.ToString() + "VNĐ";
+                    }
                 }
                 else
-                    if(dgv_Cart.Rows.Count > 1 && dgv_Cart.SelectedRows[0].Index < (dgv_Cart.Rows.Count - 1))
+                    if (dgv_Cart.Rows.Count > 1 && dgv_Cart.SelectedRows[0].Index < (dgv_Cart.Rows.Count - 1))
+                    dgv_Cart.Rows.RemoveAt(dgv_Cart.SelectedRows[0].Index);
+            }
+            if (dgv_Cart.SelectedRows.Count > 0)
+            {
+                if (btnAdd.Text.Contains("XÓA"))
+                {
+                    if (dgv_Cart.Rows.Count > 1 && dgv_Cart.SelectedRows[0].Index < (dgv_Cart.Rows.Count - 1))
                         dgv_Cart.Rows.RemoveAt(dgv_Cart.SelectedRows[0].Index);
+                }
             }
             dgv_Cart.ClearSelection();
             dgv_Accessories.ClearSelection();
@@ -318,6 +339,7 @@ namespace QUANLYLINHKIEN_PTUD
         private void dgv_Cart_SelectionChanged(object sender, EventArgs e)
         {
             btnAdd.Text = "XÓA KHỎI GIỎ HÀNG";
+            dgv_Accessories.ClearSelection();
             if (dgv_Cart.SelectedRows.Count > 0)
             {
                 if (dgv_Cart.Rows.Count > 1 && dgv_Cart.SelectedRows[0].Cells["STT"].Value != null)
@@ -349,11 +371,13 @@ namespace QUANLYLINHKIEN_PTUD
 
             else
             {
+
                 var order = new Order()
                 {
                     StaffId = staffId,
-                    CustomerId = customerBLL.GetCustomerIdByNumberPhone(txt_PhoneCustomer.Text),
-                    CreationTime = DateTime.Now
+                    CustomerId = string.IsNullOrEmpty(txt_CustomerName.Text) ? 1 : customerBLL.GetCustomerIdByNumberPhone(txt_PhoneCustomer.Text),
+                    CreationTime = DateTime.Now,
+                    TotalPrice = Convert.ToDouble(lb_TongTien.Text.ToString())
                 };
 
                 var newOrderId = Convert.ToInt32(orderBLL.CreateOrder(order).ToString());
@@ -370,6 +394,7 @@ namespace QUANLYLINHKIEN_PTUD
 
                     orderDetailBLL.CreateOrderDetail(orderDetail);
                 }
+                MessageBox.Show("Tạo hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -380,7 +405,7 @@ namespace QUANLYLINHKIEN_PTUD
             bindingSource.DataSource = null;
 
             int producerId = Convert.ToInt32(
-                (cbx_Producer.SelectedItem as ComboBoxItem) == null? "0" : (cbx_Producer.SelectedItem as ComboBoxItem).Value
+                (cbx_Producer.SelectedItem as ComboBoxItem) == null ? "0" : (cbx_Producer.SelectedItem as ComboBoxItem).Value
                 );
 
             string categoryId =
@@ -399,12 +424,37 @@ namespace QUANLYLINHKIEN_PTUD
             {
                 var customerName = customerBLL.GetCustomerNameByNumberPhone(txt_PhoneCustomer.Text);
                 if (!string.IsNullOrEmpty(customerName))
-                {
                     txt_CustomerName.Text = customerName;
+                else
+                {
+                    MessageBox.Show("Không tìm thấy khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txt_CustomerName.Text = "";
                 }
             }
             else
-                MessageBox.Show("Nhập số điện thoại khách hàng", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            {
+                MessageBox.Show("Nhập số điện thoại khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt_CustomerName.Text = "";
+            }
+        }
+
+        private void dgv_Cart_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            lb_TongTien.Text = TotalCount(dgv_Cart).ToString() + "VNĐ";
+        }
+        private long TotalCount(DataGridView dgv)
+        {
+            long Total = 0;
+
+            if (dgv_Cart.Rows.Count > 1)
+            {
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    Total += Convert.ToInt64(row.Cells["quantity"].Value) * Convert.ToInt64(row.Cells["price"].Value);
+                }
+            }
+
+            return Total;
         }
     }
 }

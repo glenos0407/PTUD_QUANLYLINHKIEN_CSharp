@@ -39,9 +39,13 @@ namespace QUANLYLINHKIEN_PTUD
             frm_main = f;
             customerbll = new CustomerBLL();
             bindingSource = new BindingSource();
-            //bunifuCustomDataGrid1.Columns.Add("STT", "STT");
-            //bindingSource.DataSource = customerbll.GetAllCustomer();
-            //CreateDataGridView();
+
+            bunifuCustomDataGrid1.Columns.Add("STT", "STT");
+            bindingSource.DataSource = customerbll.GetAllCustomer();
+            bunifuCustomDataGrid1.MultiSelect = false;
+            bunifuCustomDataGrid1.ReadOnly = true;
+            bunifuCustomDataGrid1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            CreateDataGridView();
         }
 
         private void Custom_Theme()
@@ -82,8 +86,8 @@ namespace QUANLYLINHKIEN_PTUD
             
             bunifuCustomDataGrid1.DataSource = bindingSource;
 
-            bunifuCustomDataGrid1.Columns["Id"].Visible = false;
-            bunifuCustomDataGrid1.Columns["Orders"].Visible = false;
+            //bunifuCustomDataGrid1.Columns["Id"].Visible = false;
+            //bunifuCustomDataGrid1.Columns["Orders"].Visible = false;
 
             bunifuCustomDataGrid1.Columns["Name"].Width = 120;
             bunifuCustomDataGrid1.Columns["Points"].Width = 70;

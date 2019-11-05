@@ -123,6 +123,7 @@
             this.pnl_Right.Name = "pnl_Right";
             this.pnl_Right.Size = new System.Drawing.Size(436, 387);
             this.pnl_Right.TabIndex = 2;
+            this.pnl_Right.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Right_Paint);
             // 
             // panel3
             // 
