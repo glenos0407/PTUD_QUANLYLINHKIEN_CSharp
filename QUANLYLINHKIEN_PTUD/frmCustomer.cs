@@ -246,6 +246,7 @@ namespace QUANLYLINHKIEN_PTUD
                 bindingSource.DataSource = customerbll.GetAllCustomer().OrderByDescending(x => x.Name).ToList();
             }
         }
+        //commit commit
 
         private void bunifuCustomDataGrid1_SelectionChanged(object sender, EventArgs e)
         {
