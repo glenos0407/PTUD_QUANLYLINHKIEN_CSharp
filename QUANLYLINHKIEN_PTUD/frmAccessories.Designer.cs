@@ -37,7 +37,14 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.imgs_Icon = new System.Windows.Forms.ImageList(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.dgv_Detail = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.lbDetail = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbChiTietKH = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -47,21 +54,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.cbx_Category = new System.Windows.Forms.ComboBox();
+            this.cbx_Producer = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.bunifuCustomDataGridAccessory = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Detail)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGridAccessory)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -112,6 +119,8 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btnThem);
+            this.panel4.Controls.Add(this.dgv_Detail);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.lbChiTietKH);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
@@ -120,20 +129,77 @@
             this.panel4.Size = new System.Drawing.Size(410, 612);
             this.panel4.TabIndex = 6;
             // 
+            // btnThem
+            // 
+            this.btnThem.Location = new System.Drawing.Point(6, 577);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(401, 32);
+            this.btnThem.TabIndex = 5;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // dgv_Detail
+            // 
+            this.dgv_Detail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Detail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT,
+            this.TenHang,
+            this.DonVi,
+            this.SoLuong});
+            this.dgv_Detail.Location = new System.Drawing.Point(6, 348);
+            this.dgv_Detail.Name = "dgv_Detail";
+            this.dgv_Detail.RowHeadersVisible = false;
+            this.dgv_Detail.Size = new System.Drawing.Size(401, 223);
+            this.dgv_Detail.TabIndex = 4;
+            this.dgv_Detail.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgv_Detail_RowPostPaint);
+            this.dgv_Detail.SelectionChanged += new System.EventHandler(this.dgv_Detail_SelectionChanged);
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            // 
+            // TenHang
+            // 
+            this.TenHang.HeaderText = "Tên Hàng";
+            this.TenHang.Name = "TenHang";
+            // 
+            // DonVi
+            // 
+            this.DonVi.HeaderText = "Đơn Vị";
+            this.DonVi.Name = "DonVi";
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.HeaderText = "Số Lượng Tồn";
+            this.SoLuong.Name = "SoLuong";
+            // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.lbDetail);
             this.panel5.Controls.Add(this.pictureBox1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 38);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(410, 180);
+            this.panel5.Size = new System.Drawing.Size(410, 304);
             this.panel5.TabIndex = 3;
+            // 
+            // lbDetail
+            // 
+            this.lbDetail.AutoSize = true;
+            this.lbDetail.Location = new System.Drawing.Point(26, 186);
+            this.lbDetail.Name = "lbDetail";
+            this.lbDetail.Size = new System.Drawing.Size(27, 13);
+            this.lbDetail.TabIndex = 3;
+            this.lbDetail.Text = "null";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(115, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(125, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 180);
+            this.pictureBox1.Size = new System.Drawing.Size(180, 173);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -201,7 +267,9 @@
             this.cbx_GiaTien.FormattingEnabled = true;
             this.cbx_GiaTien.Items.AddRange(new object[] {
             "Giá Tăng Dần",
-            "Giá Giảm Dần"});
+            "Giá Giảm Dần",
+            "Tên A-Z",
+            "Tên Z-A"});
             this.cbx_GiaTien.Location = new System.Drawing.Point(5, 61);
             this.cbx_GiaTien.Name = "cbx_GiaTien";
             this.cbx_GiaTien.Size = new System.Drawing.Size(181, 29);
@@ -233,9 +301,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.cbx_Category);
+            this.groupBox1.Controls.Add(this.cbx_Producer);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
@@ -246,47 +313,34 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm Kiếm Theo";
             // 
-            // radioButton3
+            // cbx_Category
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(292, 24);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(109, 21);
-            this.radioButton3.TabIndex = 8;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Nhà Sản Xuất";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.cbx_Category.FormattingEnabled = true;
+            this.cbx_Category.Items.AddRange(new object[] {
+            "Loại Linh Kiện"});
+            this.cbx_Category.Location = new System.Drawing.Point(231, 23);
+            this.cbx_Category.Name = "cbx_Category";
+            this.cbx_Category.Size = new System.Drawing.Size(201, 25);
+            this.cbx_Category.TabIndex = 10;
             // 
-            // radioButton1
+            // cbx_Producer
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(37, 24);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(106, 21);
-            this.radioButton1.TabIndex = 6;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Tên Linh Kiện";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(163, 24);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(109, 21);
-            this.radioButton2.TabIndex = 7;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Loại Linh Kiện";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.cbx_Producer.FormattingEnabled = true;
+            this.cbx_Producer.Items.AddRange(new object[] {
+            "Nhà Sản Xuất"});
+            this.cbx_Producer.Location = new System.Drawing.Point(9, 23);
+            this.cbx_Producer.Name = "cbx_Producer";
+            this.cbx_Producer.Size = new System.Drawing.Size(200, 25);
+            this.cbx_Producer.TabIndex = 9;
             // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.Green;
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(377, 4);
+            this.btnSearch.Location = new System.Drawing.Point(361, 4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(58, 29);
+            this.btnSearch.Size = new System.Drawing.Size(74, 29);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -297,21 +351,20 @@
             this.txtSearch.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtSearch.Location = new System.Drawing.Point(8, 3);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(363, 29);
+            this.txtSearch.Size = new System.Drawing.Size(347, 29);
             this.txtSearch.TabIndex = 0;
-            this.txtSearch.Text = "Bạn Cần Tìm Linh Kiện Gì ?";
             this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter_1);
             // 
-            // bunifuCustomDataGrid1
+            // bunifuCustomDataGridAccessory
             // 
-            this.bunifuCustomDataGrid1.AllowUserToResizeColumns = false;
-            this.bunifuCustomDataGrid1.AllowUserToResizeRows = false;
+            this.bunifuCustomDataGridAccessory.AllowUserToResizeColumns = false;
+            this.bunifuCustomDataGridAccessory.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.bunifuCustomDataGrid1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.bunifuCustomDataGridAccessory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.bunifuCustomDataGridAccessory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.bunifuCustomDataGridAccessory.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.bunifuCustomDataGridAccessory.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bunifuCustomDataGridAccessory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -319,20 +372,21 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.bunifuCustomDataGrid1.ColumnHeadersHeight = 30;
-            this.bunifuCustomDataGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCustomDataGrid1.DoubleBuffered = true;
-            this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
-            this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.SystemColors.HotTrack;
-            this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.SystemColors.Window;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(0, 151);
-            this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
-            this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.bunifuCustomDataGrid1.RowHeadersVisible = false;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(743, 491);
-            this.bunifuCustomDataGrid1.TabIndex = 8;
-            this.bunifuCustomDataGrid1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.bunifuCustomDataGrid1_RowPostPaint);
+            this.bunifuCustomDataGridAccessory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.bunifuCustomDataGridAccessory.ColumnHeadersHeight = 30;
+            this.bunifuCustomDataGridAccessory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bunifuCustomDataGridAccessory.DoubleBuffered = true;
+            this.bunifuCustomDataGridAccessory.EnableHeadersVisualStyles = false;
+            this.bunifuCustomDataGridAccessory.HeaderBgColor = System.Drawing.SystemColors.HotTrack;
+            this.bunifuCustomDataGridAccessory.HeaderForeColor = System.Drawing.SystemColors.Window;
+            this.bunifuCustomDataGridAccessory.Location = new System.Drawing.Point(0, 151);
+            this.bunifuCustomDataGridAccessory.Name = "bunifuCustomDataGridAccessory";
+            this.bunifuCustomDataGridAccessory.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.bunifuCustomDataGridAccessory.RowHeadersVisible = false;
+            this.bunifuCustomDataGridAccessory.Size = new System.Drawing.Size(743, 491);
+            this.bunifuCustomDataGridAccessory.TabIndex = 8;
+            this.bunifuCustomDataGridAccessory.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.bunifuCustomDataGrid1_RowPostPaint);
+            this.bunifuCustomDataGridAccessory.SelectionChanged += new System.EventHandler(this.bunifuCustomDataGridAccessory_SelectionChanged);
             // 
             // frmAccessories
             // 
@@ -340,7 +394,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(69)))), ((int)(((byte)(114)))));
             this.ClientSize = new System.Drawing.Size(1153, 642);
-            this.Controls.Add(this.bunifuCustomDataGrid1);
+            this.Controls.Add(this.bunifuCustomDataGridAccessory);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
@@ -352,7 +406,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Detail)).EndInit();
             this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -360,8 +416,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGridAccessory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -378,16 +433,22 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGridAccessory;
         private System.Windows.Forms.Label lbChiTietKH;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnNhapHang;
+        private System.Windows.Forms.DataGridView dgv_Detail;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DonVi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.Label lbDetail;
+        private System.Windows.Forms.ComboBox cbx_Category;
+        private System.Windows.Forms.ComboBox cbx_Producer;
     }
 }

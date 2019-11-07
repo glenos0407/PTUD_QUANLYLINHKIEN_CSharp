@@ -54,6 +54,9 @@ namespace QUANLYLINHKIEN_PTUD
         private void frmLogin_Load(object sender, EventArgs e)
         {
             Custom_Theme();
+            txt_Password.UseSystemPasswordChar = true;
+            txt_Password.Text = "123qwe";
+            txt_User.Text = "chautruongphat123@gmail.com";
         }
 
         private void txtUser_Enter(object sender, EventArgs e)
@@ -80,6 +83,11 @@ namespace QUANLYLINHKIEN_PTUD
                 frm.ShowDialog();
                 this.Close();
             }
+        }
+
+        private void pnl_Right_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

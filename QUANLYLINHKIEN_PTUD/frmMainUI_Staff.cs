@@ -250,7 +250,17 @@ namespace QUANLYLINHKIEN_PTUD
                 MessageBox.Show("Hãy Đóng Giao Diện Hiện Tại", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            //var taskOpenWaitingForm = Task.Factory.StartNew(() => {
+            //    frmHandling frm = new frmHandling();
+            //    frm.ShowDialog();
+            //});
+            //taskOpenWaitingForm.Wait();
+            //var taskOpenfrmSale = Task.Factory.StartNew(() => );
+            //taskOpenfrmSale.Wait();
             open_frmSale();
+
+
         }
 
         private void btnWarehouse_Click(object sender, EventArgs e)
