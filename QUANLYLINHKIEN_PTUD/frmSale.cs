@@ -215,6 +215,7 @@ namespace QUANLYLINHKIEN_PTUD
         private void dgv_Accessories_SelectionChanged(object sender, EventArgs e)
         {
             btnAdd.Text = "THÊM VÀO GIỎ HÀNG";
+            dgv_Cart.ClearSelection();
             if (dgv_Accessories.SelectedRows.Count > 0)
             {
                 if (Convert.ToInt32(dgv_Accessories.SelectedRows[0].Cells["STT"].Value) != dgv_Accessories.Rows.Count)
@@ -273,6 +274,7 @@ namespace QUANLYLINHKIEN_PTUD
             return s;
         }
 
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (dgv_Accessories.SelectedRows.Count > 0)
@@ -290,7 +292,7 @@ namespace QUANLYLINHKIEN_PTUD
                     row.Cells[2].Value = dgv_Accessories.SelectedRows[0].Cells["CalculationUnit"].Value;
                     row.Cells[2].ToolTipText = "Giá :" + dgv_Accessories.SelectedRows[0].Cells["Price"].Value.ToString();
 
-                    row.Cells[3].Value = "0";
+                    row.Cells[3].Value = "1";
                     //row.Cells[2].ToolTipText = dgv_Accessories.SelectedRows[0].Cells["Price"].Value.ToString();
 
                     row.Cells[4].Value = dgv_Accessories.SelectedRows[0].Cells["Avatar"].Value;
@@ -306,6 +308,15 @@ namespace QUANLYLINHKIEN_PTUD
                     if(dgv_Cart.Rows.Count > 1 && dgv_Cart.SelectedRows[0].Index < (dgv_Cart.Rows.Count - 1))
                         dgv_Cart.Rows.RemoveAt(dgv_Cart.SelectedRows[0].Index);
             }
+            if (dgv_Cart.SelectedRows.Count > 0)
+            {
+                if (btnAdd.Text.Contains("XÓA"))
+                {
+                    if (dgv_Cart.Rows.Count > 1 && dgv_Cart.SelectedRows[0].Index < (dgv_Cart.Rows.Count - 1))
+                        dgv_Cart.Rows.RemoveAt(dgv_Cart.SelectedRows[0].Index);
+                }
+            }
+
             dgv_Cart.ClearSelection();
             dgv_Accessories.ClearSelection();
         }
@@ -318,11 +329,12 @@ namespace QUANLYLINHKIEN_PTUD
         private void dgv_Cart_SelectionChanged(object sender, EventArgs e)
         {
             btnAdd.Text = "XÓA KHỎI GIỎ HÀNG";
+            dgv_Accessories.ClearSelection();
             if (dgv_Cart.SelectedRows.Count > 0)
             {
                 if (dgv_Cart.Rows.Count > 1 && dgv_Cart.SelectedRows[0].Cells["STT"].Value != null)
                 {
-                    var category = dgv_Cart.SelectedRows[0].Cells["CategoryId"].Value.ToString();
+                    //var category = dgv_Cart.SelectedRows[0].Cells["CategoryId"].Value.ToString();
 
                     //lbDescription.Text = CreateLabelDescription(category);
 
@@ -333,7 +345,7 @@ namespace QUANLYLINHKIEN_PTUD
                     outPutDirectory += dgv_Cart.SelectedRows[0].Cells["Avatar"].Value;
                     string directoryPath = new Uri(outPutDirectory).LocalPath;
 
-                    picbx_LinhKien.Image = new Bitmap(directoryPath);
+                   //picbx_LinhKien.Image = new Bitmap(directoryPath);
                 }
             }
         }
@@ -405,6 +417,32 @@ namespace QUANLYLINHKIEN_PTUD
             }
             else
                 MessageBox.Show("Nhập số điện thoại khách hàng", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+        }
+
+        private void dgv_Cart_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            
+                lb_TongTien.Text = TotalCount(dgv_Cart).ToString() + "VNĐ";
+            
+           
+        }
+        private long TotalCount(DataGridView dgv)
+        {
+            long Total = 0;
+            
+            if (dgv_Cart.Rows.Count > 1)
+            {
+                foreach(DataGridViewRow row in dgv.Rows)
+                {
+                    Total += Convert.ToInt64(row.Cells["quantity"].Value) * Convert.ToInt64(row.Cells["price"].Value);
+                }
+            }
+
+            return Total;
+        }
+        private void frmSale_Shown(object sender, EventArgs e)
+        {
+           
         }
     }
 }

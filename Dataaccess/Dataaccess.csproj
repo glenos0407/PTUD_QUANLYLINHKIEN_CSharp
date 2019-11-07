@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E00B66A3-C2E9-47FD-A658-8C731A4CB205}</ProjectGuid>
+    <ProjectGuid>{3D090F39-DCC0-4D45-8223-09DE72C7D953}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Dataaccess</RootNamespace>
@@ -22,7 +22,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,7 +30,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
@@ -48,7 +46,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -110,8 +108,172 @@
     <Compile Include="Staff\StaffDAL.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <Content Include="Images\AccessoryAvatar\CAC001.jpg" />
+    <Content Include="Images\AccessoryAvatar\CAC003.jpg" />
+    <Content Include="Images\AccessoryAvatar\CAC004.jpg" />
+    <Content Include="Images\AccessoryAvatar\CAC005.jpg" />
+    <Content Include="Images\AccessoryAvatar\CAC006.jpg" />
+    <Content Include="Images\AccessoryAvatar\CAC007.jpg" />
+    <Content Include="Images\AccessoryAvatar\CAC008.jpg" />
+    <Content Include="Images\AccessoryAvatar\CAC009.jpg" />
+    <Content Include="Images\AccessoryAvatar\CAC010.jpg" />
+    <Content Include="Images\AccessoryAvatar\CAC011.jpg" />
+    <Content Include="Images\AccessoryAvatar\CAC012.jpg" />
+    <Content Include="Images\AccessoryAvatar\CAC013.jpg" />
+    <Content Include="Images\AccessoryAvatar\CAC014.jpg" />
+    <Content Include="Images\AccessoryAvatar\CAC015.jpg" />
+    <Content Include="Images\AccessoryAvatar\CAC016.jpg" />
+    <Content Include="Images\AccessoryAvatar\CAC017.jpg" />
+    <Content Include="Images\AccessoryAvatar\CAC018.jpg" />
+    <Content Include="Images\AccessoryAvatar\CAC019.jpg" />
+    <Content Include="Images\AccessoryAvatar\CAC020.jpg" />
+    <Content Include="Images\AccessoryAvatar\CAC021.jpg" />
+    <Content Include="Images\AccessoryAvatar\CAC022.jpg" />
+    <Content Include="Images\AccessoryAvatar\CAC023.jpg" />
+    <Content Include="Images\AccessoryAvatar\CAC024.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU001.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU002.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU003.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU008.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU009.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU010.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU011.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU012.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU013.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU014.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU015.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU016.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU017.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU018.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU019.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU020.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU021.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU022.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU023.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU024.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU025.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU026.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU027.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU028.jpg" />
+    <Content Include="Images\AccessoryAvatar\CPU029.jpg" />
+    <Content Include="Images\AccessoryAvatar\MAB011.jpg" />
+    <Content Include="Images\AccessoryAvatar\MAB012.jpg" />
+    <Content Include="Images\AccessoryAvatar\MAB013.jpg" />
+    <Content Include="Images\AccessoryAvatar\MAB014.jpg" />
+    <Content Include="Images\AccessoryAvatar\MAB015.jpg" />
+    <Content Include="Images\AccessoryAvatar\MAB016.jpg" />
+    <Content Include="Images\AccessoryAvatar\MAB018.jpg" />
+    <Content Include="Images\AccessoryAvatar\MAB019.jpg" />
+    <Content Include="Images\AccessoryAvatar\MAB024.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU001.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU002.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU003.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU004.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU005.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU006.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU007.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU008.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU009.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU010.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU011.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU012.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU013.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU014.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU015.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU016.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU017.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU018.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU019.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU020.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU021.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU022.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU023.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU024.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU056.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU057.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU058.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU059.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU060.jpg" />
+    <Content Include="Images\AccessoryAvatar\PSU061.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM011.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM012.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM013.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM014.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM015.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM016.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM017.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM018.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM019.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM020.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM021.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM022.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM023.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM024.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM025.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM026.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM027.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM028.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM029.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM030.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM031.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM032.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM033.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM034.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM035.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM036.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM038.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM039.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM040.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM041.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM042.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM048.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM050.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM053.jpg" />
+    <Content Include="Images\AccessoryAvatar\RAM054.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA003.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA004.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA005.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA006.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA007.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA008.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA009.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA012.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA013.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA014.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA019.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA020.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA021.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA022.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA023.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA024.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA025.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA026.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA027.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA028.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA029.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA030.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA033.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA034.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA035.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA040.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA041.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA042.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA046.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA047.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA049.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA050.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA051.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA052.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA053.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA054.jpg" />
+    <Content Include="Images\AccessoryAvatar\VGA055.jpg" />
+    <Content Include="Images\StaffAvatar\19248157_820739981434639_3417637283825201724_n.jpg" />
+    <Content Include="Images\StaffAvatar\28058776_891251527699372_6039057323107621601_n.jpg" />
+    <Content Include="Images\StaffAvatar\61064106_206874210278458_5156379478917644288_n.jpg" />
+    <Content Include="Images\StaffAvatar\61362210_1623331331144647_6415344722495143936_n.jpg" />
+    <Content Include="Images\StaffAvatar\61429592_305130627062353_2051626261490434048_n.jpg" />
+    <Content Include="Images\StaffAvatar\65952266_1032804520258953_993844935394328576_n.jpg" />
+    <Content Include="Images\StaffAvatar\qoobee-agapi-sticker-pack-telegram-11.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201910051353325_CreateDatabase.resx">
@@ -140,14 +302,14 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\AccessoryAvatar\" />
-    <Folder Include="Images\StaffAvatar\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{078b0672-2c3f-4210-adb9-9bce9d5b1dc5}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

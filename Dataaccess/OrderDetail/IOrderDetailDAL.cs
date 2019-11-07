@@ -9,6 +9,6 @@ namespace Dataaccess
 {
     public interface IOrderDetailDAL
     {
-        public bool CreateOrderDetail(OrderDetail orderDetail);
+        bool CreateOrderDetail(OrderDetail orderDetail);
     }
 }
