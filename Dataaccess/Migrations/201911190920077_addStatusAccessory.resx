@@ -117,34 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lbDescription.Text" xml:space="preserve">
-    <value>Hỗ trợ thế hệ 9 th và 8 th Gen Intel ® xử ™ Core (socket 1151) - Digi điện thiết kế - 8 pha điện thiết kế - Hỗ trợ Intel ® Công nghệ Turbo Boost 2.0 - Hỗ trợ Intel K-Series mở khóa CPU - Hỗ trợ ASRock BCLK Full tầm Ép xung</value>
+  <data name="Target" xml:space="preserve">
+    <value>H4sIAAAAAAAEAO1c224ktxF9D5B/aPRTEqw1kvbFEUY2pNGuIXh3pWgkJ28C1c0ZNdzNnvRF1jjwl/khn5RfCPvOe5N9ldbCAgsNL4dksVhVLHbV/37/7/L758C3nmAUeyE6tY8ODm0LIid0PbQ9tdNk88239vff/flPyw9u8Gz9VLV7n7XDPVF8aj8mye5ksYidRxiA+CDwnCiMw01y4ITBArjh4vjw8O+Lo6MFxBA2xrKs5U2KEi+A+Q/8cxUiB+6SFPifQxf6cVmOa9Y5qvUFBDDeAQee2hcgAcBxYBzb1pnvATyDNfQ3tgUQChOQ4Pmd3MVwnUQh2q53uAD4t/sdxO02wI9hOe+TprnuEg6PsyUsmo4VlJPGSRgYAh69L2myYLt3oqxd0wxT7QOmbrLPVp1T7tQ+ywkWRnvbYkc7WflR1vLUzml/UDd9Z+UF7+pdx8yR/XtnrVI/SSN4imCaRAC3uE4ffM/5Ee5vw58hOkWp75PzwTPCdVQBLrqOwh2Mkv0N3JSzvHRta0H3W7Ad625En2L6eMcx09rWZ/D8CaJt8ojZ+fhb2/roPUO3KilZ4A55mMdxpyRK8c8veMLgwYd1/UI5Zva/YlT85xijnj1hzo8GGFc9zA9h6MY30IHeLsFnrV5o9vetF5jP+xI9QZTkvFcgXaLk/bExzHXkOc1kQsxx5lP5J4gigPDJ8AbZQPVgK+A7qZ+fMdwvGX+867vxxwgjGI8+yu1jBIE7/jj4ZybrvExPQKgSJMOMt/Z+HZ/t1qHzM5yA2x69XTzBOJ9hQIiO0YYpddzo45yn47P1+eXt+Ecn/AWOr4vW2ERpCHYehj4EqIPmCN3UgVFjKnTTQCusAbeYGQcxOZihvoAnb5vrCsmgtnUDC2US45NX2LwHVeV9ZbR5mXT+GIXBTegTncn6+1sQbfODGyoarcM0cgymeRW5MLqACfD8WDhVosE9YY02cxU24CYrbmU624ojhDOtKmVEFdVz8xQ2Ek1zuWiMdaUJ3zBCmwVftXwz4GVjTmTAS/mP4qyhznXFXcpzXfFpJxYkDl87FxKNp2fEWjTwHClsn0+2C/dSA03NxvWs+2i1f6Qg3+d+KDUdBjpamqNNfceqB+50G22VB2It31F1svJArWCNFL18mve0IcDMkaoV63a6SS+NWU5VS1C9Nl0pO6XEMtcJvqz/ABGMsCJwr0GSwAhlGLA87y3WLr6DZzikr6SzD+gWT8ofwoODbwSbTW9DPueIDqJTbqWXiGJtXlYWrE0rcrqKt82Z+nHMcpNDK5Qq4nOtO8l8T4Wzy2sEZCPLOZpRlf1M7npXW03usuWbGHkZvvIvafAAo+vHEM0w+IcgN5BH98B4KIn7CcJiEzf7glzTU+rci5LHbo8MapEnuVbpC2LuMiUR1J3kSinw2oRK3uxNorwMiTLR69s0smNW8fiKhQ4rgkEc/xJG4z8cXcZnTuI9NU9UXV3hmTAbyuZVCFotu40VsUKjrpN8bdy7bSK2avkmZV+bi7STl55lOaUrX4f1znAnx8vnxrjpqXnRa/6AXEvHj1vQnvQH4y3A7OjtMAPiyZzahwcHRxxJW+Dr61IDTziVaPy/ceCYgWGUcRDwV3g/8JHAVijP7R5yvB3wNZbJ9NU8K9mO1KOwNRdwB1HG5hpk0BmefPfjp1GPxhzmNkotFwTzqHlK7ACU7XqLN7DZdsqd37bxbfgmbHXEkn15hS6gDxNoZXou+4BuBWIHuLy8wOfQHYAjlWuYgCWVe6QzvvqBYwqmZC9TUiEku1kR4q32s4zIJ/IZCVi3dB2PIw3FBJlCEIoXriUDCZfpfDKQdlQqBZTEa9myxSNxnOrxo6M87i72hJSZSuYJiaAzuOSFdiLuoy40sl0W326a/S3dPpNwnNhDPo2AE9FhAv4SLVln2PpJaRbOEt5jZLuqvtQ0u9tcgCdhNvUXUdPdM1TkmYABVWTQGZ78TnECXixutLgPlsUIRsTnIJ/2nzz0+KMH0cV5Vg+fE4Er5S6GpTclLm/7LH9k+GuYiG70zXWa5w3u5kHjlNcxMUxzU25BoZ88ORxKF+tASUHa11OaVsLl1JZxC0guxEQIpdJp6V6xngihESYMCMFX3O4wn64RTVWfuLFMr+kpqVdDMwd3hjQ9IwQctQhWItLr16CN5EMenjgaF36DKz+xHprrFQRSX/JHoxD3QidgHNW9U+vmSbJLc/ZU3CK5MLKEHYxHmA8yJAyiuA3p3odaV6B7jdHksQ4Eod8SeFLITfN245yYdSVAFcsX2tRj8IDYt80vvd121LceiXUQykBBDaXR11tAVA732jyp65aLIia4LFguJMHDy89gt/PQlggmLkusdRFJvPpmbR5qGxQYC4eiNGtM1SMlYQS2kKnN4uhc+NGL4izCEjyA7GFk5QZcM5kxJlHm1ai8vcVvY6Xkqz7Z30W/JsD6QKp7GmJ+xOsLMhs4f28S7Lugr5XFdQMfRIL3rVXopwGS2+Py3sWLFdm/KNFHqN74SYyqTB+FD6Al8fhafWQikpYiU1Osj1V+jEnilEX6GHQ4LQlF1+gjct9zk6BcpQFuFhtLYWUFBv2LuFcKoSjSx6ijWkmUutBk55ioVXoPmUp93CI6lQQrSgwQytBTCqMsM6B1FVlKUbsq1MepIkdJmKpMH6UODCVh6kJ9nDzwk8TICwz6Z0GdVP+swIBrioBNileKIoP9LcMxqf0ty4z4t3ZzMKwrdX8ouIV4nKWFhfzRNrMaGPXFuVs4Dcm5w2ilq6WSidtpR41c+zfMFbK869z6eKbdaLk+ae0H6Scy3xJlb6mVQj79UqaK6k1Yjle/rJBY0ucWOU4TSEYCNaUGdhgdTCZco7FtJw0ZE8L3sDXYGDEhvtTWmvMs9DsFXfl/KnlEBzRRuoKqMbDoiKgmyqgjyo20a/EOxahX8eOUYp3EUz21SsUT/nwasXbAdVWIlYe8g0KUdp1bIUoRyO+2KSCyQh+v/NqcRCqLTAzLIg6FtiyLMoOrLfNROE1lus7AaG4+9aZM56b4xRyE0v/Y8RQUrzzmR0DS76Xy/zAOmiG4fuiT+HL4X3rO62AH6qTXpQZrbaIZqGU2xfpYRUADCVOUvJhz3TjTOx7t+vnV/HTLu859wEfdDO7tgG1Sj16/ITBvBcvSb9+ejZRz5BdNbAuT5slzMyf+eh8nMDjIGhys/+2vfA+vt2nwGSBvA+OkCCexjw+PjpnEpi8nyegijl1f8O4hzDRKb9gEQTHoCUTOY6YL2NQrPdIDVaB/CcDzX3tGDUqx+uTldPHfySB5Ob2MLftk5dz4ITCHECXl7EUpSVKYfphNcs1+OGQCzV5ITJLMXljcq8EAmGSyy35AVELLftSnk1b2wqITU/aCYpJP9sIiEkz2w2mSSPZjLTJRZD8+oJJBPnhdhBWbCDIXedyXjZfIhc+n9n/ybifW5b/um57vrNxpdWIdWr8NkEGy0Vkas2i607OQqzuerub5Bv94erxTQrwOZJozS50R4xH9dTmvSwI73dNYdut1FNm0d12MH2HSu14yri2x3TDgxkabYcq1ySVGvnmtAe+mwlqQAK2zsc0nQOtmLDP5z3RPTNmtn/Lisqbpjt70NJiAeZaur4Pthrt8CrK89AOkktP0tArJ5FVdZK84i0y/9XGZYTSPu2Hipzc+Hc1JMhyHDn54XhLDCg4kk8qoF+24dEVdLmtkqqJ2AWGeG+iPfQpHTmgzRPYaIkJqhlw1UwSMqj6v5wd7ZWloDLdvzMwLVRznpLkWzDZ3uHwyX2n6mDkTxpRxvBPnh5mMb77OBDDzJnuZReTo7+bE4ua1JG+ZLV3LtBJG9rXYjOLlFSZhmTPjyjy2seJTpJltY1Xs0GSpU/igXnb7xAlR9up0KMUXRfhu/xDi3S5udMbZUkRjNFWiIbpkUmlLpCIaxzjTijzRihS+nUq1QclTqa4SUskoQYs8P4sI2yx1izJziwj++iXldRElcRHEDIlFoDDqnBOnLyddi+HU5dalJJSs/9JHycMizLzSvlh+mUPt7QhpVtonO8NuDplChU+aMtMOCm224ZKkCDOiTCSQDJKf8B8qY7MmRdkbQPHrAsbetoFYYkwEHcqgqdtcok1Y2VbMjKom3EdwCXCxtXMWJd4GOEnzIaFt/QT8NH+SeYDuJbpKk12a4CXD4MGniJHZZ6rx8wwv9JyXV7s8HfwQS8DT9LJnkyt0nnq+W8/7o8BpLoHIDL/Sp5/tZZL59rf7GukLFwsiAyrJV9urtzDY+RgsvkJr8AS7zO0uhp/gFjj76ntzOUj7RtBkX154YBuBIC4xmv74J+ZhN3j+7v/u9PfPY4QAAA==</value>
   </data>
-  <metadata name="picbx_LinhKien.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="STT.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="NameAccessory.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="CalculationUnit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Quantity.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Avatar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Price.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
-  </metadata>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
+  </data>
 </root>

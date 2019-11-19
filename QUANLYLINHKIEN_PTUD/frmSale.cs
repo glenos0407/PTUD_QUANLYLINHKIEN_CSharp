@@ -103,7 +103,7 @@ namespace QUANLYLINHKIEN_PTUD
                     Value = category.Id
                 });
             }
-            cbx_Category.SelectedIndex = 0;
+            cbx_Category.SelectedIndex = 1;
         }
 
         private void CreateDataGridViewAccessory(BindingSource bindingSource)
@@ -201,8 +201,9 @@ namespace QUANLYLINHKIEN_PTUD
             producerBLL = new ProducerBLL();
             categoryBLL = new CategoryBLL();
             dgv_Accessories.Columns.Add("STT", "STT");
-            bindingSource.DataSource = accesoryBLL.GetAllAccessories();
             CreateComboBox();
+            //bindingSource.DataSource = accesoryBLL.GetAccessoriesByFilter(0, "CAC", "");
+            bindingSource.DataSource = accesoryBLL.GetAllAccessories();
             CreateDataGridViewAccessory(bindingSource);
             CreateDataGridViewCart();
         }
@@ -302,7 +303,7 @@ namespace QUANLYLINHKIEN_PTUD
                         row.Cells[2].Value = dgv_Accessories.SelectedRows[0].Cells["CalculationUnit"].Value;
                         row.Cells[2].ToolTipText = "Giá :" + dgv_Accessories.SelectedRows[0].Cells["Price"].Value.ToString();
 
-                        row.Cells[3].Value = "0";
+                        row.Cells[3].Value = "1";
                         //row.Cells[2].ToolTipText = dgv_Accessories.SelectedRows[0].Cells["Price"].Value.ToString();
 
                         row.Cells[4].Value = dgv_Accessories.SelectedRows[0].Cells["Avatar"].Value;
