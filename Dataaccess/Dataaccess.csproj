@@ -99,6 +99,10 @@
     <Compile Include="Migrations\201911190920077_addStatusAccessory.Designer.cs">
       <DependentUpon>201911190920077_addStatusAccessory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911190953117_updateStatus.cs" />
+    <Compile Include="Migrations\201911190953117_updateStatus.Designer.cs">
+      <DependentUpon>201911190953117_updateStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OrderDetail\IOrderDetailDAL.cs" />
     <Compile Include="OrderDetail\OrderDetailDAL.cs" />
@@ -306,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911190920077_addStatusAccessory.resx">
       <DependentUpon>201911190920077_addStatusAccessory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911190953117_updateStatus.resx">
+      <DependentUpon>201911190953117_updateStatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

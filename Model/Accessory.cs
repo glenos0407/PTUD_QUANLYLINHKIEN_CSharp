@@ -34,7 +34,7 @@ namespace Model
         public string Bus { get; set; }
         public string BIT { get; set; }
         public string Power { get; set; }
-        public bool Status { get; set; }
+        public int Status { get; set; }
 
         public int ProducerId { get; set; }
         [ForeignKey(nameof(ProducerId))]
