@@ -31,7 +31,11 @@ namespace QUANLYLINHKIEN_PTUD
             cbx_Producer.ForeColor = Color.DarkGray;
             cbx_Category.ForeColor = Color.DarkGray;
             bunifuCustomDataGridAccessory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            bunifuCustomDataGridAccessory.MultiSelect = false;
+            bunifuCustomDataGridAccessory.ReadOnly = true;
             dgv_Detail.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv_Detail.MultiSelect = false;
+            dgv_Detail.ReadOnly = true;
         }
 
         public frmAccessories(frmMainUI_Staff f)
@@ -44,7 +48,11 @@ namespace QUANLYLINHKIEN_PTUD
             cbx_Producer.ForeColor = Color.DarkGray;
             cbx_Category.ForeColor = Color.DarkGray;
             bunifuCustomDataGridAccessory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            bunifuCustomDataGridAccessory.MultiSelect = false;
+            bunifuCustomDataGridAccessory.ReadOnly = true;
             dgv_Detail.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv_Detail.MultiSelect = false;
+            dgv_Detail.ReadOnly = true;
         }
 
         private void Custom_Theme()
@@ -81,11 +89,7 @@ namespace QUANLYLINHKIEN_PTUD
             }
             cbx_Category.SelectedIndex = 0;
         }
-        private void CustomDetail()
-        {
-            dgv_Detail.Columns["STT"].Width = 30;
-            dgv_Detail.Columns["TenHang"].Width = 190;
-        }
+        
         private void Custom_GridView()
         {
             foreach (DataGridViewColumn column in bunifuCustomDataGridAccessory.Columns)
@@ -157,7 +161,6 @@ namespace QUANLYLINHKIEN_PTUD
             Custom_Theme();
             bindingSource.DataSource = accsorybll.GetAllAccessories();
             CreateDataGridViewAccessory(bindingSource);
-            CustomDetail();
             CreateDataGridViewDetail();
             CreateComboBox();
         }
@@ -232,26 +235,26 @@ namespace QUANLYLINHKIEN_PTUD
 
         private void dgv_Detail_SelectionChanged(object sender, EventArgs e)
         {
-            btnThem.Text = "Xóa";
-            if (dgv_Detail.SelectedRows.Count > 0)
-            {
-                if (dgv_Detail.Rows.Count > 1 && dgv_Detail.SelectedRows[0].Cells["STT"].Value != null)
-                {
-                    //var category = dgv_Detail.SelectedRows[0].Cells["CategoryId"].Value.ToString();
+            //btnThem.Text = "Xóa";
+            //if (dgv_Detail.SelectedRows.Count > 0)
+            //{
+            //    if (dgv_Detail.Rows.Count > 1 && dgv_Detail.SelectedRows[0].Cells["STT"].Value != null)
+            //    {
+            //        //var category = dgv_Detail.SelectedRows[0].Cells["CategoryId"].Value.ToString();
 
-                    //lbDescription.Text = CreateLabelDescription(category);
+            //        //lbDescription.Text = CreateLabelDescription(category);
 
-                    //var outPutDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
-                    //outPutDirectory = outPutDirectory.Replace(@"\QUANLYLINHKIEN_PTUD\bin\Debug", @"\Dataaccess\Images\AccessoryAvatar");
+            //        //var outPutDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
+            //        //outPutDirectory = outPutDirectory.Replace(@"\QUANLYLINHKIEN_PTUD\bin\Debug", @"\Dataaccess\Images\AccessoryAvatar");
 
-                    //outPutDirectory += @"\";
-                    //outPutDirectory += dgv_Detail.SelectedRows[0].Cells["Avatar"].Value;
-                    //string directoryPath = new Uri(outPutDirectory).LocalPath;
+            //        //outPutDirectory += @"\";
+            //        //outPutDirectory += dgv_Detail.SelectedRows[0].Cells["Avatar"].Value;
+            //        //string directoryPath = new Uri(outPutDirectory).LocalPath;
 
-                    //pictureBox1.Image = new Bitmap(directoryPath);
+            //        //pictureBox1.Image = new Bitmap(directoryPath);
                     
-                }
-            }
+            //    }
+            //}
         }
         private string CreateLabelDescription(string category)
         {
@@ -293,30 +296,30 @@ namespace QUANLYLINHKIEN_PTUD
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (bunifuCustomDataGridAccessory.SelectedRows.Count > 0)
-            {
-                if (btnThem.Text.Contains("Thêm"))
-                {
-                    DataGridViewRow row = (DataGridViewRow)dgv_Detail.Rows[0].Clone();
+            //if (bunifuCustomDataGridAccessory.SelectedRows.Count > 0)
+            //{
+            //    if (btnThem.Text.Contains("Thêm"))
+            //    {
+            //        DataGridViewRow row = (DataGridViewRow)dgv_Detail.Rows[0].Clone();
 
-                    row.Cells[1].Value = bunifuCustomDataGridAccessory.SelectedRows[0].Cells["Name"].Value;
+            //        row.Cells[1].Value = bunifuCustomDataGridAccessory.SelectedRows[0].Cells["Name"].Value;
 
-                    row.Cells[2].Value = bunifuCustomDataGridAccessory.SelectedRows[0].Cells["CalculationUnit"].Value;
+            //        row.Cells[2].Value = bunifuCustomDataGridAccessory.SelectedRows[0].Cells["CalculationUnit"].Value;
 
-                    row.Cells[3].Value = bunifuCustomDataGridAccessory.SelectedRows[0].Cells["Inventory"].Value; ;
+            //        row.Cells[3].Value = bunifuCustomDataGridAccessory.SelectedRows[0].Cells["Inventory"].Value; ;
 
-                    //row.Cells[4].Value = bunifuCustomDataGridAccessory.SelectedRows[0].Cells["Avatar"].Value;
-                    //row.Cells[5].Value = bunifuCustomDataGridAccessory.SelectedRows[0].Cells["Price"].Value;
-                    //row.Cells[6].Value = bunifuCustomDataGridAccessory.SelectedRows[0].Cells["Id"].Value;
+            //        //row.Cells[4].Value = bunifuCustomDataGridAccessory.SelectedRows[0].Cells["Avatar"].Value;
+            //        //row.Cells[5].Value = bunifuCustomDataGridAccessory.SelectedRows[0].Cells["Price"].Value;
+            //        //row.Cells[6].Value = bunifuCustomDataGridAccessory.SelectedRows[0].Cells["Id"].Value;
 
-                    dgv_Detail.Rows.Add(row);
-                }
-                else
-                    if (dgv_Detail.Rows.Count > 1 /*&& dgv_Detail.SelectedRows[0].Index < (dgv_Detail.Rows.Count - 1)*/)
-                        dgv_Detail.Rows.RemoveAt(dgv_Detail.SelectedRows[0].Index);
-            }
-            dgv_Detail.ClearSelection();
-            bunifuCustomDataGridAccessory.ClearSelection();
+            //        dgv_Detail.Rows.Add(row);
+            //    }
+            //    else
+            //        if (dgv_Detail.Rows.Count > 1 /*&& dgv_Detail.SelectedRows[0].Index < (dgv_Detail.Rows.Count - 1)*/)
+            //            dgv_Detail.Rows.RemoveAt(dgv_Detail.SelectedRows[0].Index);
+            //}
+            //dgv_Detail.ClearSelection();
+            //bunifuCustomDataGridAccessory.ClearSelection();
         }
 
         private void dgv_Detail_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)

@@ -9,6 +9,7 @@ using Business;
 using Model;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace QUANLYLINHKIEN_PTUD
 {
@@ -61,7 +62,6 @@ namespace QUANLYLINHKIEN_PTUD
         private void frmCustomer_Load(object sender, EventArgs e)
         {
             Custom_Theme();
-            rbtnSoDienThoai.Checked = true;
             bunifuCustomDataGrid1.MultiSelect = false;
         }
 
@@ -86,7 +86,7 @@ namespace QUANLYLINHKIEN_PTUD
             
             bunifuCustomDataGrid1.DataSource = bindingSource;
 
-            //bunifuCustomDataGrid1.Columns["Id"].Visible = false;
+            bunifuCustomDataGrid1.Columns["Id"].Visible = false;
             //bunifuCustomDataGrid1.Columns["Orders"].Visible = false;
 
             bunifuCustomDataGrid1.Columns["Name"].Width = 120;
@@ -192,10 +192,19 @@ namespace QUANLYLINHKIEN_PTUD
             Clear_TextBox();
         }
 
-
+        public bool IsNumber(string pText)
+        {
+            char s = pText.Trim().First();
+            String a = Convert.ToString(s);
+            //while (s.IndexOf(" ") >= 0)        
+            //    s = s.Replace("  ", "");             
+            Regex regex = new Regex(@"^[0-9]{1}$");
+            return regex.IsMatch(a);
+        }
         private void btnSearch_Click_1(object sender, EventArgs e)
         {
             String txt = txtSearch.Text.ToString();
+     
             if (txt == "" && isEnter == true)
             {
                 MessageBox.Show("Hãy nhập thông tin");
@@ -206,7 +215,19 @@ namespace QUANLYLINHKIEN_PTUD
                 MessageBox.Show("Hãy nhập thông tin");
                 return;
             }
-            if (rbtnKhachHang.Checked == true)
+            if (IsNumber(txt) == true)
+            {
+                if (customerbll.GetCustomerFromNumberPhone(txt) != null)
+                {
+                    CreateDataGridView();
+                    bindingSource.DataSource = customerbll.GetCustomerFromNumberPhone(txt);
+                }
+                else
+                {
+                    MessageBox.Show("Không Tìm Thấy");
+                }
+            }
+            else if(IsNumber(txt) == false)
             {
                 if(customerbll.GetListCustomer(txt).Count != 0)
                 {
@@ -219,18 +240,7 @@ namespace QUANLYLINHKIEN_PTUD
                 }
                 
             }
-            else if (rbtnSoDienThoai.Checked == true)
-            {
-                if (customerbll.GetCustomerFromNumberPhone(txt) != null)
-                {
-                    CreateDataGridView();
-                    bindingSource.DataSource = customerbll.GetCustomerFromNumberPhone(txt);
-                }
-                else
-                {
-                    MessageBox.Show("Không Tìm Thấy");
-                }
-            }
+            
         }
         private void cbx_SapXep_SelectedIndexChanged(object sender, EventArgs e)//lỗi
         {

@@ -78,21 +78,21 @@ namespace Dataaccess
 
         public List<Customer> GetListCustomer(string name)
         {
-            return db.Customers.Where(x => x.Name.Equals(name)).ToList();
+            return db.Customers.Where(x => x.Name.Contains(name)).ToList();
 
         }
         public Customer GetCustomerFromNumberPhone(string sdt)
         {
-            return db.Customers.FirstOrDefault(x => x.NumberPhone.Equals(sdt));
+            return db.Customers.FirstOrDefault(x => x.NumberPhone.Contains(sdt));
         }
         public int GetCustomerByNumberPhone(string sdt)
         {
-            return db.Customers.FirstOrDefault(x => x.NumberPhone.Equals(sdt)).Id;
+            return db.Customers.FirstOrDefault(x => x.NumberPhone.Contains(sdt)).Id;
         }
 
         public string GetCustomerNameByNumberPhone(string phone)
         {
-            return db.Customers.FirstOrDefault(c => c.NumberPhone.Equals(phone)).Name;
+            return db.Customers.FirstOrDefault(c => c.NumberPhone.Contains(phone)).Name;
         }
     }
 }

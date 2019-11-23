@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAccessories));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
@@ -39,10 +39,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnThem = new System.Windows.Forms.Button();
             this.dgv_Detail = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lbDetail = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -59,6 +55,10 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.bunifuCustomDataGridAccessory = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Detail)).BeginInit();
@@ -135,7 +135,7 @@
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(401, 32);
             this.btnThem.TabIndex = 5;
-            this.btnThem.Text = "Thêm";
+            this.btnThem.Text = "Thêm vào cơ sở dữ liệu ";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -155,26 +155,6 @@
             this.dgv_Detail.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgv_Detail_RowPostPaint);
             this.dgv_Detail.SelectionChanged += new System.EventHandler(this.dgv_Detail_SelectionChanged);
             // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            // 
-            // TenHang
-            // 
-            this.TenHang.HeaderText = "Tên Hàng";
-            this.TenHang.Name = "TenHang";
-            // 
-            // DonVi
-            // 
-            this.DonVi.HeaderText = "Đơn Vị";
-            this.DonVi.Name = "DonVi";
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.HeaderText = "Số Lượng Tồn";
-            this.SoLuong.Name = "SoLuong";
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.lbDetail);
@@ -188,11 +168,13 @@
             // lbDetail
             // 
             this.lbDetail.AutoSize = true;
-            this.lbDetail.Location = new System.Drawing.Point(26, 186);
+            this.lbDetail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDetail.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbDetail.Location = new System.Drawing.Point(86, 184);
             this.lbDetail.Name = "lbDetail";
-            this.lbDetail.Size = new System.Drawing.Size(27, 13);
+            this.lbDetail.Size = new System.Drawing.Size(10, 15);
             this.lbDetail.TabIndex = 3;
-            this.lbDetail.Text = "null";
+            this.lbDetail.Text = ".";
             // 
             // pictureBox1
             // 
@@ -359,20 +341,20 @@
             // 
             this.bunifuCustomDataGridAccessory.AllowUserToResizeColumns = false;
             this.bunifuCustomDataGridAccessory.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGridAccessory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGridAccessory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.bunifuCustomDataGridAccessory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.bunifuCustomDataGridAccessory.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGridAccessory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGridAccessory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGridAccessory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGridAccessory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.bunifuCustomDataGridAccessory.ColumnHeadersHeight = 30;
             this.bunifuCustomDataGridAccessory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuCustomDataGridAccessory.DoubleBuffered = true;
@@ -387,6 +369,30 @@
             this.bunifuCustomDataGridAccessory.TabIndex = 8;
             this.bunifuCustomDataGridAccessory.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.bunifuCustomDataGrid1_RowPostPaint);
             this.bunifuCustomDataGridAccessory.SelectionChanged += new System.EventHandler(this.bunifuCustomDataGridAccessory_SelectionChanged);
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.Width = 40;
+            // 
+            // TenHang
+            // 
+            this.TenHang.HeaderText = "Tên Hàng";
+            this.TenHang.Name = "TenHang";
+            this.TenHang.Width = 160;
+            // 
+            // DonVi
+            // 
+            this.DonVi.HeaderText = "Số Lượng";
+            this.DonVi.Name = "DonVi";
+            this.DonVi.Width = 60;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.HeaderText = "Đơn Giá";
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.Width = 140;
             // 
             // frmAccessories
             // 
@@ -443,12 +449,12 @@
         private System.Windows.Forms.Button btnNhapHang;
         private System.Windows.Forms.DataGridView dgv_Detail;
         private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Label lbDetail;
+        private System.Windows.Forms.ComboBox cbx_Category;
+        private System.Windows.Forms.ComboBox cbx_Producer;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonVi;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
-        private System.Windows.Forms.Label lbDetail;
-        private System.Windows.Forms.ComboBox cbx_Category;
-        private System.Windows.Forms.ComboBox cbx_Producer;
     }
 }

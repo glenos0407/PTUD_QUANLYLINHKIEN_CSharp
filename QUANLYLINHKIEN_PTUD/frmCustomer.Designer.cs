@@ -60,9 +60,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.rbtnKhachHang = new System.Windows.Forms.RadioButton();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.rbtnSoDienThoai = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel1.SuspendLayout();
@@ -381,9 +379,7 @@
             // panel6
             // 
             this.panel6.Controls.Add(this.txtSearch);
-            this.panel6.Controls.Add(this.rbtnKhachHang);
             this.panel6.Controls.Add(this.btnSearch);
-            this.panel6.Controls.Add(this.rbtnSoDienThoai);
             this.panel6.Controls.Add(this.label1);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(0, 0);
@@ -402,19 +398,6 @@
             this.txtSearch.Text = "Nhập Tên, CMND, Mã Khách Hàng,...";
             this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
             // 
-            // rbtnKhachHang
-            // 
-            this.rbtnKhachHang.AutoSize = true;
-            this.rbtnKhachHang.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnKhachHang.ForeColor = System.Drawing.Color.White;
-            this.rbtnKhachHang.Location = new System.Drawing.Point(145, 68);
-            this.rbtnKhachHang.Name = "rbtnKhachHang";
-            this.rbtnKhachHang.Size = new System.Drawing.Size(121, 21);
-            this.rbtnKhachHang.TabIndex = 16;
-            this.rbtnKhachHang.TabStop = true;
-            this.rbtnKhachHang.Text = "Tên Khách Hàng";
-            this.rbtnKhachHang.UseVisualStyleBackColor = true;
-            // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.Green;
@@ -426,19 +409,6 @@
             this.btnSearch.TabIndex = 8;
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
-            // 
-            // rbtnSoDienThoai
-            // 
-            this.rbtnSoDienThoai.AutoSize = true;
-            this.rbtnSoDienThoai.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnSoDienThoai.ForeColor = System.Drawing.Color.White;
-            this.rbtnSoDienThoai.Location = new System.Drawing.Point(12, 68);
-            this.rbtnSoDienThoai.Name = "rbtnSoDienThoai";
-            this.rbtnSoDienThoai.Size = new System.Drawing.Size(107, 21);
-            this.rbtnSoDienThoai.TabIndex = 15;
-            this.rbtnSoDienThoai.TabStop = true;
-            this.rbtnSoDienThoai.Text = "Số Điện Thoại";
-            this.rbtnSoDienThoai.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -542,8 +512,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.RadioButton rbtnKhachHang;
-        private System.Windows.Forms.RadioButton rbtnSoDienThoai;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
