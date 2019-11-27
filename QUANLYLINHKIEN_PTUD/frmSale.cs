@@ -18,12 +18,14 @@ namespace QUANLYLINHKIEN_PTUD
     {
         static int staffId;
         frmMainUI_Staff fmain;
+
         AccesoryBLL accesoryBLL;
         CustomerBLL customerBLL;
         OrderBLL orderBLL;
         OrderDetailBLL orderDetailBLL;
         ProducerBLL producerBLL;
         CategoryBLL categoryBLL;
+        StaffBLL staffBLL;
         BindingSource bindingSource;
 
         public frmSale()
@@ -199,6 +201,7 @@ namespace QUANLYLINHKIEN_PTUD
             customerBLL = new CustomerBLL();
             accesoryBLL = new AccesoryBLL();
             producerBLL = new ProducerBLL();
+            staffBLL = new StaffBLL();
             categoryBLL = new CategoryBLL();
             dgv_Accessories.Columns.Add("STT", "STT");
             CreateComboBox();
@@ -343,9 +346,9 @@ namespace QUANLYLINHKIEN_PTUD
             dgv_Accessories.ClearSelection();
             if (dgv_Cart.SelectedRows.Count > 0)
             {
-                if (dgv_Cart.Rows.Count > 1 && dgv_Cart.SelectedRows[0].Cells["STT"].Value != null)
+                if (dgv_Cart.Rows.Count > 1 && !string.IsNullOrEmpty(dgv_Cart.SelectedRows[0].Cells["NameAccessory"].Value.ToString()))
                 {
-                    var category = dgv_Cart.SelectedRows[0].Cells["CategoryId"].Value.ToString();
+                    //var category = dgv_Cart.SelectedRows[0].Cells["CategoryId"].Value.ToString();
 
                     //lbDescription.Text = CreateLabelDescription(category);
 
@@ -378,11 +381,15 @@ namespace QUANLYLINHKIEN_PTUD
                     StaffId = staffId,
                     CustomerId = string.IsNullOrEmpty(txt_CustomerName.Text) ? 1 : customerBLL.GetCustomerIdByNumberPhone(txt_PhoneCustomer.Text),
                     CreationTime = DateTime.Now,
-                    TotalPrice = Convert.ToDouble(lb_TongTien.Text.ToString())
+                    TotalPrice = Convert.ToDouble(lb_TongTien.Text.ToString().Replace("VNĐ", ""))
                 };
 
                 var newOrderId = Convert.ToInt32(orderBLL.CreateOrder(order).ToString());
 
+                var customer = customerBLL.GetCustomerFromNumberPhone(txt_PhoneCustomer.Text);
+
+
+                List<AccessoryPDFCreatingDTO> listAccessory = new List<AccessoryPDFCreatingDTO>();
                 for (int i = 0; i < (dgv_Cart.Rows.Count - 1); i++)
                 {
                     OrderDetail orderDetail = new OrderDetail();
@@ -393,9 +400,34 @@ namespace QUANLYLINHKIEN_PTUD
                     orderDetail.Quantity = Convert.ToInt32(dgv_Cart.Rows[i].Cells["Quantity"].Value.ToString());
                     orderDetail.AccessoryPrice = Convert.ToDouble(dgv_Cart.Rows[i].Cells["Price"].Value.ToString());
 
+                    listAccessory.Add(new AccessoryPDFCreatingDTO
+                    {
+                        CalculationUnit = orderDetail.AccessoryCalculationUnit,
+                        Name = orderDetail.AccessoryName,
+                        Price = orderDetail.AccessoryPrice,
+                        Quantity = orderDetail.Quantity,
+                        Total = orderDetail.Quantity * orderDetail.AccessoryPrice
+                    });
                     orderDetailBLL.CreateOrderDetail(orderDetail);
                 }
-                MessageBox.Show("Tạo hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                var orderPDF = new OrderPDFCreatingDTO();
+                orderPDF.Id = newOrderId;
+                orderPDF.StaffName = staffBLL.GetStaffNameById(staffId);
+                orderPDF.Total = order.TotalPrice.ToString();
+                if (customer != null)
+                {
+                    orderPDF.CustomerName = customer.Name;
+                    orderPDF.CustomerAddress = customer.Address;
+                    orderPDF.CustomerPhone = customer.NumberPhone;
+                }
+                else
+                {
+                    orderPDF.CustomerName = "";
+                    orderPDF.CustomerAddress = "";
+                    orderPDF.CustomerPhone = "";
+                }
+                orderPDF.ListAccessory = listAccessory;
+                orderBLL.PrintOrder(orderPDF);
             }
         }
 

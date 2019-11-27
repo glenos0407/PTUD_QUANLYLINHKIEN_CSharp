@@ -12,5 +12,6 @@ namespace Dataaccess
         bool SignIn(string email, string password);
         bool ChangePassword(Staff staff, string newPassword);
         Staff GetStaff(int staffId);
+        string GetStaffNameById(int staffId);
     }
 }

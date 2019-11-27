@@ -10,6 +10,7 @@ namespace Dataaccess
     public class OrderDAL : IOrderDAL
     {
         QuanLyLinhKienDBContext db;
+        PDFCreateExtention pdfExtention;
         public OrderDAL()
         {
             db = new QuanLyLinhKienDBContext();
@@ -19,6 +20,11 @@ namespace Dataaccess
             db.Orders.Add(order);
             db.SaveChanges();
             return order.Id;
+        }
+        public void PrintOrder(OrderPDFCreatingDTO orderPDF)
+        {
+            pdfExtention = new PDFCreateExtention(orderPDF);
+            pdfExtention.CreateBillPDF();
         }
     }
 }

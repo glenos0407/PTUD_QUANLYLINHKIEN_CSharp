@@ -109,10 +109,13 @@ namespace Dataaccess
                 IsSuccess = true
             };
         }
-
         public int CountStaff()
         {
             return db.Staffs.Count();
+        }
+        public string GetStaffNameById(int staffId)
+        {
+            return db.Staffs.FirstOrDefault(x => x.Id == staffId).Name;
         }
     }
 }

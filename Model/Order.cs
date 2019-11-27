@@ -15,7 +15,7 @@ namespace Model
         public DateTime CreationTime { get; set; }
         public double TotalPrice { get; set; }
         public int StaffId { get; set; }
-        public int CustomerId { get; set; }
+        public int? CustomerId { get; set; }
 
         [ForeignKey(nameof(StaffId))]
         public Staff Staff { get; set; }

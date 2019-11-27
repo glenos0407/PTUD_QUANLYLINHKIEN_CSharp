@@ -19,5 +19,9 @@ namespace Business
         {
             return dal.CreateOrder(order);
         }
+        public void PrintOrder(OrderPDFCreatingDTO orderPDF)
+        {
+            dal.PrintOrder(orderPDF);
+        }
     }
 }

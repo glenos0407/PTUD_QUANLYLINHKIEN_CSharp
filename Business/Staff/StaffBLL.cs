@@ -52,5 +52,9 @@ namespace Business
         {
             return dal.CountStaff();
         }
+        public string GetStaffNameById(int staffId)
+        {
+            return dal.GetStaffNameById(staffId);
+        }
     }
 }
