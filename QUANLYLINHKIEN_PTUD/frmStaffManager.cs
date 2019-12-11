@@ -28,8 +28,7 @@ namespace QUANLYLINHKIEN_PTUD
             InitializeComponent();
             Custom_Theme();
             staffbll = new StaffBLL();
-            dgv_StaffInfor.Columns.Add("STT", "STT");
-            roleTypes = new List<string>() { "Quản Lý", "Nhân viên thủ kho", "Nhân viên bán hàng" };
+            roleTypes = new List<string>() { "Quản lý", "Nhân viên thủ kho", "Nhân viên bán hàng" };
             cbx_Role.DataSource = roleTypes;
             dtp_BirthDate.Format = DateTimePickerFormat.Custom;
             bindingSource = new BindingSource();
@@ -43,8 +42,7 @@ namespace QUANLYLINHKIEN_PTUD
             fmain = f;
             Custom_Theme();
             staffbll = new StaffBLL();
-            dgv_StaffInfor.Columns.Add("STT", "STT");
-            roleTypes = new List<string>() { "Quản Lý", "Nhân viên thủ kho", "Nhân viên bán hàng" };
+            roleTypes = new List<string>() { "Quản lý", "Nhân viên thủ kho", "Nhân viên bán hàng" };
             cbx_Role.DataSource = roleTypes;
             dtp_BirthDate.Format = DateTimePickerFormat.Custom;
             dtp_BirthDate.CustomFormat = "dd/MM/yyyy";
@@ -75,8 +73,7 @@ namespace QUANLYLINHKIEN_PTUD
         {
             bindingSource.DataSource = staffbll.GetAllStaffDto();
 
-            
-            
+            dgv_StaffInfor.Columns.Add("STT", "STT");
             dgv_StaffInfor.DataSource = bindingSource;
             dgv_StaffInfor.Columns["Avatar"].Visible = false;
             dgv_StaffInfor.Columns["Role"].Visible = false;
@@ -180,10 +177,7 @@ namespace QUANLYLINHKIEN_PTUD
             //bindingSource.Add(staff);
 
             if(!result.IsSuccess)
-            {
                 CreateDataGridView();
-            }
-                
             //if(result.IsSuccess)
             //    MessageBox.Show(result.ResultMessage, "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
             //else

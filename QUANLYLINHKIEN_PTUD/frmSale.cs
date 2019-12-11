@@ -130,33 +130,8 @@ namespace QUANLYLINHKIEN_PTUD
             dgv_Accessories.Columns["Power"].Visible = false;
             dgv_Accessories.Columns["ProducerId"].Visible = false;
             dgv_Accessories.Columns["CategoryId"].Visible = false;
-            //dgv_Accessories.Columns["Producer"].Visible = false;
-            //dgv_Accessories.Columns["Category"].Visible = false;
             dgv_Accessories.Columns["Cores"].Visible = false;
             dgv_Accessories.Columns["Threads"].Visible = false;
-
-            //    Id 
-            //    Name 
-            //    Avatar
-            //    Inventory
-            //    GoodsReceiptDate 
-            //    Price
-            //    WarrantyTime
-            //    CalculationUnit
-            //    Description 
-            //    CPU
-            //    Generation
-            //    ProcessingSpeed 
-            //    Size
-            //    Socket 
-            //    Memory
-            //    Chipset
-            //    Version 
-            //    Bus 
-            //    BIT 
-            //    Power 
-            //    ProducerId 
-            //    CategoryId 
 
             dgv_Accessories.Columns["STT"].Width = 30;
             dgv_Accessories.Columns["STT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -346,7 +321,7 @@ namespace QUANLYLINHKIEN_PTUD
             dgv_Accessories.ClearSelection();
             if (dgv_Cart.SelectedRows.Count > 0)
             {
-                if (dgv_Cart.Rows.Count > 1 && !string.IsNullOrEmpty(dgv_Cart.SelectedRows[0].Cells["NameAccessory"].Value.ToString()))
+                if (dgv_Cart.Rows.Count > 1 && dgv_Cart.SelectedRows[0].Cells["NameAccessory"].Value != null)
                 {
                     //var category = dgv_Cart.SelectedRows[0].Cells["CategoryId"].Value.ToString();
 
@@ -408,6 +383,7 @@ namespace QUANLYLINHKIEN_PTUD
                         Quantity = orderDetail.Quantity,
                         Total = orderDetail.Quantity * orderDetail.AccessoryPrice
                     });
+                    accesoryBLL.UpdateInventoryAccessory(orderDetail.AccessoryId, orderDetail.Quantity);
                     orderDetailBLL.CreateOrderDetail(orderDetail);
                 }
                 var orderPDF = new OrderPDFCreatingDTO();

@@ -116,7 +116,7 @@ namespace Dataaccess
             int no = int.Parse(number);
             string strWords = "";
 
-            if (no > 999999999 && no < 10000000000)
+            if (no > 999999999)
             {
                 int i = no / 1000000000;
                 strWords = strWords + Ones[i - 1] + " Tỷ ";
