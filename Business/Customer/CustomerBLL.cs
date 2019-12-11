@@ -32,7 +32,9 @@ namespace Business
         }
         public Customer GetCustomerFromNumberPhone(string sdt)
         {
-            return cus.GetCustomerFromNumberPhone(sdt);
+            if(!string.IsNullOrEmpty(sdt))
+                return cus.GetCustomerFromNumberPhone(sdt);
+            return null;
         }
         public int GetCustomerIdByNumberPhone(string sdt)
         {

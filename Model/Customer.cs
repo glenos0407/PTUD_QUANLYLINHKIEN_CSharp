@@ -28,6 +28,7 @@ namespace Model
             ErrorMessage = "Sai định dạng email")]
 
         public string Email { get; set; }
+        public string Address { get; set; }
 
         public int Points { get; set; }
 

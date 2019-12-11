@@ -24,7 +24,7 @@ namespace Dataaccess
             return db.Customers.ToList();
         }
         
-        public Customer GetCustomer(int id)
+        public Customer GetCustomerById(int id)
         {
             return db.Customers.FirstOrDefault(x => x.Id == id);
         }
