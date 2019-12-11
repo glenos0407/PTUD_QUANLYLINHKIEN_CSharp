@@ -102,6 +102,7 @@ namespace QUANLYLINHKIEN_PTUD
             bunifuCustomDataGrid1.Columns["NumberPhone"].HeaderText = "Số điện thoại";
             bunifuCustomDataGrid1.Columns["IdentifyNumber"].HeaderText = "Số CMND";
             bunifuCustomDataGrid1.Columns["Points"].HeaderText = "Điểm Thưởng";
+            bunifuCustomDataGrid1.Columns["Address"].Visible = false;
 
             bunifuCustomDataGrid1.ClearSelection();
             bunifuCustomDataGrid1.Rows[0].Selected = false;

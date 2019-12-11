@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReport));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbTieuDe = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
@@ -48,12 +51,37 @@
             this.btnBaoCaoNgay = new System.Windows.Forms.Button();
             this.btnLuuBaoCao = new System.Windows.Forms.Button();
             this.btnXuatBaoCao = new System.Windows.Forms.Button();
-            this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.chartRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lb_LastMonthDown = new System.Windows.Forms.Label();
+            this.lb_YesterdayDown = new System.Windows.Forms.Label();
+            this.lb_Reply = new System.Windows.Forms.Label();
+            this.lb_Revenue = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dgv_Accessory = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.pnlNgayThangNam.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Accessory)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -211,6 +239,7 @@
             this.btnBaoCaoNam.TabIndex = 15;
             this.btnBaoCaoNam.Text = "Năm";
             this.btnBaoCaoNam.UseVisualStyleBackColor = false;
+            this.btnBaoCaoNam.Click += new System.EventHandler(this.btnBaoCaoNam_Click);
             // 
             // btnBaoCaoThang
             // 
@@ -225,6 +254,7 @@
             this.btnBaoCaoThang.TabIndex = 14;
             this.btnBaoCaoThang.Text = "Tháng";
             this.btnBaoCaoThang.UseVisualStyleBackColor = false;
+            this.btnBaoCaoThang.Click += new System.EventHandler(this.btnBaoCaoThang_Click);
             // 
             // btnBaoCaoNgay
             // 
@@ -239,6 +269,7 @@
             this.btnBaoCaoNgay.TabIndex = 13;
             this.btnBaoCaoNgay.Text = "Ngày";
             this.btnBaoCaoNgay.UseVisualStyleBackColor = false;
+            this.btnBaoCaoNgay.Click += new System.EventHandler(this.btnBaoCaoNgay_Click);
             // 
             // btnLuuBaoCao
             // 
@@ -271,32 +302,247 @@
             this.btnXuatBaoCao.Text = "Xuất Báo Cáo";
             this.btnXuatBaoCao.UseVisualStyleBackColor = false;
             // 
-            // bunifuCustomDataGrid1
+            // chartRevenue
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bunifuCustomDataGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCustomDataGrid1.DoubleBuffered = true;
-            this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
-            this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(0, 116);
-            this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
-            this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(1023, 499);
-            this.bunifuCustomDataGrid1.TabIndex = 3;
+            chartArea2.Name = "ChartArea1";
+            this.chartRevenue.ChartAreas.Add(chartArea2);
+            this.chartRevenue.Dock = System.Windows.Forms.DockStyle.Left;
+            legend2.Name = "Legend1";
+            this.chartRevenue.Legends.Add(legend2);
+            this.chartRevenue.Location = new System.Drawing.Point(0, 0);
+            this.chartRevenue.Name = "chartRevenue";
+            series2.ChartArea = "ChartArea1";
+            series2.IsXValueIndexed = true;
+            series2.Legend = "Legend1";
+            series2.Name = "Doanh thu";
+            this.chartRevenue.Series.Add(series2);
+            this.chartRevenue.Size = new System.Drawing.Size(550, 405);
+            this.chartRevenue.TabIndex = 4;
+            this.chartRevenue.Text = "chartRevenue";
+            this.chartRevenue.Click += new System.EventHandler(this.chart1_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.lb_LastMonthDown);
+            this.groupBox1.Controls.Add(this.lb_YesterdayDown);
+            this.groupBox1.Controls.Add(this.lb_Reply);
+            this.groupBox1.Controls.Add(this.lb_Revenue);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.pictureBox4);
+            this.groupBox1.Controls.Add(this.pictureBox3);
+            this.groupBox1.Controls.Add(this.pictureBox2);
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(0, 116);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1023, 94);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "KẾT QUẢ BÁN HÀNG HÔM NAY";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(813, 67);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(161, 15);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "So với cùng kỳ tháng trước ";
+            this.label16.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(568, 67);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(93, 15);
+            this.label13.TabIndex = 6;
+            this.label13.Text = "So với hôm qua";
+            this.label13.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(323, 67);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(61, 15);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "Sản phẩm";
+            this.label10.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(78, 67);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 15);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Doanh thu thuần";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // lb_LastMonthDown
+            // 
+            this.lb_LastMonthDown.AutoSize = true;
+            this.lb_LastMonthDown.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_LastMonthDown.Location = new System.Drawing.Point(811, 37);
+            this.lb_LastMonthDown.Name = "lb_LastMonthDown";
+            this.lb_LastMonthDown.Size = new System.Drawing.Size(173, 30);
+            this.lb_LastMonthDown.TabIndex = 6;
+            this.lb_LastMonthDown.Text = "Tổng doanh thu";
+            this.lb_LastMonthDown.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // lb_YesterdayDown
+            // 
+            this.lb_YesterdayDown.AutoSize = true;
+            this.lb_YesterdayDown.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_YesterdayDown.Location = new System.Drawing.Point(566, 37);
+            this.lb_YesterdayDown.Name = "lb_YesterdayDown";
+            this.lb_YesterdayDown.Size = new System.Drawing.Size(173, 30);
+            this.lb_YesterdayDown.TabIndex = 6;
+            this.lb_YesterdayDown.Text = "Tổng doanh thu";
+            this.lb_YesterdayDown.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // lb_Reply
+            // 
+            this.lb_Reply.AutoSize = true;
+            this.lb_Reply.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Reply.Location = new System.Drawing.Point(321, 37);
+            this.lb_Reply.Name = "lb_Reply";
+            this.lb_Reply.Size = new System.Drawing.Size(173, 30);
+            this.lb_Reply.TabIndex = 6;
+            this.lb_Reply.Text = "Tổng doanh thu";
+            this.lb_Reply.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // lb_Revenue
+            // 
+            this.lb_Revenue.AutoSize = true;
+            this.lb_Revenue.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Revenue.Location = new System.Drawing.Point(76, 37);
+            this.lb_Revenue.Name = "lb_Revenue";
+            this.lb_Revenue.Size = new System.Drawing.Size(151, 30);
+            this.lb_Revenue.TabIndex = 6;
+            this.lb_Revenue.Text = "1,000,000,000";
+            this.lb_Revenue.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(323, 22);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(80, 15);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Gửi bảo hành";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(78, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 15);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Tổng doanh thu";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(745, 22);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(500, 22);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(255, 22);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(10, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.dgv_Accessory);
+            this.panel4.Controls.Add(this.chartRevenue);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 210);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1023, 405);
+            this.panel4.TabIndex = 6;
+            // 
+            // dgv_Accessory
+            // 
+            this.dgv_Accessory.AllowUserToResizeColumns = false;
+            this.dgv_Accessory.AllowUserToResizeRows = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgv_Accessory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_Accessory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_Accessory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Accessory.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgv_Accessory.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_Accessory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Accessory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_Accessory.ColumnHeadersHeight = 30;
+            this.dgv_Accessory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT});
+            this.dgv_Accessory.DoubleBuffered = true;
+            this.dgv_Accessory.EnableHeadersVisualStyles = false;
+            this.dgv_Accessory.HeaderBgColor = System.Drawing.SystemColors.HotTrack;
+            this.dgv_Accessory.HeaderForeColor = System.Drawing.SystemColors.Window;
+            this.dgv_Accessory.Location = new System.Drawing.Point(556, 3);
+            this.dgv_Accessory.Name = "dgv_Accessory";
+            this.dgv_Accessory.ReadOnly = true;
+            this.dgv_Accessory.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_Accessory.RowHeadersVisible = false;
+            this.dgv_Accessory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Accessory.Size = new System.Drawing.Size(467, 399);
+            this.dgv_Accessory.TabIndex = 5;
+            this.dgv_Accessory.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgv_Accessory_RowPostPaint);
+            // 
+            // STT
+            // 
+            this.STT.FillWeight = 114.2132F;
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
             // 
             // frmReport
             // 
@@ -304,7 +550,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(69)))), ((int)(((byte)(114)))));
             this.ClientSize = new System.Drawing.Size(1023, 615);
-            this.Controls.Add(this.bunifuCustomDataGrid1);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -318,7 +565,15 @@
             this.panel3.PerformLayout();
             this.pnlNgayThangNam.ResumeLayout(false);
             this.pnlNgayThangNam.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Accessory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -330,7 +585,6 @@
         private System.Windows.Forms.Button btnXuatBaoCao;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label lbTieuDe;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
         private System.Windows.Forms.Panel pnlNgayThangNam;
         private System.Windows.Forms.Button btnBaoCaoNam;
         private System.Windows.Forms.Button btnBaoCaoThang;
@@ -342,5 +596,24 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtp_NgayBatDau;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartRevenue;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lb_Revenue;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lb_Reply;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lb_LastMonthDown;
+        private System.Windows.Forms.Label lb_YesterdayDown;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panel4;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid dgv_Accessory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
     }
 }

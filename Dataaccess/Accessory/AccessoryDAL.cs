@@ -92,5 +92,20 @@ namespace Dataaccess
                 .AsQueryable<AccessoryGettingDTO>()
                 .ToList();
         }
+
+        public void UpdateInventoryAccessory(string accessoryId, int quantity)
+        {
+            var accessory = GetAccessory(accessoryId);
+            accessory.Inventory -= quantity;
+            db.SaveChanges();
+        }
+        public double GetGuarantee()
+        {
+            var total = db.Accessories
+                .Where(x => x.Status > 0)
+                .Select(x => x.Status)
+                .ToList();
+            return total.Sum();
+        }
     }
 }

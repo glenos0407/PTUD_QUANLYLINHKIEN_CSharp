@@ -74,6 +74,7 @@
             this.btnImport.TabIndex = 2;
             this.btnImport.Text = "OK";
             this.btnImport.UseVisualStyleBackColor = false;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // label1
             // 

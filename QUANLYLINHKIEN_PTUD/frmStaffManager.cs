@@ -28,7 +28,7 @@ namespace QUANLYLINHKIEN_PTUD
             InitializeComponent();
             Custom_Theme();
             staffbll = new StaffBLL();
-            roleTypes = new List<string>() { "Quản Lý", "Nhân viên thủ kho", "Nhân viên bán hàng" };
+            roleTypes = new List<string>() { "Quản lý", "Nhân viên thủ kho", "Nhân viên bán hàng" };
             cbx_Role.DataSource = roleTypes;
             dtp_BirthDate.Format = DateTimePickerFormat.Custom;
             bindingSource = new BindingSource();
@@ -42,7 +42,7 @@ namespace QUANLYLINHKIEN_PTUD
             fmain = f;
             Custom_Theme();
             staffbll = new StaffBLL();
-            roleTypes = new List<string>() { "Quản Lý", "Nhân viên thủ kho", "Nhân viên bán hàng" };
+            roleTypes = new List<string>() { "Quản lý", "Nhân viên thủ kho", "Nhân viên bán hàng" };
             cbx_Role.DataSource = roleTypes;
             dtp_BirthDate.Format = DateTimePickerFormat.Custom;
             dtp_BirthDate.CustomFormat = "dd/MM/yyyy";

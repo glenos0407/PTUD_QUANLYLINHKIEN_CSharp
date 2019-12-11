@@ -21,5 +21,9 @@ namespace Business
         {
             return dal.CreateOrderDetail(orderDetail);
         }
+        public List<OrderDetailStatisticDTO> GetListOrderDetailForStaticByDay(int day, int month, int year)
+        {
+            return dal.GetListOrderDetailForStaticByDay(day,month,year);
+        }
     }
 }

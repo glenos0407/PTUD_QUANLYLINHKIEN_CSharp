@@ -41,10 +41,67 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Interop.SHDocVw">
+      <HintPath>C:\Program Files (x86)\Nevron Software\Nevron .NET Vision 2019.1 for VS2019\Bin\Interop.SHDocVw.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Chart, Version=19.11.14.12, Culture=neutral, PublicKeyToken=2961c51bb98125d2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Nevron Software\Nevron .NET Vision 2019.1 for VS2019\Bin\Nevron.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Chart.WinForm, Version=19.11.14.12, Culture=neutral, PublicKeyToken=c9bd8998e981e4ee, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Nevron Software\Nevron .NET Vision 2019.1 for VS2019\Bin\Nevron.Chart.WinForm.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Diagram, Version=19.11.14.12, Culture=neutral, PublicKeyToken=58d0c39aedb7cb73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Nevron Software\Nevron .NET Vision 2019.1 for VS2019\Bin\Nevron.Diagram.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Diagram.Shapes, Version=19.11.14.12, Culture=neutral, PublicKeyToken=532a56b211affb14, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Nevron Software\Nevron .NET Vision 2019.1 for VS2019\Bin\Nevron.Diagram.Shapes.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Diagram.WinForm, Version=19.11.14.12, Culture=neutral, PublicKeyToken=8232c9976c3abc48, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Nevron Software\Nevron .NET Vision 2019.1 for VS2019\Bin\Nevron.Diagram.WinForm.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Examples.Framework.WinForm">
+      <HintPath>C:\Program Files (x86)\Nevron Software\Nevron .NET Vision 2019.1 for VS2019\Bin\Nevron.Examples.Framework.WinForm.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.GraphicsGL, Version=19.11.14.12, Culture=neutral, PublicKeyToken=2f17c6a71f852d32, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Nevron Software\Nevron .NET Vision 2019.1 for VS2019\Bin\Nevron.GraphicsGL.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Presentation, Version=19.11.14.12, Culture=neutral, PublicKeyToken=6656c5d1103e75cc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Nevron Software\Nevron .NET Vision 2019.1 for VS2019\Bin\Nevron.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.System, Version=19.11.14.12, Culture=neutral, PublicKeyToken=6a987feae5e496fd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Nevron Software\Nevron .NET Vision 2019.1 for VS2019\Bin\Nevron.System.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.UI.WinForm.Docking, Version=19.11.14.12, Culture=neutral, PublicKeyToken=446d8963349a628a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Nevron Software\Nevron .NET Vision 2019.1 for VS2019\Bin\Nevron.UI.WinForm.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.UI.WinForm.Skins, Version=19.11.14.12, Culture=neutral, PublicKeyToken=231d012f86497c6a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Nevron Software\Nevron .NET Vision 2019.1 for VS2019\Bin\Nevron.UI.WinForm.Skins.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -54,6 +111,7 @@
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,6 +121,8 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Control\ComboBoxItem.cs" />
@@ -190,6 +250,7 @@
     <EmbeddedResource Include="frmStaffManager.resx">
       <DependentUpon>frmStaffManager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -241,6 +302,11 @@
       <Project>{078b0672-2c3f-4210-adb9-9bce9d5b1dc5}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="imgs\all-icon-26.jpg" />
+    <Content Include="imgs\img_77489.png" />
+    <Content Include="imgs\social-usd.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -48,6 +48,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
@@ -109,6 +110,26 @@
     <Compile Include="Migrations\201911261721250_addAddressToCustomer.cs" />
     <Compile Include="Migrations\201911261721250_addAddressToCustomer.Designer.cs">
       <DependentUpon>201911261721250_addAddressToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912061757285_addTriggerOrderDetail.cs" />
+    <Compile Include="Migrations\201912061757285_addTriggerOrderDetail.Designer.cs">
+      <DependentUpon>201912061757285_addTriggerOrderDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912061809043_updateDatabase.cs" />
+    <Compile Include="Migrations\201912061809043_updateDatabase.Designer.cs">
+      <DependentUpon>201912061809043_updateDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912070626189_addProcedureGetRevenue.cs" />
+    <Compile Include="Migrations\201912070626189_addProcedureGetRevenue.Designer.cs">
+      <DependentUpon>201912070626189_addProcedureGetRevenue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912110932294_addProcedureGetStatistic.cs" />
+    <Compile Include="Migrations\201912110932294_addProcedureGetStatistic.Designer.cs">
+      <DependentUpon>201912110932294_addProcedureGetStatistic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912111023193_updateDatabase1.cs" />
+    <Compile Include="Migrations\201912111023193_updateDatabase1.Designer.cs">
+      <DependentUpon>201912111023193_updateDatabase1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OrderDetail\IOrderDetailDAL.cs" />
@@ -325,6 +346,21 @@
     <EmbeddedResource Include="Migrations\201911261721250_addAddressToCustomer.resx">
       <DependentUpon>201911261721250_addAddressToCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912061757285_addTriggerOrderDetail.resx">
+      <DependentUpon>201912061757285_addTriggerOrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912061809043_updateDatabase.resx">
+      <DependentUpon>201912061809043_updateDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912070626189_addProcedureGetRevenue.resx">
+      <DependentUpon>201912070626189_addProcedureGetRevenue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912110932294_addProcedureGetStatistic.resx">
+      <DependentUpon>201912110932294_addProcedureGetStatistic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912111023193_updateDatabase1.resx">
+      <DependentUpon>201912111023193_updateDatabase1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">
@@ -338,6 +374,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="OrderPDF\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

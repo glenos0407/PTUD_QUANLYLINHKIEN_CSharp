@@ -29,5 +29,13 @@ namespace Business
         {
             return acc.GetListAccessoriesByFilter(producerId, categoryId, accessoryName);
         }
+        public void UpdateInventoryAccessory(string accessoryId, int quantity)
+        {
+            acc.UpdateInventoryAccessory(accessoryId, quantity);
+        }
+        public double GetGuarantee()
+        {
+            return acc.GetGuarantee();
+        }
     }
 }

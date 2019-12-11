@@ -42,5 +42,11 @@ namespace QUANLYLINHKIEN_PTUD
                 return;
             }
         }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            //Định dạng kiểu trả về list lấy từ file excel
+            //list = excel
+        }
     }
 }
