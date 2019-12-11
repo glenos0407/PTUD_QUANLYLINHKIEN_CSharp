@@ -70,5 +70,11 @@ namespace Dataaccess
                 return list;
             }
         }
+        public List<OrderDetail> GetListOrderDetailByOrderId(int orderId)
+        {
+            return db.OrderDetails
+                .Where(x => x.OrderId == orderId)
+                .ToList();
+        }
     }
 }

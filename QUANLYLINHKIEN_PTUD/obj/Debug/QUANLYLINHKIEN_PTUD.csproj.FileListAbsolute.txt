@@ -587,3 +587,9 @@ D:\PhatTrienUngDung\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\ExcelDa
 D:\PhatTrienUngDung\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\ExcelDataReader.pdb
 D:\PhatTrienUngDung\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\ExcelDataReader.xml
 D:\PhatTrienUngDung\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.csproj.ResolveComReference.cache
+D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.csproj.ResolveComReference.cache
+D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\ExcelDataReader.dll
+D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Microsoft.Office.Interop.Excel.dll
+D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\stdole.dll
+D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\ExcelDataReader.pdb
+D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\ExcelDataReader.xml

@@ -33,5 +33,13 @@ namespace Business
         {
             return acc.UpdateInventoryAccessoryFromExcelFile(Name,SoLuong);
         }
+        public double GetGuarantee()
+        {
+            return acc.GetGuarantee();
+        }
+        public void UpdateInventoryAccessory(string accessoryId, int quantity)
+        {
+            acc.UpdateInventoryAccessory(accessoryId, quantity);
+        }
     }
 }

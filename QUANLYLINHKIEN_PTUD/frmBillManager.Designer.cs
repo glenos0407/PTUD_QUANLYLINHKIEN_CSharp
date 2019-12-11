@@ -30,25 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBillManager));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.imgs_Icon = new System.Windows.Forms.ImageList(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.cbx_GiaTien = new System.Windows.Forms.ComboBox();
+            this.cbx_Sort = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Order = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -58,7 +53,7 @@
             this.groupBox2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Order)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
@@ -130,26 +125,26 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Controls.Add(this.cbx_GiaTien);
+            this.panel3.Controls.Add(this.cbx_Sort);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(459, 25);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(253, 93);
             this.panel3.TabIndex = 10;
             // 
-            // cbx_GiaTien
+            // cbx_Sort
             // 
-            this.cbx_GiaTien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_GiaTien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbx_GiaTien.FormattingEnabled = true;
-            this.cbx_GiaTien.Items.AddRange(new object[] {
-            "Sắp xếp từ A-Z",
-            "Sắp xếp từ Z-A"});
-            this.cbx_GiaTien.Location = new System.Drawing.Point(3, 25);
-            this.cbx_GiaTien.Name = "cbx_GiaTien";
-            this.cbx_GiaTien.Size = new System.Drawing.Size(181, 29);
-            this.cbx_GiaTien.TabIndex = 4;
-            this.cbx_GiaTien.SelectedIndexChanged += new System.EventHandler(this.cbx_GiaTien_SelectedIndexChanged);
+            this.cbx_Sort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_Sort.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_Sort.FormattingEnabled = true;
+            this.cbx_Sort.Items.AddRange(new object[] {
+            "Giảm dần",
+            "Tăng dần"});
+            this.cbx_Sort.Location = new System.Drawing.Point(3, 25);
+            this.cbx_Sort.Name = "cbx_Sort";
+            this.cbx_Sort.Size = new System.Drawing.Size(181, 29);
+            this.cbx_Sort.TabIndex = 4;
+            this.cbx_Sort.SelectedIndexChanged += new System.EventHandler(this.cbx_GiaTien_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -182,6 +177,7 @@
             this.btnSearch.Size = new System.Drawing.Size(58, 29);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
@@ -193,66 +189,40 @@
             this.txtSearch.TabIndex = 0;
             this.txtSearch.Text = "Bạn Cần Tìm Hóa Đơn Gì ?";
             // 
-            // bunifuCustomDataGrid1
+            // dgv_Order
             // 
-            this.bunifuCustomDataGrid1.AllowUserToResizeColumns = false;
-            this.bunifuCustomDataGrid1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.bunifuCustomDataGrid1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.bunifuCustomDataGrid1.ColumnHeadersHeight = 30;
-            this.bunifuCustomDataGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
-            this.bunifuCustomDataGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCustomDataGrid1.DoubleBuffered = true;
-            this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
-            this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.SystemColors.HotTrack;
-            this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.SystemColors.Window;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(0, 151);
-            this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
-            this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(743, 491);
-            this.bunifuCustomDataGrid1.TabIndex = 8;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Column3";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Column4";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Column5";
-            this.Column5.Name = "Column5";
+            this.dgv_Order.AllowUserToAddRows = false;
+            this.dgv_Order.AllowUserToResizeColumns = false;
+            this.dgv_Order.AllowUserToResizeRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgv_Order.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgv_Order.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Order.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgv_Order.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_Order.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Order.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgv_Order.ColumnHeadersHeight = 30;
+            this.dgv_Order.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_Order.DoubleBuffered = true;
+            this.dgv_Order.EnableHeadersVisualStyles = false;
+            this.dgv_Order.HeaderBgColor = System.Drawing.SystemColors.HotTrack;
+            this.dgv_Order.HeaderForeColor = System.Drawing.SystemColors.Window;
+            this.dgv_Order.Location = new System.Drawing.Point(0, 151);
+            this.dgv_Order.Name = "dgv_Order";
+            this.dgv_Order.ReadOnly = true;
+            this.dgv_Order.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_Order.RowHeadersVisible = false;
+            this.dgv_Order.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Order.Size = new System.Drawing.Size(743, 491);
+            this.dgv_Order.TabIndex = 8;
+            this.dgv_Order.SelectionChanged += new System.EventHandler(this.dgv_Order_SelectionChanged);
             // 
             // panel6
             // 
@@ -285,6 +255,7 @@
             // lstvOrderDetail
             // 
             this.lstvOrderDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstvOrderDetail.HideSelection = false;
             this.lstvOrderDetail.Location = new System.Drawing.Point(0, 30);
             this.lstvOrderDetail.Name = "lstvOrderDetail";
             this.lstvOrderDetail.Size = new System.Drawing.Size(410, 461);
@@ -310,7 +281,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(69)))), ((int)(((byte)(114)))));
             this.ClientSize = new System.Drawing.Size(1153, 642);
-            this.Controls.Add(this.bunifuCustomDataGrid1);
+            this.Controls.Add(this.dgv_Order);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
@@ -326,7 +297,7 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Order)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -340,17 +311,12 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ComboBox cbx_GiaTien;
+        private System.Windows.Forms.ComboBox cbx_Sort;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid dgv_Order;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel4;

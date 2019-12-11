@@ -54,7 +54,6 @@ namespace QUANLYLINHKIEN_PTUD
             this.btnShowMenu.BackColor = Color.FromArgb(26, 58, 102);
             this.btnShowMenu.Image = imgs_BtnICon.Images[6];
 
-
             this.btnAccount.Image = imgs_BtnICon.Images[0];
             this.btnPOS.Image = imgs_BtnICon.Images[2];
             this.btnBackUp.Image = imgs_BtnICon.Images[3];

@@ -43,5 +43,13 @@ namespace Business
         {
             return dal.CompareRevenueForLastMonth();
         }
+        public List<OrderGetDto> GetListOrder()
+        {
+            return dal.GetListOrder();
+        }
+        public List<OrderGetDto> GetOrderById(int orderId)
+        {
+            return dal.GetOrderById(orderId);
+        }
     }
 }

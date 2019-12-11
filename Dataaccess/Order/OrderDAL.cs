@@ -134,7 +134,6 @@ namespace Dataaccess
                 str += "0%";
             return str;
         }
-        
         public string CompareRevenueForLastMonth()
         {
             var today = GetRevenueForDay();
@@ -156,6 +155,35 @@ namespace Dataaccess
             else
                 str += "0%";
             return str;
+        }
+        public List<OrderGetDto> GetListOrder()
+        {
+            var list = db.Orders
+                .Select(s => new OrderGetDto
+                {
+                    CreationTime = s.CreationTime,
+                    OrderId = s.Id,
+                    TotalPrice = s.TotalPrice,
+                    StaffName = db.Staffs.FirstOrDefault(x => x.Id == s.StaffId).Name,
+                    CustomerName = db.Customers.FirstOrDefault(x => x.Id == s.CustomerId).Name
+                })
+                .ToList();
+            return list;
+        }
+        public List<OrderGetDto> GetOrderById(int orderId)
+        {
+            var list = db.Orders
+                .Where(x => x.Id == orderId)
+                .Select(s => new OrderGetDto
+                {
+                    CreationTime = s.CreationTime,
+                    OrderId = s.Id,
+                    TotalPrice = s.TotalPrice,
+                    StaffName = db.Staffs.FirstOrDefault(x => x.Id == s.StaffId).Name,
+                    CustomerName = db.Customers.FirstOrDefault(x => x.Id == s.CustomerId).Name
+                })
+                .ToList();
+            return list;
         }
 
     }

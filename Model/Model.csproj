@@ -65,6 +65,7 @@
     <Compile Include="DTO\Accessory\AccessoryCreatingDTO.cs" />
     <Compile Include="DTO\Accessory\AccessoryGettingDTO.cs" />
     <Compile Include="DTO\OrderDetail\OrderDetailStatisticDTO.cs" />
+    <Compile Include="DTO\Order\OrderGetDto.cs" />
     <Compile Include="DTO\Order\OrderRevenueYearDto.cs" />
     <Compile Include="DTO\PDF\AccessoryPDFCreatingDTO.cs" />
     <Compile Include="DTO\PDF\OrderPDFCreatingDTO.cs" />

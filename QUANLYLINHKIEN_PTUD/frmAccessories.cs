@@ -64,31 +64,31 @@ namespace QUANLYLINHKIEN_PTUD
 
         public void ReadExcel(String FileExcel)
         {
-            Microsoft.Office.Interop.Excel.Application xlApp;
-            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
-            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
-            Microsoft.Office.Interop.Excel.Range xlRange;
+            //Microsoft.Office.Interop.Excel.Application xlApp;
+            //Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            //Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+            //Microsoft.Office.Interop.Excel.Range xlRange;
 
-            int xlRow;
+            //int xlRow;
 
-            if(!string.IsNullOrEmpty(FileExcel))
-            {
-                xlApp = new Microsoft.Office.Interop.Excel.Application();
-                xlWorkBook = xlApp.Workbooks.Open(FileExcel);
-                xlWorkSheet = xlWorkBook.Worksheets["Accessory"];
-                xlRange = xlWorkSheet.UsedRange;
+            //if(!string.IsNullOrEmpty(FileExcel))
+            //{
+            //    xlApp = new Microsoft.Office.Interop.Excel.Application();
+            //    xlWorkBook = xlApp.Workbooks.Open(FileExcel);
+            //    xlWorkSheet = xlWorkBook.Worksheets["Accessory"];
+            //    xlRange = xlWorkSheet.UsedRange;
 
-                int i = 0;
-                for(xlRow = 2;xlRow <= xlRange.Rows.Count;xlRow++)
-                {
-                    i++;
-                    dgv_Detail.Rows.Add(i, xlRange.Cells[xlRow, 2].Text, xlRange.Cells[xlRow, 19].Text, xlRange.Cells[xlRow, 4].Text);
+            //    int i = 0;
+            //    for(xlRow = 2;xlRow <= xlRange.Rows.Count;xlRow++)
+            //    {
+            //        i++;
+            //        dgv_Detail.Rows.Add(i, xlRange.Cells[xlRow, 2].Text, xlRange.Cells[xlRow, 19].Text, xlRange.Cells[xlRow, 4].Text);
                     
-                }
-                xlWorkBook.Close();
-                xlApp.Quit();
-            }
-            //dgv_Detail.DataSource = table;
+            //    }
+            //    xlWorkBook.Close();
+            //    xlApp.Quit();
+            //}
+            ////dgv_Detail.DataSource = table;
             
         }
         private void Custom_Theme()
