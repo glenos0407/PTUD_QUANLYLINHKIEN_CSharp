@@ -10,7 +10,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Reflection;
+using System.Data.OleDb;
+using Microsoft.Office.Interop.Excel;
 using Model;
+
 
 namespace QUANLYLINHKIEN_PTUD
 {
@@ -22,6 +25,9 @@ namespace QUANLYLINHKIEN_PTUD
         CategoryBLL categoryBLL;
         BindingSource bindingSource;
 
+        String FileExcel;
+        
+       
         public frmAccessories()
         {
             InitializeComponent();
@@ -55,6 +61,36 @@ namespace QUANLYLINHKIEN_PTUD
             dgv_Detail.ReadOnly = true;
         }
 
+
+        public void ReadExcel(String FileExcel)
+        {
+            Microsoft.Office.Interop.Excel.Application xlApp;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+            Microsoft.Office.Interop.Excel.Range xlRange;
+
+            int xlRow;
+
+            if(FileExcel != string.Empty)
+            {
+                xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlWorkBook = xlApp.Workbooks.Open(FileExcel);
+                xlWorkSheet = xlWorkBook.Worksheets["Accessory"];
+                xlRange = xlWorkSheet.UsedRange;
+
+                int i = 0;
+                for(xlRow = 2;xlRow <= xlRange.Rows.Count;xlRow++)
+                {
+                    i++;
+                    dgv_Detail.Rows.Add(i, xlRange.Cells[xlRow, 2].Text, xlRange.Cells[xlRow, 19].Text, xlRange.Cells[xlRow, 4].Text);
+                    
+                }
+                xlWorkBook.Close();
+                xlApp.Quit();
+            }
+            //dgv_Detail.DataSource = table;
+            
+        }
         private void Custom_Theme()
         {
             btnSearch.Image = imgs_Icon.Images[0];
@@ -94,8 +130,8 @@ namespace QUANLYLINHKIEN_PTUD
         {
             foreach (DataGridViewColumn column in bunifuCustomDataGridAccessory.Columns)
             {
-                column.DefaultCellStyle.Font = new Font("Segoe UI", 10);
-                column.HeaderCell.Style.Font = new Font("Segoe UI", 12);
+                //column.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+                //column.HeaderCell.Style.Font = new Font("Segoe UI", 12);
             }
             bunifuCustomDataGridAccessory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             bunifuCustomDataGridAccessory.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -144,13 +180,13 @@ namespace QUANLYLINHKIEN_PTUD
         private void CreateDataGridViewDetail()
         {
             dgv_Detail.ClearSelection();
-            foreach (DataGridViewColumn column in dgv_Detail.Columns)
-            {
-                column.DefaultCellStyle.Font = new Font("Segoe UI", 9);
-                column.HeaderCell.Style.Font = new Font("Segoe UI Semibold", 10);
-            }
-            dgv_Detail.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgv_Detail.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //foreach (DataGridViewColumn column in dgv_Detail.Columns)
+            //{
+            //    //column.DefaultCellStyle.Font = new Font("Segoe UI", 9);
+            //    //column.HeaderCell.Style.Font = new Font("Segoe UI Semibold", 10);
+            //}
+            ////dgv_Detail.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            ////dgv_Detail.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
         private void frmAccessories_Load(object sender, EventArgs e)
         {
@@ -163,6 +199,7 @@ namespace QUANLYLINHKIEN_PTUD
             CreateDataGridViewAccessory(bindingSource);
             CreateDataGridViewDetail();
             CreateComboBox();
+
         }
 
         private void txtSearch_Enter_1(object sender, EventArgs e)
@@ -186,8 +223,14 @@ namespace QUANLYLINHKIEN_PTUD
 
         private void btnNhapHang_Click(object sender, EventArgs e)
         {
+            dgv_Detail.Rows.Clear();
             frmFileImport frmfi = new frmFileImport();
             frmfi.ShowDialog();
+            if (!string.IsNullOrEmpty(frmfi.ExcelURL))
+            {
+                FileExcel = frmfi.ExcelURL;
+            }
+            ReadExcel(FileExcel);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -296,6 +339,47 @@ namespace QUANLYLINHKIEN_PTUD
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            if (dgv_Detail.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu !!");
+                return;
+            }
+            int SoLuongLienKienDungThongTin = 0;
+            int sl = 0;
+            String s2 = "";
+            String Error = "{";
+            for (int i = 0;i < dgv_Detail.Rows.Count; i++)
+            {
+                //if (!string.IsNullOrEmpty(dgv_Detail.Rows[i].Cells["Column4"].Value.ToString()))
+                //{
+                sl = Convert.ToInt32(dgv_Detail.Rows[i].Cells["Column4"].Value.ToString());
+                //}
+                //if (!string.IsNullOrEmpty(dgv_Detail.Rows[i].Cells["Column2"].Value.ToString()))
+                //{
+                s2 = dgv_Detail.Rows[i].Cells["Column2"].Value.ToString();
+                //}
+                if (accsorybll.UpdateInventoryAccessoryFromExcelFile(s2, sl) == true )
+                {
+                    SoLuongLienKienDungThongTin++;
+                }
+                else if (accsorybll.UpdateInventoryAccessoryFromExcelFile(s2, sl) == false)
+                {
+                    Error += (i + 1) + ",";
+                }
+            }
+            if(SoLuongLienKienDungThongTin == dgv_Detail.Rows.Count)
+            {
+                MessageBox.Show("Đã Thêm " + SoLuongLienKienDungThongTin + "/" + (dgv_Detail.Rows.Count));
+            }
+            else
+            {
+                Error += "}";
+                MessageBox.Show("Đã Thêm " + SoLuongLienKienDungThongTin + "/" + (dgv_Detail.Rows.Count) + '\n'+ "Lỗi = " + Error);
+            }
+            bunifuCustomDataGridAccessory.Rows.Clear();
+            bindingSource.DataSource = accsorybll.GetAllAccessories();
+            CreateDataGridViewAccessory(bindingSource);
+
             //if (bunifuCustomDataGridAccessory.SelectedRows.Count > 0)
             //{
             //    if (btnThem.Text.Contains("Thêm"))

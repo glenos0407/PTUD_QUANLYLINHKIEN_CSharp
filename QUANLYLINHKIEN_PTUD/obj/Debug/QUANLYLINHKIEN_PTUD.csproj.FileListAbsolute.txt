@@ -583,36 +583,7 @@ D:\PhatTrienUngDung\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\itextsh
 D:\PhatTrienUngDung\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Dataaccess.dll.config
 D:\PhatTrienUngDung\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.csprojAssemblyReference.cache
 D:\PhatTrienUngDung\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.csproj.CopyComplete
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\LiveCharts.dll
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\LiveCharts.Wpf.dll
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Nevron.Chart.dll
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Nevron.Chart.WinForm.dll
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Nevron.Diagram.dll
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Nevron.Diagram.Shapes.dll
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Nevron.Diagram.WinForm.dll
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Nevron.Examples.Framework.WinForm.dll
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Nevron.GraphicsGL.dll
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Nevron.Presentation.dll
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Nevron.System.dll
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Nevron.UI.WinForm.Docking.dll
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Nevron.UI.WinForm.Skins.dll
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\AxInterop.SHDocVw.dll
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\LiveCharts.pdb
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\LiveCharts.xml
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\LiveCharts.Wpf.pdb
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\LiveCharts.Wpf.xml
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Nevron.Chart.xml
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Nevron.Chart.WinForm.xml
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Nevron.Diagram.xml
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Nevron.Diagram.Shapes.xml
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Nevron.Diagram.WinForm.xml
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Nevron.Examples.Framework.WinForm.xml
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Nevron.GraphicsGL.xml
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Nevron.Presentation.xml
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Nevron.System.xml
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Nevron.UI.WinForm.Docking.xml
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\Nevron.UI.WinForm.Skins.xml
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.exe.licenses
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\LiveCharts.WinForms.dll
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\LiveCharts.WinForms.pdb
-D:\O_CUNG_CUA_PHAT\Phát triển ứng dụng\source-code-ver0.8\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\LiveCharts.WinForms.xml
+D:\PhatTrienUngDung\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\ExcelDataReader.dll
+D:\PhatTrienUngDung\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\ExcelDataReader.pdb
+D:\PhatTrienUngDung\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\bin\Debug\ExcelDataReader.xml
+D:\PhatTrienUngDung\PTUD_QUANLYLINHKIEN_UI\QUANLYLINHKIEN_PTUD\obj\Debug\QUANLYLINHKIEN_PTUD.csproj.ResolveComReference.cache
