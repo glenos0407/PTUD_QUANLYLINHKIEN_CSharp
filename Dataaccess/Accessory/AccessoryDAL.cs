@@ -50,7 +50,16 @@ namespace Dataaccess
         {
             return db.Accessories.FirstOrDefault(x => x.Id == id);
         }
-
+        public bool UpdateInventoryAccessoryFromExcelFile(string Name,int SoLuong)
+        {
+            var Acc = db.Accessories.FirstOrDefault(x => x.Name.Equals(Name));
+            if(Acc == null)
+            {
+                return false;
+            }
+            //Acc.Inventory = Acc.Inventory + SoLuong;
+            return true;
+        }
         public List<AccessoryGettingDTO> GetListAccessoriesByFilter(int producerId, string categoryId, string accessoryName)
         {
             var query = db.Accessories

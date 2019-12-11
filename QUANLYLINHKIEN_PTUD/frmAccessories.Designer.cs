@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAccessories));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
@@ -39,6 +39,10 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnThem = new System.Windows.Forms.Button();
             this.dgv_Detail = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lbDetail = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -55,10 +59,6 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.bunifuCustomDataGridAccessory = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Detail)).BeginInit();
@@ -143,10 +143,10 @@
             // 
             this.dgv_Detail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Detail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT,
-            this.TenHang,
-            this.DonVi,
-            this.SoLuong});
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
             this.dgv_Detail.Location = new System.Drawing.Point(6, 348);
             this.dgv_Detail.Name = "dgv_Detail";
             this.dgv_Detail.RowHeadersVisible = false;
@@ -154,6 +154,33 @@
             this.dgv_Detail.TabIndex = 4;
             this.dgv_Detail.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgv_Detail_RowPostPaint);
             this.dgv_Detail.SelectionChanged += new System.EventHandler(this.dgv_Detail_SelectionChanged);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "STT";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 35;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Tên Linh Kiện";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 190;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Loại Linh Kiện";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Số Lượng";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 70;
             // 
             // panel5
             // 
@@ -341,20 +368,20 @@
             // 
             this.bunifuCustomDataGridAccessory.AllowUserToResizeColumns = false;
             this.bunifuCustomDataGridAccessory.AllowUserToResizeRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGridAccessory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGridAccessory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.bunifuCustomDataGridAccessory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.bunifuCustomDataGridAccessory.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGridAccessory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGridAccessory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGridAccessory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGridAccessory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.bunifuCustomDataGridAccessory.ColumnHeadersHeight = 30;
             this.bunifuCustomDataGridAccessory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuCustomDataGridAccessory.DoubleBuffered = true;
@@ -369,30 +396,6 @@
             this.bunifuCustomDataGridAccessory.TabIndex = 8;
             this.bunifuCustomDataGridAccessory.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.bunifuCustomDataGrid1_RowPostPaint);
             this.bunifuCustomDataGridAccessory.SelectionChanged += new System.EventHandler(this.bunifuCustomDataGridAccessory_SelectionChanged);
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.Width = 40;
-            // 
-            // TenHang
-            // 
-            this.TenHang.HeaderText = "Tên Hàng";
-            this.TenHang.Name = "TenHang";
-            this.TenHang.Width = 160;
-            // 
-            // DonVi
-            // 
-            this.DonVi.HeaderText = "Số Lượng";
-            this.DonVi.Name = "DonVi";
-            this.DonVi.Width = 60;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.HeaderText = "Đơn Giá";
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.Width = 140;
             // 
             // frmAccessories
             // 
@@ -452,9 +455,9 @@
         private System.Windows.Forms.Label lbDetail;
         private System.Windows.Forms.ComboBox cbx_Category;
         private System.Windows.Forms.ComboBox cbx_Producer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DonVi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

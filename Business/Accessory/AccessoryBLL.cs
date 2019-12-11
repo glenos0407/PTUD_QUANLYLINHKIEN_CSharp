@@ -29,5 +29,9 @@ namespace Business
         {
             return acc.GetListAccessoriesByFilter(producerId, categoryId, accessoryName);
         }
+        public bool UpdateInventoryAccessoryFromExcelFile(String Name, int SoLuong)
+        {
+            return acc.UpdateInventoryAccessoryFromExcelFile(Name,SoLuong);
+        }
     }
 }
