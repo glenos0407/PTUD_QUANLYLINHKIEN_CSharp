@@ -339,19 +339,46 @@ namespace QUANLYLINHKIEN_PTUD
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            //int a = 0;
-            //for (int i = 1;i < dgv_Detail.Rows.Count - 1; i++)
-            //{
-            //    int sl = Convert.ToInt32(dgv_Detail.Rows[i].Cells["Column4"].Value.ToString());
-            //    string s2 = dgv_Detail.Rows[i].Cells["Column2"].Value.ToString();
-            //    if (accsorybll.UpdateInventoryAccessoryFromExcelFile(s2, sl) == true )
-            //    {
-            //        a++;
-            //    }
-            //}
-            //MessageBox.Show(a + "");
-            //CreateDataGridViewAccessory(bindingSource);
-            //bunifuCustomDataGridAccessory.Refresh();
+            if (dgv_Detail.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu !!");
+                return;
+            }
+            int SoLuongLienKienDungThongTin = 0;
+            int sl = 0;
+            String s2 = "";
+            String Error = "{";
+            for (int i = 0;i < dgv_Detail.Rows.Count; i++)
+            {
+                //if (!string.IsNullOrEmpty(dgv_Detail.Rows[i].Cells["Column4"].Value.ToString()))
+                //{
+                sl = Convert.ToInt32(dgv_Detail.Rows[i].Cells["Column4"].Value.ToString());
+                //}
+                //if (!string.IsNullOrEmpty(dgv_Detail.Rows[i].Cells["Column2"].Value.ToString()))
+                //{
+                s2 = dgv_Detail.Rows[i].Cells["Column2"].Value.ToString();
+                //}
+                if (accsorybll.UpdateInventoryAccessoryFromExcelFile(s2, sl) == true )
+                {
+                    SoLuongLienKienDungThongTin++;
+                }
+                else if (accsorybll.UpdateInventoryAccessoryFromExcelFile(s2, sl) == false)
+                {
+                    Error += (i + 1) + ",";
+                }
+            }
+            if(SoLuongLienKienDungThongTin == dgv_Detail.Rows.Count)
+            {
+                MessageBox.Show("Đã Thêm " + SoLuongLienKienDungThongTin + "/" + (dgv_Detail.Rows.Count));
+            }
+            else
+            {
+                Error += "}";
+                MessageBox.Show("Đã Thêm " + SoLuongLienKienDungThongTin + "/" + (dgv_Detail.Rows.Count) + '\n'+ "Lỗi = " + Error);
+            }
+            bunifuCustomDataGridAccessory.Rows.Clear();
+            bindingSource.DataSource = accsorybll.GetAllAccessories();
+            CreateDataGridViewAccessory(bindingSource);
 
             //if (bunifuCustomDataGridAccessory.SelectedRows.Count > 0)
             //{

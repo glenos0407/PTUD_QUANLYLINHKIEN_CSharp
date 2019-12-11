@@ -57,7 +57,7 @@ namespace Dataaccess
             {
                 return false;
             }
-            //Acc.Inventory = Acc.Inventory + SoLuong;
+            Acc.Inventory = Acc.Inventory + SoLuong;
             return true;
         }
         public List<AccessoryGettingDTO> GetListAccessoriesByFilter(int producerId, string categoryId, string accessoryName)
