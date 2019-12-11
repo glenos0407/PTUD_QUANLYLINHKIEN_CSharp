@@ -58,6 +58,14 @@ namespace Dataaccess
                 return false;
             }
             Acc.Inventory = Acc.Inventory + SoLuong;
+            try
+            {
+                db.SaveChanges();
+            }
+            catch
+            {
+                
+            }
             return true;
         }
         public List<AccessoryGettingDTO> GetListAccessoriesByFilter(int producerId, string categoryId, string accessoryName)

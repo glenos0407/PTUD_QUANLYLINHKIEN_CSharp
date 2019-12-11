@@ -367,6 +367,7 @@
             // 
             // bunifuCustomDataGridAccessory
             // 
+            this.bunifuCustomDataGridAccessory.AllowUserToAddRows = false;
             this.bunifuCustomDataGridAccessory.AllowUserToResizeColumns = false;
             this.bunifuCustomDataGridAccessory.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));

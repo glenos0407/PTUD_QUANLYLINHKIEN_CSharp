@@ -42,7 +42,15 @@ namespace Business
         }
         public string GetCustomerNameByNumberPhone(string phone)
         {
-            return cus.GetCustomerNameByNumberPhone(phone);
+            try
+            {
+                return cus.GetCustomerNameByNumberPhone(phone);
+            }
+            catch
+            {
+                return null;
+            }
+            
         }
     }
 }

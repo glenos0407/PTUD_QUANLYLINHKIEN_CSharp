@@ -453,9 +453,10 @@ namespace QUANLYLINHKIEN_PTUD
 
         private void btn_SearchCustomer_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txt_PhoneCustomer.Text))
+            string PhoneCustomer = txt_PhoneCustomer.Text.Trim();
+            if (!string.IsNullOrEmpty(PhoneCustomer))
             {
-                var customerName = customerBLL.GetCustomerNameByNumberPhone(txt_PhoneCustomer.Text);
+                var customerName = customerBLL.GetCustomerNameByNumberPhone(PhoneCustomer);
                 if (!string.IsNullOrEmpty(customerName))
                     txt_CustomerName.Text = customerName;
                 else

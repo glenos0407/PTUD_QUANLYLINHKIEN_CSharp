@@ -71,7 +71,7 @@ namespace QUANLYLINHKIEN_PTUD
 
             int xlRow;
 
-            if(FileExcel != string.Empty)
+            if(!string.IsNullOrEmpty(FileExcel))
             {
                 xlApp = new Microsoft.Office.Interop.Excel.Application();
                 xlWorkBook = xlApp.Workbooks.Open(FileExcel);

@@ -203,7 +203,7 @@ namespace QUANLYLINHKIEN_PTUD
         }
         private void btnSearch_Click_1(object sender, EventArgs e)
         {
-            String txt = txtSearch.Text.ToString();
+            String txt = txtSearch.Text.ToString().Trim();
      
             if (txt == "" && isEnter == true)
             {

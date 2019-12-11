@@ -229,6 +229,7 @@
             // 
             // dgv_StaffInfor
             // 
+            this.dgv_StaffInfor.AllowUserToAddRows = false;
             this.dgv_StaffInfor.AllowUserToResizeColumns = false;
             this.dgv_StaffInfor.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));

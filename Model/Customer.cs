@@ -18,8 +18,8 @@ namespace Model
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Số điện thoại không được để trống")]
-        [RegularExpression(@"(\+[0-9]{2}|\+[0-9]{2}\(0\)|\(\+[0-9]{2}\)\(0\)|00[0-9]{2}|0)([0-9]{9}|[0-9\-\s]{9,18})",
-            ErrorMessage = "Sai định dạng số điện thoại")]
+        //[RegularExpression(@"(\+[0-9]{2}|\+[0-9]{2}\(0\)|\(\+[0-9]{2}\)\(0\)|00[0-9]{2}|0)([0-9]{9}|[0-9\-\s]{9,18})",
+        //    ErrorMessage = "Sai định dạng số điện thoại")]
         public string NumberPhone { get; set; }
 
         [RegularExpression(@"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*"
